@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid" style="height: 200px;  color: red; text-align: center;">
+            <h1>logo de la empresa con el nombre</h1>
+        </div>
+    </header>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Inicio</a>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+
+                    </ul>
+                    <div>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <section>
+    
+        <div class="card-container">
+            <div class="card">
+                <div class="card-img">
+                    <img src="imagenes/eros.jpeg" alt="..." width="100%">
+                </div>
+                <h3>titulo</h3>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-detalle">
+                    <div class="precio">
+                       <p>Precio: $50.00</p>
+                    </div>
+                </div>
+                <button class="agregar">Agregar al Carrito</button>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="imagenes/eros.jpeg" alt="..." width="100%">
+                </div>
+                <h3>titulo</h3>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-detalle">
+                    <div class="precio">
+                        <span>precio</span>
+                        <p>$</p>
+                    </div>
+                </div>
+                <button>comprar</button>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="imagenes/eros.jpeg" alt="..." width="100%">
+                </div>
+                <h3>titulo</h3>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-detalle">
+                    <div class="precio">
+                        <span>precio</span>
+                        <p>$</p>
+                    </div>
+                </div>
+                <button>comprar</button>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="imagenes/eros.jpeg" alt="..." width="100%">
+                </div>
+                <h3>titulo</h3>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-detalle">
+                    <div class="precio">
+                        <span>precio</span>
+                        <p>$</p>
+                    </div>
+                </div>
+                <button>comprar</button>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="imagenes/eros.jpeg" alt="..." width="100%">
+                </div>
+                <h3>titulo</h3>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-detalle">
+                    <div class="precio">
+                        <span>precio</span>
+                        <p>$</p>
+                    </div>
+                </div>
+                <button>comprar</button>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="imagenes/eros.jpeg" alt="..." width="100%">
+                </div>
+                <h3>titulo</h3>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-detalle">
+                    <div class="precio">
+                        <span>precio</span>
+                        <p>$</p>
+                    </div>
+                </div>
+                <button>comprar</button>
+            </div>  <div class="card">
+                <div class="card-img">
+                    <img src="imagenes/eros.jpeg" alt="..." width="100%">
+                </div>
+                <h3>titulo</h3>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-detalle">
+                    <div class="precio">
+                        <span>precio</span>
+                        <p>$</p>
+                    </div>
+                </div>
+                <button>comprar</button>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="imagenes/eros.jpeg" alt="..." width="100%">
+                </div>
+                <h3>titulo</h3>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-detalle">
+                    <div class="precio">
+                        <span>precio</span>
+                        <p>$</p>
+                    </div>
+                </div>
+                <button>comprar</button>
+            </div>
+
+    </section>
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito">
+            <!-- Los productos seleccionados se mostrarán aquí -->
+        </ul>
+        <p>Total: <span id="total">$0.00</span></p>
+    </div>
+
+    
+
+    <footer>
+
+        <div class="footer">
+          <div class='social-links'>
+            <ul>
+              <li>
+                <a href="#" title="Instagram">
+                  <img src="imagenes/svg/instagram.svg" alt='Instagram'>
+                </a>
+              </li>
+              <li>
+                <a href="#" title="Linkedin">
+                  <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
+                </a>
+              </li>
+              <li>
+                <a href="#" title="Twitter">
+                  <img src="imagenes/svg/twitter.svg" alt='Twitter'>
+                </a>
+              </li>
+              <li>
+                <a href="#" title="Youtube">
+                  <img src="imagenes/svg/youtube.svg" alt='YouTube'>
+                </a>
+              </li>
+              <li>
+                <a href="#" title="GitHub">
+                  <img src="imagenes/svg/github.svg" alt='GitHub'>
+                </a>
+              </li>
+            </ul>
+          </div>
+    
+          <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+        </div>
+        </div>
+    
+      </footer>
+      <script src="Javascript"></script>
+</body>
+
+</html>
