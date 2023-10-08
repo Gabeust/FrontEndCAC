@@ -14,22 +14,77 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
 
+  <!--Para incorporar íconos de flaticon-->
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
 </head>
 
 <body>
-    <header>
-        <!-- Primer línea del encabezado -->
-        <div style="display: flex; justify-content: space-around; align-items: center;">
-            <div>
-                <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
-                <h1 style="display: inline;">FERRETERIA</h1>
-            </div>
-            <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1"
-                placeholder="Ingresa tu búsqueda"></textarea>
-            <div>
-                <a href=""><i class="fi fi-rr-envelope"></i></a>
-                <a href=""><i class="fi fi-rr-marker"></i></a>
-            </div>
+
+  <header>
+    <!-- Primer línea del encabezado -->
+    <div style="display: flex; justify-content: space-around; align-items: center;">
+        <div>
+            <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
+            <h1 style="display: inline;">FERRETERIA</h1>
+        </div>
+        <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1" placeholder="Ingresa tu búsqueda"></textarea>
+        <div>
+            <a href=""><i class="fi fi-rr-envelope"></i></a>
+            <a href=""><i class="fi fi-rr-marker"></i></a>
+        </div>
+    </div>
+
+    <!-- Segunda línea del encabezado -->
+    <div>
+      <nav>
+          <ul type="none"  style="display: flex; justify-content: space-evenly;">
+              <a href="./index.html"><li>Inicio</li></a>
+              <a href="#"><li>Ofertas</li></a>
+              <a href="#"><li>Productos</li></a>
+              <a href="./sucursales.html"><li>Sucursales</li></a>
+              <a href="#"><li>Contacto</li></a>
+          </ul>    
+      </nav>
+  </div>
+</header>
+
+<div class="sticky-top">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inicio</a>
+       
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+          
+          </ul>
+          <div>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <section>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="imagenes/1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/2.jpg" class="d-block w-100" alt="...">
         </div>
 
         <!-- Segunda línea del encabezado -->
