@@ -2,39 +2,51 @@
 .sticky-top{
     position: sticky;
     top: 0;
-    height: 60px; /* Establece una altura adecuada */
+    height: 60px; 
+
+}
+#sobre article {
+    display: none;
 }
 
+.productos{
+    display: flex;
+    justify-content: space-evenly;
 
-
-
+   
+}
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding: 60px;
+    padding: 20px;
+    width: 1200px;
 }
 
 .card {
-    width: calc(20% - 10px); /* 20% del ancho total con un margen de 10px */
     margin: 5px;
     padding: 15px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    border: 2px solid #ccc;
+   
+}
+.card p, h3{
+    text-align: center;
+}
+.agregar{
+    margin-top: auto;
+}
+/* Estilo para la imagen */
+.imagen {
+    width: 200px;
+    height: auto;
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima */
 }
 
-/* .card{
-   
-   padding: 25px;
-   margin: 10px;
-   border-radius: 8px;
-   box-shadow: 2px 2px 14px #bababa;
-} */
-/* .card .card-img{
-    width: 100%;
-    text-align: center;
-} */
-.card-img{
+.whatsapp{
+   text-align: center;
+    
+}
+/* card-img{
     transition: .03s linear all;
     overflow: hidden;
 
@@ -43,32 +55,15 @@
 .card img:hover{
     transform: scale(1.5);
     transition: 0.3s linear all;
-}
-/* .card .card-img img{
-    height: 200px;
-    margin: 20px 0 15px 0;
-    filter: drop-shadow(0 8px 8px #cdd5e2);
-    transition: .3s;
-}
-.card:hover .card-img img{
-    height: 240px;
-}
-.card .card-title h3{
-    color: #1b2430;
-    font-size: 28px;
-    letter-spacing: -0.5px;
-}
-.card .card-title p{
-    color: #b3bac3;
-    font-size: 18px;
 } */
+
 @media screen and (max-width: 992px){
     .card-container {
         display: block;
         padding: 20px
     };
     
-}
+} */
 
 /* footer */
 footer{
@@ -97,7 +92,6 @@ footer{
     background-color: var(--text-gray);
 }
 
-/*? socials */
 
 .social-links {
     flex-direction: column;
@@ -128,52 +122,5 @@ footer{
     display: flex;
     gap: 12px;
     list-style-type: none;
-}
-
-/* Carrocompra */
-/* Estilos para la página */
-
-h1 {
-    text-align: center;
-}
-
-.productos {
-    display: flex;
-    justify-content: space-around;
-}
-
-.producto {
-    width: 30%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.agregar {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-/* Estilos para el carrito */
-
-.carrito {
-    width: 30%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
 }
 
