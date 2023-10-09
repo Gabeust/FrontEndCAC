@@ -11,9 +11,11 @@ img.onclick = function(){
 
 // Cuando se hace clic en el botón de cerrar, cerrar la ventana modal
 var closeButton = document.getElementsByClassName("close")[0];
+/* COMENTO ESTE BLOQUE PORQUE TIRA UNA EXCEPCION. EL closeButton es undefined
 closeButton.onclick = function() {
     modal.style.display = "none";
 }
+*/
 
 function mostrarOcultar() {
     var article = document.querySelector('#sobre article');
@@ -27,3 +29,12 @@ function mostrarOcultar() {
         button.textContent = 'Leer más';
     }
 }
+
+// Giro de la imagen central
+let contenedorImagenCentral = document.getElementsByClassName("contenedor_imagen_central");
+console.log(contenedorImagenCentral);
+console.log(contenedorImagenCentral[1]);
+//contenedorImagenCentral[1].setAttribute("hidden", true);
+//contenedorImagenCentral[2].setAttribute("hidden", true);
+//contenedorImagenCentral[3].setAttribute("hidden", true);
+

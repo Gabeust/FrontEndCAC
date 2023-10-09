@@ -179,3 +179,43 @@ nav a:hover {
     padding: 3% 0%;
 }
 
+/* Animaciones */
+.galeria_imagenes {
+    animation: girarIzquierda 20s linear 3s 1 normal;
+}
+
+body {
+    overflow: hidden;
+    overflow-y: visible;
+}
+
+@keyframes girarIzquierda {
+    20% {
+        transform: translateX(-100vw);
+    }
+    25% {
+        transform: translateX(-100vw);
+    }
+    45% {
+        transform: translateX(-200vw);
+    }
+    50% {
+        transform: translateX(-200vw);
+    }
+    70% {
+        transform: translateX(-300vw);
+    }
+    75% {
+        transform: translateX(-300vw);
+    }
+}
+
+.contenedor_imagen_central {
+    /*border: 3px solid green; */
+    width: 100vw;
+}
+
+.imagen_central {
+    /*border: 5px solid darkblue; */
+    height: 100%;
+}
