@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferreteria</title>
@@ -14,6 +15,11 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
 
+
+  <!--Para incorporar íconos de flaticon-->
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+
   <!--Para incorporar íconos de flaticon-->
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
@@ -24,60 +30,133 @@
   <header>
     <!-- Primer línea del encabezado -->
     <div style="display: flex; justify-content: space-around; align-items: center;">
-        <div>
-            <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
-            <h1 style="display: inline;">FERRETERIA</h1>
-        </div>
-        <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1" placeholder="Ingresa tu búsqueda"></textarea>
-        <div>
-            <a href=""><i class="fi fi-rr-envelope"></i></a>
-            <a href=""><i class="fi fi-rr-marker"></i></a>
-        </div>
+      <div>
+        <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
+        <h1 style="display: inline;">FERRETERIA</h1>
+      </div>
+      <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1"
+        placeholder="Ingresa tu búsqueda"></textarea>
+      <div>
+        <a href=""><i class="fi fi-rr-envelope"></i></a>
+        <a href=""><i class="fi fi-rr-marker"></i></a>
+      </div>
     </div>
 
     <!-- Segunda línea del encabezado -->
     <div>
       <nav>
-          <ul type="none"  style="display: flex; justify-content: space-evenly;">
-              <a href="./index.html"><li>Inicio</li></a>
-              <a href="#"><li>Ofertas</li></a>
-              <a href="#"><li>Productos</li></a>
-              <a href="./sucursales.html"><li>Sucursales</li></a>
-              <a href="#"><li>Contacto</li></a>
-          </ul>    
+        <ul type="none" style="display: flex; justify-content: space-evenly;">
+          <a href="./index.html">
+            <li>Inicio</li>
+          </a>
+          <a href="./sobreNosotros.html">
+            <li>Sobre Nosotros</li>
+          </a>
+          <a href="#">
+            <li>Ofertas</li>
+          </a>
+          <a href="./Productos.html">
+            <li>Productos</li>
+          </a>
+          <a href="./Sucursales.html">
+            <li>Sucursales</li>
+          </a>
+          <a href="./Contacto.html">
+            <li>Contacto</li>
+          </a>
+        </ul>
       </nav>
-  </div>
-</header>
+    </div>
+  </header>
 
-<div class="sticky-top">
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Inicio</a>
-       
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Sobre Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-          
-          </ul>
-          <div>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
   <section>
+
+    <div class="contenedor_imagen_central">
+      <img class="imagen_central" src="imagenes/ferreteria.jpg" alt="Nuestra ferretería">
+      <h3 class="texto_imagen_central">BIENVENIDOS</h3>
+    </div>
+    <div class="contenedor_imagen_central">
+      <img class="imagen_central" src="imagenes/ofertas.jpg" alt="Ofertas de nuestra ferretería">
+      <h3 class="texto_imagen_central">OFERTAS</h3>
+    </div>
+    <div class="contenedor_imagen_central">
+      <img class="imagen_central" src="imagenes/herramientas_manuales.png" alt="Herramientas manuales">
+      <h3 class="texto_imagen_central">HERRAMIENTAS MANUALES</h3>
+    </div>
+    <div class="contenedor_imagen_central">
+      <img class="imagen_central" src="imagenes/herramientas_electricas.jpg" alt="Herramientas eléctricas">
+      <h3 class="texto_imagen_central">HERRAMIENTAS ELÉCTRICAS</h3>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align: center;">Nuestras marcas</h2>
+    <div style="display: flex; justify-content: space-around;">
+      <img class="imagen_marca" src="imagenes/marca_Bahco.png" alt="Productos Bahco">
+      <img class="imagen_marca" src="imagenes/marca_BlackandDecker.png" alt="Productos Black and Decker">
+      <img class="imagen_marca" src="imagenes/marca_Bosch.png" alt="Productos Bosch">
+      <img class="imagen_marca" src="imagenes/marca_DeWalt.png" alt="Productos DeWalt">
+      <img class="imagen_marca" src="imagenes/marca_Makita.png" alt="Productos Makita">
+      <img class="imagen_marca" src="imagenes/marca_Stanley.png" alt="Productos Stanley">
+    </div>
+  </section>
+
+  <section style="display: flex; align-items: baseline;">
+    <div>
+        <h2>Suscribite y mantenete informado</h2>
+        <p>Ingresa tu mail para recibir novedades y ofertas. Aprovecha un descuento en tu primer compra.</p>
+    </div>
+    <form action="" class="formulario_suscripcion">
+        <fieldset>
+            <input type="email" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico">
+            <input type="submit" value="Enviar">
+        </fieldset>
+        <fieldset  style="border: none;">
+            <input type="checkbox" name="aceptar_tyc" id="aceptar_tyc">
+            <label for="aceptar_tyc">Acepto términos y condiciones</label>
+        </fieldset>
+    </form>
+  </section>
+
+
+  <footer>
+
+    <div class="footer">
+      <div class='social-links'>
+        <ul>
+          <li>
+            <a href="#" title="Instagram">
+              <img src="imagenes/svg/instagram.svg" alt='Instagram'>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Linkedin">
+              <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Twitter">
+              <img src="imagenes/svg/twitter.svg" alt='Twitter'>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Youtube">
+              <img src="imagenes/svg/youtube.svg" alt='YouTube'>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="GitHub">
+              <img src="imagenes/svg/github.svg" alt='GitHub'>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -152,6 +231,7 @@
         </div>
     </footer>
     <script src="./script.js"></script>
+
 </body>
 
 </html>

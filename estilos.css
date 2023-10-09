@@ -124,3 +124,42 @@ footer{
     list-style-type: none;
 }
 
+
+/* Estilos mtm */
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: blue;
+    color: white;
+    transition: background-color 0.35s ease-out 0s;
+} 
+
+.imagen_marca {
+    width: 12%;
+}
+
+.formulario_suscripcion fieldset {
+    border: 0px;
+}
+
+.contenedor_imagen_central {
+    position: relative;
+}
+
+.imagen_central {
+    width: 100%;
+}
+
+.texto_imagen_central {
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0%;
+    margin: 0px;
+    width: 100%;
+    padding: 3% 0%;
+}
+
