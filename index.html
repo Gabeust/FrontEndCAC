@@ -18,22 +18,22 @@
 
   <header>
     <!-- Primer línea del encabezado -->
-    <div style="display: flex; justify-content: space-around; align-items: center;">
-      <div>
+    <div class="linea1_encabezado">
+      <div id="contenedor_logo_nombre">
         <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
         <h1 style="display: inline;">EL COSITO</h1>
       </div>
       <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1"
         placeholder="Ingresa tu búsqueda"></textarea>
-      <div>
+      <div id="contenedor_logo_carrito">
         <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
       </div>
     </div>
 
     <!-- Segunda línea del encabezado -->
     <div>
-      <nav class="barra-navegacion">
-        <ul type="none" class="lista-menues">
+      <nav class="barra_navegacion">
+        <ul type="none" class="lista_menues">
           <a href="./index.html">
             <li>Inicio</li>
           </a>
@@ -80,8 +80,8 @@
   </section>
 
   <section>
-    <h2 style="text-align: center;">Nuestras marcas</h2>
-    <div style="display: flex; justify-content: space-around;">
+    <h2>Nuestras marcas</h2>
+    <div class="contenedor_marcas">
       <img class="imagen_marca" src="imagenes/marca_Bahco.png" alt="Productos Bahco">
       <img class="imagen_marca" src="imagenes/marca_BlackandDecker.png" alt="Productos Black and Decker">
       <img class="imagen_marca" src="imagenes/marca_Bosch.png" alt="Productos Bosch">
@@ -91,7 +91,7 @@
     </div>
   </section>
 
-  <section style="display: flex; align-items: baseline;">
+  <section class="seccion_suscripcion">
     <div>
       <h2>Suscribite y mantenete informado</h2>
       <p>Ingresa tu mail para recibir novedades y ofertas. Aprovecha un descuento en tu primer compra.</p>
@@ -101,49 +101,47 @@
         <input type="email" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico">
         <input type="submit" value="Enviar">
       </fieldset>
-      <fieldset style="border: none;">
+      <fieldset>
         <input type="checkbox" name="aceptar_tyc" id="aceptar_tyc">
-        <label for="aceptar_tyc">Acepto términos y condiciones</label>
+        <label for="aceptar_tyc" style="font-size: 0.85em;">Acepto términos y condiciones</label>
       </fieldset>
     </form>
   </section>
 
 
-  <footer>
-
-    <div class="footer" style="background-color: blueviolet;">
-      <div class='social-links'>
-        <ul>
-          <li>
-            <a href="#" title="Instagram">
-              <img src="imagenes/svg/instagram.svg" alt='Instagram'>
-            </a>
-          </li>
-          <li>
-            <a href="#" title="Linkedin">
-              <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
-            </a>
-          </li>
-          <li>
-            <a href="#" title="Twitter">
-              <img src="imagenes/svg/twitter.svg" alt='Twitter'>
-            </a>
-          </li>
-          <li>
-            <a href="#" title="Youtube">
-              <img src="imagenes/svg/youtube.svg" alt='YouTube'>
-            </a>
-          </li>
-          <li>
-            <a href="#" title="GitHub">
-              <img src="imagenes/svg/github.svg" alt='GitHub'>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+  <footer style="background-color: blueviolet;">
+    <div class='social-links'>
+      <ul>
+        <li>
+          <a href="#" title="Instagram">
+            <img src="imagenes/svg/instagram.svg" alt='Instagram'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Linkedin">
+            <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Twitter">
+            <img src="imagenes/svg/twitter.svg" alt='Twitter'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Youtube">
+            <img src="imagenes/svg/youtube.svg" alt='YouTube'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="GitHub">
+            <img src="imagenes/svg/github.svg" alt='GitHub'>
+          </a>
+        </li>
+      </ul>
     </div>
+
+    <p style="text-align: center; color: white;">© Codo a Codo. 2023</p>
+
   </footer>
 
   <script src="./script.js"></script>
