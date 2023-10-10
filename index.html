@@ -3,22 +3,11 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferreteria</title>
-    <link rel="stylesheet" href="./estilos.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-    <!--Para incorporar íconos de flaticon-->
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
-
-
-  <!--Para incorporar íconos de flaticon-->
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferreteria El Cosito</title>
+  <link rel="icon" href="./imagenes/logo_ferreteria_16x16.png" sizes="16x16">
+  <link rel="stylesheet" href="./estilos.css">
 
   <!--Para incorporar íconos de flaticon-->
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -29,23 +18,22 @@
 
   <header>
     <!-- Primer línea del encabezado -->
-    <div style="display: flex; justify-content: space-around; align-items: center;">
-      <div>
+    <div class="linea1_encabezado">
+      <div id="contenedor_logo_nombre">
         <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
-        <h1 style="display: inline;">FERRETERIA</h1>
+        <h1 style="display: inline;">EL COSITO</h1>
       </div>
       <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1"
         placeholder="Ingresa tu búsqueda"></textarea>
-      <div>
-        <a href=""><i class="fi fi-rr-envelope"></i></a>
-        <a href=""><i class="fi fi-rr-marker"></i></a>
+      <div id="contenedor_logo_carrito">
+        <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
       </div>
     </div>
 
     <!-- Segunda línea del encabezado -->
     <div>
-      <nav>
-        <ul type="none" style="display: flex; justify-content: space-evenly;">
+      <nav class="barra_navegacion">
+        <ul type="none" class="lista_menues">
           <a href="./index.html">
             <li>Inicio</li>
           </a>
@@ -70,28 +58,30 @@
   </header>
 
   <section>
+    <div class="galeria_imagenes" style="display: flex; overflow: hidden; width: 400vw;">
+      <div class="contenedor_imagen_central imagen_bienvenidos">
+        <img class="imagen_central" src="imagenes/ferreteria.jpg" alt="Nuestra ferretería">
+        <h3 class="texto_imagen_central">BIENVENIDOS</h3>
+      </div>
+      <div class="contenedor_imagen_central imagen_ofertas">
+        <img class="imagen_central" src="imagenes/ofertas.jpg" alt="Ofertas de nuestra ferretería">
+        <h3 class="texto_imagen_central">OFERTAS</h3>
+      </div>
+      <div class="contenedor_imagen_central imagen_herr_manuales">
+        <img class="imagen_central" src="imagenes/herramientas_manuales.png" alt="Herramientas manuales">
+        <h3 class="texto_imagen_central">HERRAMIENTAS MANUALES</h3>
+      </div>
+      <div class="contenedor_imagen_central imagen_herr_electricas">
+        <img class="imagen_central" src="imagenes/herramientas_electricas.jpg" alt="Herramientas eléctricas">
+        <h3 class="texto_imagen_central">HERRAMIENTAS ELÉCTRICAS</h3>
+      </div>
+    </div>
 
-    <div class="contenedor_imagen_central">
-      <img class="imagen_central" src="imagenes/ferreteria.jpg" alt="Nuestra ferretería">
-      <h3 class="texto_imagen_central">BIENVENIDOS</h3>
-    </div>
-    <div class="contenedor_imagen_central">
-      <img class="imagen_central" src="imagenes/ofertas.jpg" alt="Ofertas de nuestra ferretería">
-      <h3 class="texto_imagen_central">OFERTAS</h3>
-    </div>
-    <div class="contenedor_imagen_central">
-      <img class="imagen_central" src="imagenes/herramientas_manuales.png" alt="Herramientas manuales">
-      <h3 class="texto_imagen_central">HERRAMIENTAS MANUALES</h3>
-    </div>
-    <div class="contenedor_imagen_central">
-      <img class="imagen_central" src="imagenes/herramientas_electricas.jpg" alt="Herramientas eléctricas">
-      <h3 class="texto_imagen_central">HERRAMIENTAS ELÉCTRICAS</h3>
-    </div>
   </section>
 
   <section>
-    <h2 style="text-align: center;">Nuestras marcas</h2>
-    <div style="display: flex; justify-content: space-around;">
+    <h2>Nuestras marcas</h2>
+    <div class="contenedor_marcas">
       <img class="imagen_marca" src="imagenes/marca_Bahco.png" alt="Productos Bahco">
       <img class="imagen_marca" src="imagenes/marca_BlackandDecker.png" alt="Productos Black and Decker">
       <img class="imagen_marca" src="imagenes/marca_Bosch.png" alt="Productos Bosch">
@@ -101,137 +91,60 @@
     </div>
   </section>
 
-  <section style="display: flex; align-items: baseline;">
+  <section class="seccion_suscripcion">
     <div>
-        <h2>Suscribite y mantenete informado</h2>
-        <p>Ingresa tu mail para recibir novedades y ofertas. Aprovecha un descuento en tu primer compra.</p>
+      <h2>Suscribite y mantenete informado</h2>
+      <p>Ingresa tu mail para recibir novedades y ofertas. Aprovecha un descuento en tu primer compra.</p>
     </div>
     <form action="" class="formulario_suscripcion">
-        <fieldset>
-            <input type="email" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico">
-            <input type="submit" value="Enviar">
-        </fieldset>
-        <fieldset  style="border: none;">
-            <input type="checkbox" name="aceptar_tyc" id="aceptar_tyc">
-            <label for="aceptar_tyc">Acepto términos y condiciones</label>
-        </fieldset>
+      <fieldset>
+        <input type="email" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico">
+        <input type="submit" value="Enviar">
+      </fieldset>
+      <fieldset>
+        <input type="checkbox" name="aceptar_tyc" id="aceptar_tyc">
+        <label for="aceptar_tyc" style="font-size: 0.85em;">Acepto términos y condiciones</label>
+      </fieldset>
     </form>
   </section>
 
 
-  <footer>
-
-    <div class="footer">
-      <div class='social-links'>
-        <ul>
-          <li>
-            <a href="#" title="Instagram">
-              <img src="imagenes/svg/instagram.svg" alt='Instagram'>
-            </a>
-          </li>
-          <li>
-            <a href="#" title="Linkedin">
-              <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
-            </a>
-          </li>
-          <li>
-            <a href="#" title="Twitter">
-              <img src="imagenes/svg/twitter.svg" alt='Twitter'>
-            </a>
-          </li>
-          <li>
-            <a href="#" title="Youtube">
-              <img src="imagenes/svg/youtube.svg" alt='YouTube'>
-            </a>
-          </li>
-          <li>
-            <a href="#" title="GitHub">
-              <img src="imagenes/svg/github.svg" alt='GitHub'>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+  <footer style="background-color: blueviolet;">
+    <div class='social-links'>
+      <ul>
+        <li>
+          <a href="#" title="Instagram">
+            <img src="imagenes/svg/instagram.svg" alt='Instagram'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Linkedin">
+            <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Twitter">
+            <img src="imagenes/svg/twitter.svg" alt='Twitter'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Youtube">
+            <img src="imagenes/svg/youtube.svg" alt='YouTube'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="GitHub">
+            <img src="imagenes/svg/github.svg" alt='GitHub'>
+          </a>
+        </li>
+      </ul>
     </div>
+
+    <p style="text-align: center; color: white;">© Codo a Codo. 2023</p>
+
   </footer>
+
   <script src="./script.js"></script>
-
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="imagenes/1.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="imagenes/2.jpg" class="d-block w-100" alt="...">
-        </div>
-
-        <!-- Segunda línea del encabezado -->
-        <div>
-            <nav>
-                <ul type="none" style="display: flex; justify-content: space-evenly;">
-                    <a href="./index1.html">
-                        <li>Inicio</li>
-                    </a>
-                    <a href="./SobreNosotros.html">
-                        <li>Sobre Nosotros</li>
-                    </a>
-                    <a href="#">
-                        <li>Ofertas</li>
-                    </a>
-                    <a href="./Productos.html">
-                        <li>Productos</li>
-                    </a>
-                    <a href="./Sucursales.html">
-                        <li>Sucursales</li>
-                    </a>
-                    <a href="./Contacto.html">
-                        <li>Contacto</li>
-                    </a>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-  
-    <footer>
-
-        <div class="footer">
-            <div class='social-links'>
-                <ul>
-                    <li>
-                        <a href="#" title="Instagram">
-                            <img src="imagenes/svg/instagram.svg" alt='Instagram'>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="Linkedin">
-                            <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="Twitter">
-                            <img src="imagenes/svg/twitter.svg" alt='Twitter'>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="Youtube">
-                            <img src="imagenes/svg/youtube.svg" alt='YouTube'>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="GitHub">
-                            <img src="imagenes/svg/github.svg" alt='GitHub'>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
-        </div>
-    </footer>
-    <script src="./script.js"></script>
-
 </body>
 
 </html>
