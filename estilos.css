@@ -3,67 +3,128 @@
     position: sticky;
     top: 0;
     height: 60px; 
+    background-color: #bcc1ea;
 
 }
-#sobre article {
-    display: none;
-}
 
-.productos{
-    display: flex;
-    justify-content: space-evenly;
+ /* Pruductos --------------------------------------------- gabriel */
 
+li{
+    list-style-type: none;
    
 }
-.card-container {
+main{
+    margin-top: 50px;
+}
+section{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    padding: 20px;
-    width: 1200px;
+    position: relative;
+}
+.contenedor-grid{
+    display: grid;
+    grid-template: auto  / 30% 70%;
+}
+.derecha {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid blue;
+    gap: 20px; /* Espacio entre las tarjetas */
+    
+ }
+.card-container {
+    width: 25%;
+    margin: 10px 0 10px 20px;
+    
+        
+}
+.card{
+    align-items: center;
+    text-align: center;
+}
+.card p, h4{
+    text-align: center;
 }
 
 .card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    overflow-y: auto;
+   
+  }
+  
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
     margin: 5px;
-    padding: 15px;
+    padding: 15px 0 0 15px;
     border: 2px solid #ccc;
    
-}
-.card p, h3{
-    text-align: center;
-}
-.agregar{
+   
+  }
+  .agregar {
     margin-top: auto;
-}
-/* Estilo para la imagen */
-.imagen {
-    width: 200px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    
+  }
+  img {
+    width: 800px;
     height: auto;
-    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima */
+
 }
+
+#categoria{
+    justify-content: center;
+} 
+
 
 .whatsapp{
    text-align: center;
     
 }
-/* card-img{
-    transition: .03s linear all;
-    overflow: hidden;
-
-
+/* valicacion form */
+.form-cont{
+    position: relative;
 }
-.card img:hover{
-    transform: scale(1.5);
-    transition: 0.3s linear all;
-} */
 
-@media screen and (max-width: 992px){
-    .card-container {
-        display: block;
-        padding: 20px
-    };
-    
-} */
+.form-cont input{
+    font: inherit;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: 2px solid #fff;
+    background-color: transparent;
+    transition: outline-color 500ms;
+}
+.form-cont_input:is(:focus, :valid){
+    outline-color: #3c50eb;
+}
+.form-cont_label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 10px 10px;
+    color: #fff;
+    transition: translate 500ms, scale 500ms;
+}
+.form-cont_input:focus +
+.form-cont_label,
+.form-cont_input:valid +
+.form-cont_label{
+    padding-inline: 5px;
+    translate: 10px -14px;
+    scale: 0.8;
+    background-color: #000;
+}
+
+
 
 /* footer */
 footer{
