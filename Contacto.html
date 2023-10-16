@@ -17,33 +17,34 @@
 </head>
 
 <body>
+
   <header>
     <!-- Primer línea del encabezado -->
-    <div style="display: flex; justify-content: space-around; align-items: center;">
-      <div>
-        <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
-        <h1 style="display: inline;">FERRETERIA</h1>
-      </div>
-      <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1"
-        placeholder="Ingresa tu búsqueda"></textarea>
-      <div>
-        <a href=""><i class="fi fi-rr-envelope"></i></a>
-        <a href=""><i class="fi fi-rr-marker"></i></a>
-      </div>
+   <!-- Primer línea del encabezado -->
+   <div class="linea1_encabezado">
+    <div id="contenedor_logo_nombre">
+      <img src="./imagenes/5.png" alt="Logo de Ferretería">
     </div>
+    <form class="buscar">
+      <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+      <button type="button" class="buscarbtn">
+        <i class="fi-rr-search"></i>
+      </button>
+    </form>
+    <div id="contenedor_logo_carrito" style="align-items: end;">
+      <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
+    </div>
+  </div>
 
     <!-- Segunda línea del encabezado -->
     <div>
-      <nav>
-        <ul type="none" style="display: flex; justify-content: space-evenly;">
-          <a href="./index1.html">
+      <nav class="barra_navegacion">
+        <ul type="none" class="lista_menues">
+          <a href="./index.html">
             <li>Inicio</li>
           </a>
-          <a href="./SobreNosotros.html">
+          <a href="./sobreNosotros.html">
             <li>Sobre Nosotros</li>
-          </a>
-          <a href="#">
-            <li>Ofertas</li>
           </a>
           <a href="./Productos.html">
             <li>Productos</li>
@@ -60,34 +61,31 @@
   </header>
 
   <section id="contacto" style="display: flex; justify-content: space-around;padding-left: 10px;">
-    <div class="col-8" class="container" style="border: solid;">
+    <div class="col-8">
       <h1>Contacto</h1>
-      <form class="form-cont">
-        <div class="mb-3">
-          <input type="text" name="nombre" id="nombre" formControlName="nombre" maxlength="50" required>
-          <label for="nombre" class="form-cont_label">Nombre</label>
-        </div>
-        <div class="mb-3">
-          <input type="email" name="email" formControlName="email" maxlength="100" id="email" placeholder="tucorreo@example.com">
-          <label for="email" class="form-cont_labeld">Correo electrónico</label>
-        </div>
-        <div class="mb-3">
-          <label for="mensaje" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="mensaje" rows="4"  maxlength="15000" placeholder="Escribe tu mensaje aquí"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+      <form id="contactForm" onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="mensaje">Consulta:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+    
+        <button class="botones" type="submit">Enviar</button>
       </form>
     </div>
-    <div style="border: solid;">
+    <div>
       <div class="whatsapp">
         <p></p>
-        <!-- <h2>¿LEER ANTES DE LLAMAR?</h2> -->
+       
         <h3><strong>Es Más Rápido por WhatsApp</strong></h2>
-          <p>Solicita tu cotización productos de Ferretería</p>
+          <p>Solicita tu cotización</p>
           <img src="https://tumayorferretero.net/img/cms/emocoties/boton-de-whatsapp.png"
             alt="Solicitar Cotización Whatsapp Coorporativo" title="Whatsapp Coorporativo" width="350" height="273">
-          <p>Teléfonos Atención al Cliente: <br>0343-4555657 - 4557890</p>
-          <p>Teléfonos Area Administrativa: <br>011-47484950 - 47896714</p>
+          <p>Teléfonos Atención al Cliente: <br>0343-4555657 / 4557890</p>
+          <p>Teléfonos Area Administrativa: <br>011-47484950 / 47896714</p>
       </div>
 
     </div>

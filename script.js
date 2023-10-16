@@ -1,4 +1,6 @@
 
+// Sobre Nosotros -----------gabriel
+
 function mostrarOcultar() {
     var article = document.querySelector('#sobre article');
     var button = document.querySelector('#leerMas');
@@ -12,57 +14,15 @@ function mostrarOcultar() {
     }
 }
 
-
-// const productCardsContainer = document.querySelector("#productos-cards");
-
-
-// fetch('https://my-json-server.typicode.com/Gabeust/db.json/productos')
-//     .then(datos => datos.json())
-
-//     .then(data => {
-//         if (Array.isArray(data)) {
-//             // Procesar los datos de la API
-//             data.forEach(productos => {
-//                 // Crear una tarjeta para cada producto
-//                 const card = document.createElement("li");
-
-
-//                 // Crear el contenido de la tarjeta
-//                 card.innerHTML = `
-//         <div class="card-container">
-//             <div class="card">
-//                 <div class="card-img">
-//                     <img src="${productos.imagen_url}" >
-//                 </div>
-//                 <h4> ${productos.nombre} </h4>
-//                 <p> Cod. ${productos.codigo}</p>
-//             <div class="card-detalle">
-//                     <div class="precio">
-//                         <p>Precio <strong> $${productos.precio} </strong></p>
-//                     </div>
-//                 </div>
-//                 <button class="agregar">Agregar al Carrito</button>
-//             </div>
-//         </div>
-//         `;
-//                 // Agregar la tarjeta al contenedor
-//                 productCardsContainer.appendChild(card);
-
-//             })
-//         }
-//     })
-//     .catch(error => {
-//         console.error("Error al obtener los datos de la API:", error);
-//     });
-
+// Productos ------------- gabriel
 const productCardsContainer = document.querySelector("#productos-cards");
 let data; // Variable global para almacenar los datos del JSON
 
 fetch('https://my-json-server.typicode.com/Gabeust/db.json/productos')
     .then(datos => datos.json())
     .then(responseData => {
-        data = responseData; // Asignar los datos a la variable "data"
-        mostrarProductos(data); // Mostrar todos los productos al cargar la página
+        data = responseData; // Asigna los datos a la variable "data"
+        mostrarProductos(data); // Muestra todos los productos al cargar la página
     })
     .catch(error => {
         console.error("Error al obtener los datos de la API:", error);
@@ -79,7 +39,7 @@ function mostrarProductos(productos) {
         <div class="card-container">
             <div class="card">
                 <div class="card-img">
-                    <img src="${producto.imagen_url}" >
+                    <img src="${producto.imagen_url}" class="img-prod" >
                 </div>
                 <h4>${producto.nombre}</h4>
                 <p>Cod. ${producto.codigo}</p>
@@ -88,7 +48,7 @@ function mostrarProductos(productos) {
                         <p>Precio <strong> $${producto.precio}</strong></p>
                     </div>
                 </div>
-                <button class="agregar">Agregar al Carrito</button>
+                <button class="botones" >Agregar al Carrito</button>
             </div>
         </div>
     `;
@@ -112,4 +72,36 @@ categoriasLinks.forEach(link => {
         mostrarProductosPorCategoria(categoriaSeleccionada);
     });
 });
+
+// formulario -------------------------------------gabriel 
+function validarFormulario() {
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const mensaje = document.getElementById('mensaje').value;
+    const mensajeError = document.getElementById('mensajeError');
+
+    // Verificar si los campos están vacíos
+    if (!nombre || !email || !mensaje) {
+      mensajeError.textContent = 'Todos los campos son obligatorios';
+      return false;
+    }
+
+    // Verificar la validez del correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      mensajeError.textContent = 'Ingrese una dirección de correo electrónico válida';
+      return false;
+    }
+
+    return true;
+}
+
+// Giro de la imagen central
+let contenedorImagenCentral = document.getElementsByClassName("contenedor_imagen_central");
+console.log(contenedorImagenCentral);
+console.log(contenedorImagenCentral[1]);
+//contenedorImagenCentral[1].setAttribute("hidden", true);
+//contenedorImagenCentral[2].setAttribute("hidden", true);
+//contenedorImagenCentral[3].setAttribute("hidden", true);
+
 

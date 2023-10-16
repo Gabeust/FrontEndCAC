@@ -12,30 +12,35 @@
 
     <!--Para incorporar íconos de flaticon-->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
-
 </head>
 
 <body>
-    <header class="sticky-top">
-        <div style="display: flex; justify-content: space-around; align-items: center;">
-            <div>
-                <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
-                <h1 style="display: inline;">FERRETERIA "EL COSITO"</h1>
+    <header>
+        <!-- Primer línea del encabezado -->
+        <div class="linea1_encabezado">
+            <div id="contenedor_logo_nombre">
+                <img src="./imagenes/5.png" alt="Logo de Ferretería">
             </div>
-            <input name="barra_busqueda" id="barra_busqueda" placeholder="Ingresa tu búsqueda"></input>
+            <form class="buscar">
+                <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+                <button type="button" class="buscarbtn">
+                    <i class="fi-rr-search"></i>
+                </button>
+            </form>
+            <div id="contenedor_logo_carrito" style="align-items: end;">
+                <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
+            </div>
         </div>
-        <div class="sticky-top">
-            <nav style="padding: 15px;">
-                <ul type="none" style="display: flex; justify-content: space-evenly;">
-                    <a href="./index1.html">
+
+        <!-- Segunda línea del encabezado -->
+        <div>
+            <nav class="barra_navegacion">
+                <ul type="none" class="lista_menues">
+                    <a href="./index.html">
                         <li>Inicio</li>
                     </a>
-                    <a href="./SobreNosotros.html">
+                    <a href="./sobreNosotros.html">
                         <li>Sobre Nosotros</li>
-                    </a>
-                    <a href="#">
-                        <li>Ofertas</li>
                     </a>
                     <a href="./Productos.html">
                         <li>Productos</li>
@@ -52,9 +57,9 @@
     </header>
 
 
-    <main class="contenedor-grid"  >
-        <div  class="sticky-left">
-            <div  class="izquierda" id="categorias">
+    <main class="contenedor-grid">
+        <div class="sticky-left">
+            <div class="izquierda" id="categorias">
 
                 <h2> <span> Categorías </span></h2>
                 <div>
@@ -67,23 +72,25 @@
                         </li>
                         <li> <a href="" data-categoria="Herramientas"> Herramientas </a>
                         </li>
-                        <li> <a href="" data-categoria="Hogar y Productos para el Hogar"> Hogar y Productos para el Hogar </a>
+                        <li> <a href="" data-categoria="Hogar y Productos para el Hogar"> Hogar y Productos para el
+                                Hogar </a>
                         </li>
-                        <li> <a href=""> Lijas Pliegos y Discos Esmeril </a>
+                        <li> <a href="" data-categoria="Lijas Pliegos y Discos Esmeril"> Lijas Pliegos y Discos Esmeril
+                            </a>
                         </li>
-                        <li> <a href=""> Materiales de Construcción </a>
+                        <li> <a href="" data-categoria="Materiales de Construcción"> Materiales de Construcción </a>
                         </li>
-                        <li> <a href=""> Materiales Electricos </a>
+                        <li> <a href="" data-categoria="Materiales Electricos"> Materiales Electricos </a>
                         </li>
-                        <li> <a href=""> Pinturas, Pegamentos y Accesorios </a>
+                        <li> <a href="" data-categoria="Pinturas, Pegamentos y Accesorios"> Pinturas, Pegamentos y
+                                Accesorios </a>
                         </li>
-                        <li> <a href=""> Seguridad Industrial </a>
-                        </li>
+
                 </div>
             </div>
         </div>
         <section class="productos" class="derecha">
-            <ul  id="productos-cards">
+            <ul id="productos-cards">
 
             </ul>
         </section>
