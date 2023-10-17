@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ferreteria El Cosito</title>
   <link rel="icon" href="./imagenes/logo_ferreteria_16x16.png" sizes="16x16">
-  <link rel="stylesheet" href="./estilos.css">
+  <link rel="stylesheet" href="estilos.css">
 
   <!--Para incorporar íconos de flaticon-->
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -20,14 +20,17 @@
     <!-- Primer línea del encabezado -->
     <div class="linea1_encabezado">
       <div id="contenedor_logo_nombre">
-        <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
-        <h1 style="display: inline;">EL COSITO</h1>
+        <img src="./imagenes/5.png" alt="Logo de Ferretería">
       </div>
-      <div id="contenedor_barra_busqueda">
-        <input type="text" name="barra_busqueda" id="barra_busqueda" cols="30" rows="1"
-        placeholder="Ingresa tu búsqueda"></input>
-      </div>
-      <div id="contenedor_logo_carrito">
+
+      <form class="buscar">
+        <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+        <button type="button" class="buscarbtn">
+          <i class="fi-rr-search"></i>
+        </button>
+      </form>
+      <div id="contenedor_logo_carrito" style="align-items: end;">
+
         <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
       </div>
       <div id="contenedor_logo_menu">
@@ -44,9 +47,6 @@
           </a>
           <a href="./sobreNosotros.html">
             <li>Sobre Nosotros</li>
-          </a>
-          <a href="#">
-            <li>Ofertas</li>
           </a>
           <a href="./Productos.html">
             <li>Productos</li>
@@ -114,6 +114,7 @@
   </section>
 
 
+
   <footer id="footer">
     <div class='social-links'>
       <ul>
@@ -143,11 +144,13 @@
           </a>
         </li>
       </ul>
+       </div>
+
+        <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+
     </div>
 
-    <p style="text-align: center; color: white;">© Codo a Codo. 2023</p>
-
-  </footer>
+</footer>
 
   <script src="./script.js"></script>
 </body>
