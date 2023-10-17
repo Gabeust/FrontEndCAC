@@ -1,86 +1,261 @@
-
-.sticky-top{
+html{
+    background-color: #5E7575;
+}
+.sticky-top {
     position: sticky;
     top: 0;
-    height: 60px; 
+    height: 60px;
+    background-color: #bcc1ea;
 
 }
-#sobre article {
-    display: none;
+/* Buscar ------------------------------------------------ gabriel*/
+.buscar{
+    display: inline-flex;
+    align-items: center;
+    background: #264A4A;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
 }
-
-.productos{
-    display: flex;
-    justify-content: space-evenly;
-
+.buscar :is(input, button){
+    background: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+}
+.buscarinput{
+    width: 0;
+    transition: width 0.5s;
+}
+.buscarbtn {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: color 0.25s;
+}
+.buscarbtn:hover{
+    color: #e3e3e3;
+}
+.buscar:focus-within input {
+    width: 400px;
    
 }
-.card-container {
+::placeholder{
+    font: inherit;
+    color: #e3e3e3;
+}
+/* Sobre nosotros ---------------------------------------- gabriel */
+#sobre {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+article {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.botones {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5pc;
+    
+}
+
+/* Pruductos --------------------------------------------- gabriel */
+.izquierda h2 {
+    text-align: start;
+    padding-left: 30px;
+}
+
+.productos ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    padding: 20px;
-    width: 1200px;
+    border-radius: unset;
+    gap: 20px;
+
+}
+
+li {
+    list-style-type: none;
+    text-align: start;
+}
+
+li a {
+    text-decoration: none;
+}
+
+main {
+    margin-top: 50px;
+}
+
+.contenedor-grid {
+    display: grid;
+    grid-template: auto / 30% 70%;
+}
+
+.card-container {
+    text-align: center;
+    width: 250px;
+    margin: 10px 10px 10px 2px;
+
+}
+
+.card p,
+h4 {
+    text-align: center;
+
 }
 
 .card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .4);
+    overflow-y: auto;
+}
+
+.card img {
+    max-width: 100%;
+    width: auto;
+    height: 190px;
     margin: 5px;
-    padding: 15px;
-    border: 2px solid #ccc;
+    padding: 15px 0 0 15px;
+}
+
+@media (max-width: 768px) {
+    .contenedor-grid {
+        grid-template: auto / 1fr;
+    }
+    
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        /* width: 100%; */
+        /* margin: 10px 0; */
+    }
+ 
+    #contenedor_logo_nombre img {
+        width: 150px;
+        height: auto;
+    }
+  
+
+}
+
+/* formulario contacto -------------------------------gabriel*/
+
+#contacto{
+    margin-top: 50px;
    
 }
-.card p, h3{
-    text-align: center;
+#cont{
+    background-color: #C49D9D;
 }
-.agregar{
-    margin-top: auto;
-}
-/* Estilo para la imagen */
-.imagen {
-    width: 200px;
-    height: auto;
-    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima */
-}
+  h2 {
+    color: #333;
+  }
 
-.whatsapp{
-   text-align: center;
+  #contactForm{
     
-}
-/* card-img{
-    transition: .03s linear all;
-    overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
-
-}
-.card img:hover{
-    transform: scale(1.5);
-    transition: 0.3s linear all;
-} */
-
-@media screen and (max-width: 992px){
-    .card-container {
-        display: block;
-        padding: 20px
-    };
+  label {
     
-} */
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  #contactForm input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #mensajeError {
+    color: red;
+  }
+
+  #whatsapp {
+    background-color: #7B3F3F;
+    text-align: center; 
+
+  }
+
+
 
 /* footer */
-footer{
-    background-color: rgb(173, 232, 212);
+footer {
+    background-color: #002424;
     text-align: center;
 }
-
-.footer > small {
+footer p{
+    font-size: large;
+    color: #fff;
+}
+.footer>small {
     font-size: 16px;
     margin: 0 4px;
+    color: #fff;
 }
-.footer-headline > h2 {
+
+.footer-headline>h2 {
     margin: 0px;
     color: var(--text-primary);
 }
 
-.footer-headline > p {
+.footer-headline>p {
     color: var(--text-gray);
     margin: 4px 0px 20px 0px;
 }
@@ -98,18 +273,19 @@ footer{
     display: flex;
     gap: 20px;
     align-items: center;
+
 }
 
 .social-text {
     display: flex;
     align-items: center;
     gap: 8px;
+
 }
 
 .social-links img {
     margin-top: 10px;
     width: 35px;
-    
     transition: all 0.2s ease-in-out;
 }
 
@@ -123,8 +299,9 @@ footer{
     gap: 12px;
     list-style-type: none;
 }
-
-
+small{
+    text-align:  center;
+}
 /* Estilos mtm */
 .linea1_encabezado {
     display: grid;
@@ -134,7 +311,7 @@ footer{
     grid-template-rows: 70% 30%;
     grid-template-columns: 15% 70% 15%;
     grid-template-areas: "vacio1 logo_y_nombre vacio2"
-                         "menu barra_busqueda carrito";
+        "menu barra_busqueda carrito";
 }
 
 #contenedor_logo_nombre {
@@ -149,9 +326,9 @@ footer{
 #contenedor_logo_carrito {
     grid-area: carrito;
     margin: auto;
+   align-items: end;
 }
-
-.linea1_encabezado a {
+a{
     text-decoration: none;
 }
 
@@ -160,30 +337,29 @@ h2 {
 }
 
 .lista_menues {
-    display: flex; 
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
     /*border: 2px solid blue; */
     height: 8vh;
     margin: 1vh 0 0 0;
 }
-
-nav a {
+ a {
     display: flex;
     align-items: center;
-    text-decoration: none;
+    
     text-align: center;
     /*border: 2px solid yellow; */
     height: 100%;
     padding: 0px 10px;
 }
 
-nav a:hover {
+ a:hover {
     background-color: blue;
     color: white;
     border-radius: 10px 0px;
     transition: background-color 0.25s ease-out 0s;
-} 
+}
 
 .contenedor_marcas {
     display: grid;
@@ -197,13 +373,13 @@ nav a:hover {
 
 .imagen_marca {
     width: 100%;
- }
-
-.seccion_suscripcion {
-/*    display: flex;
-    align-items: baseline;
-    */
 }
+
+/* .seccion_suscripcion {
+    display: flex;
+    align-items: baseline;
+    
+} */
 
 .seccion_suscripcion p {
     text-align: center;
@@ -243,27 +419,29 @@ nav a:hover {
     animation: girarIzquierda 20s linear 3s 1 normal;
 }
 
-body {
-    overflow: hidden;
-    overflow-y: visible;
-}
+
 
 @keyframes girarIzquierda {
     20% {
         transform: translateX(-100vw);
     }
+
     25% {
         transform: translateX(-100vw);
     }
+
     45% {
         transform: translateX(-200vw);
     }
+
     50% {
         transform: translateX(-200vw);
     }
+
     70% {
         transform: translateX(-300vw);
     }
+
     75% {
         transform: translateX(-300vw);
     }
@@ -285,20 +463,21 @@ body {
     .linea1_encabezado {
         display: flex;
         align-items: center;
-        border: 2px solid green;
+        
     }
-    
+
     #contenedor_logo_nombre {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        border: 2px solid cyan;
+       
+        
     }
-
     #contenedor_logo_nombre img {
-        height: 32px;
-        border: 2px solid black;
+        width: 400px;
+        height: auto;
     }
+  
 
     h1 {
         text-align: center;
@@ -309,14 +488,14 @@ body {
     }
 
     .lista_menues li {
-        font-size: 10px;
+        font-size: 20px;
         display: flex;
         align-items: center;
         text-align: center;
-        border: 2px solid orange;
+        /* border: 2px solid orange; */
         height: 100%;
         padding: 0px;
+        
     }
 
 }
-  
