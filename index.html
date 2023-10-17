@@ -22,6 +22,7 @@
       <div id="contenedor_logo_nombre">
         <img src="./imagenes/5.png" alt="Logo de Ferretería">
       </div>
+
       <form class="buscar">
         <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
         <button type="button" class="buscarbtn">
@@ -29,14 +30,18 @@
         </button>
       </form>
       <div id="contenedor_logo_carrito" style="align-items: end;">
+
         <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
+      </div>
+      <div id="contenedor_logo_menu">
+        <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
       </div>
     </div>
 
     <!-- Segunda línea del encabezado -->
     <div>
-      <nav class="barra_navegacion">
-        <ul type="none" class="lista_menues">
+      <nav id="barra_navegacion" onresize="desplegarMenu()">
+        <ul type="none" id="lista_menues">
           <a href="./index.html">
             <li>Inicio</li>
           </a>
@@ -91,7 +96,7 @@
     </div>
   </section>
 
-  <section class="seccion_suscripcion">
+  <section id="seccion_suscripcion">
     <div>
       <h2>Suscribite y mantenete informado</h2>
       <p>Ingresa tu mail para recibir novedades y ofertas. Aprovecha un descuento en tu primer compra.</p>
@@ -109,41 +114,42 @@
   </section>
 
 
-  <footer>
 
-    <div class="footer">
-        <div class='social-links'>
-            <ul>
-                <li>
-                    <a href="#" title="Instagram">
-                        <img src="imagenes/svg/instagram.svg" alt='Instagram'>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Linkedin">
-                        <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Twitter">
-                        <img src="imagenes/svg/twitter.svg" alt='Twitter'>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Youtube">
-                        <img src="imagenes/svg/youtube.svg" alt='YouTube'>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="GitHub">
-                        <img src="imagenes/svg/github.svg" alt='GitHub'>
-                    </a>
-                </li>
-            </ul>
-        </div>
+  <footer id="footer">
+    <div class='social-links'>
+      <ul>
+        <li>
+          <a href="#" title="Instagram">
+            <img src="imagenes/svg/instagram.svg" alt='Instagram'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Linkedin">
+            <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Twitter">
+            <img src="imagenes/svg/twitter.svg" alt='Twitter'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Youtube">
+            <img src="imagenes/svg/youtube.svg" alt='YouTube'>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="GitHub">
+            <img src="imagenes/svg/github.svg" alt='GitHub'>
+          </a>
+        </li>
+      </ul>
+       </div>
 
         <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+
     </div>
+
 </footer>
 
   <script src="./script.js"></script>

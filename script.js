@@ -14,6 +14,48 @@ function mostrarOcultar() {
     }
 }
 
+
+
+/* 
+Despliego o contraigo el menú teniendo en cuenta:
+    - click en el botón de menú hamburguesa para pantallas chicas
+    - el ancho de la ventana para pantallas grandes 
+*/
+var barraNavegacionVisiblePorBoton = false;
+var barraNavegacionVisiblePorAncho = false;
+
+function desplegarMenu() {
+    console.log("Barra de navegación es visible?", barraNavegacionVisiblePorBoton);
+    
+    let barraNav = document.querySelector("#barra_navegacion");
+
+    barraNav.style.display = barraNavegacionVisiblePorBoton ? "none" : "block";
+    barraNavegacionVisiblePorBoton = !barraNavegacionVisiblePorBoton;
+
+    console.log(barraNav);
+}
+
+window.onresize = desplegarMenuSegunViewport;
+function desplegarMenuSegunViewport() {
+    console.log("Ancho del vieport en px:", window.innerWidth);
+    
+    let barraNav = document.querySelector("#barra_navegacion");
+    let anchoVentana = window.innerWidth;
+
+    if (anchoVentana >= 450) {
+        barraNav.style.display = "block";
+        barraNavegacionVisiblePorAncho = true;
+        barraNavegacionVisiblePorBoton = false;
+    } else {
+        if (barraNavegacionVisiblePorAncho) {
+            barraNav.style.display = "none";
+            barraNavegacionVisiblePorAncho = false;    
+        }
+    }
+
+    console.log(barraNav);
+} 
+
 // Productos ------------- gabriel
 const productCardsContainer = document.querySelector("#productos-cards");
 let data; // Variable global para almacenar los datos del JSON
@@ -98,13 +140,5 @@ function validarFormulario() {
     return true;
 }
 
-
-// Giro de la imagen central
-let contenedorImagenCentral = document.getElementsByClassName("contenedor_imagen_central");
-console.log(contenedorImagenCentral);
-console.log(contenedorImagenCentral[1]);
-//contenedorImagenCentral[1].setAttribute("hidden", true);
-//contenedorImagenCentral[2].setAttribute("hidden", true);
-//contenedorImagenCentral[3].setAttribute("hidden", true);
 
 

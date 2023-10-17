@@ -303,6 +303,40 @@ small{
     text-align:  center;
 }
 /* Estilos mtm */
+* {
+    --color-primario: #1D4645;
+    --color-primario-claro: #808D8D;
+    --color-primario-oscuro: #001A19;
+
+    --color-secundario: #4E204B;
+    --color-secundario-claro: #9E909D;
+    --color-secundario-oscuro: #1D001B;
+
+    --color-terciario: #736C30;
+    --color-terciario-claro: #E8E6D3;
+    --color-terciario-oscuro: #2A2500;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    overflow-y: visible;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--color-primario-oscuro);
+    width: 100vw;
+    padding-bottom: 1vh;
+}
+
+header h1,
+header a {
+    color: var(--color-primario-claro);
+}
+
 .linea1_encabezado {
     display: grid;
     align-items: center;
@@ -311,22 +345,44 @@ small{
     grid-template-rows: 70% 30%;
     grid-template-columns: 15% 70% 15%;
     grid-template-areas: "vacio1 logo_y_nombre vacio2"
-        "menu barra_busqueda carrito";
-}
+
+                         "menu_hamburguesa barra_busqueda carrito";
+
+  }
 
 #contenedor_logo_nombre {
     grid-area: logo_y_nombre;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedor_barra_busqueda {
+    grid-area: barra_busqueda;
+    display: flex;
+    justify-content: center;
 }
 
 #barra_busqueda {
-    grid-area: barra_busqueda;
+    width: 100%;
+    max-width: 250px;
+}
+
+#contenedor_logo_menu {
+    grid-area: menu_hamburguesa;
 }
 
 #contenedor_logo_carrito {
     grid-area: carrito;
-    margin: auto;
-   align-items: end;
+
+}
+
+#contenedor_logo_menu,
+#contenedor_logo_carrito {
+    display: flex;
+    justify-content: center;
+
 }
 a{
     text-decoration: none;
@@ -336,27 +392,33 @@ h2 {
     text-align: center;
 }
 
-.lista_menues {
-    display: flex;
+#barra_navegacion {
+    display: none;
+}
+
+#lista_menues {
+    display: flex; 
+    flex-direction: column;
+    gap: 2px;
+
     justify-content: space-evenly;
     align-items: center;
-    /*border: 2px solid blue; */
-    height: 8vh;
-    margin: 1vh 0 0 0;
+    margin: 1vh 0 1vh 0;
+    padding: 0px;
 }
  a {
     display: flex;
     align-items: center;
     
     text-align: center;
-    /*border: 2px solid yellow; */
     height: 100%;
     padding: 0px 10px;
 }
 
- a:hover {
-    background-color: blue;
-    color: white;
+
+nav a:hover {
+    background-color: var(--color-secundario-claro);
+    color: var(--color-secundario);
     border-radius: 10px 0px;
     transition: background-color 0.25s ease-out 0s;
 }
@@ -375,14 +437,20 @@ h2 {
     width: 100%;
 }
 
-/* .seccion_suscripcion {
-    display: flex;
-    align-items: baseline;
-    
-} */
 
-.seccion_suscripcion p {
+#seccion_suscripcion {
+    padding: 2vh 0;
+    background-color: var(--color-terciario);
+}
+
+
+#seccion_suscripcion p {
     text-align: center;
+}
+
+#seccion_suscripcion p,
+#seccion_suscripcion label {
+    color: var(--color-terciario-claro);
 }
 
 .formulario_suscripcion fieldset {
@@ -414,11 +482,15 @@ h2 {
     padding: 3% 0%;
 }
 
+#footer {
+    background-color: var(--color-secundario);
+    padding: 10px;
+}
+
 /* Animaciones */
 .galeria_imagenes {
     animation: girarIzquierda 20s linear 3s 1 normal;
 }
-
 
 
 @keyframes girarIzquierda {
@@ -448,12 +520,10 @@ h2 {
 }
 
 .contenedor_imagen_central {
-    /*border: 3px solid green; */
     width: 100vw;
 }
 
 .imagen_central {
-    /*border: 5px solid darkblue; */
     height: 100%;
 }
 
@@ -463,19 +533,18 @@ h2 {
     .linea1_encabezado {
         display: flex;
         align-items: center;
-        
     }
 
     #contenedor_logo_nombre {
         display: flex;
         justify-content: space-around;
         align-items: center;
-       
-        
     }
     #contenedor_logo_nombre img {
+
         width: 400px;
         height: auto;
+
     }
   
 
@@ -483,19 +552,47 @@ h2 {
         text-align: center;
     }
 
-    .lista_menues {
+    #contenedor_logo_menu {
+        display: none;
+    }
+    
+    #contenedor_logo_carrito {
+        padding: 10px;
+    }
+
+    #contenedor_barra_busqueda {
+    }
+
+    #barra_navegacion {
+        display: block;
+    }
+
+    #lista_menues {
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 8vh;
+        margin: 1vh 0 0 0;
         padding: 0px;
     }
 
-    .lista_menues li {
-        font-size: 20px;
+    #lista_menues li {
+        font-size: 0.75rem;
         display: flex;
         align-items: center;
         text-align: center;
-        /* border: 2px solid orange; */
+
         height: 100%;
         padding: 0px;
         
     }
 
-}
+
+    .imagen_marca {
+        min-width: 125px;
+        max-width: 175px;
+    }
+    
+  }
+
