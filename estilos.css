@@ -1,3 +1,6 @@
+html{
+    background-color: #5E7575;
+}
 .sticky-top {
     position: sticky;
     top: 0;
@@ -9,7 +12,7 @@
 .buscar{
     display: inline-flex;
     align-items: center;
-    background: #a70a39;
+    background: #264A4A;
     color: #fff;
     padding: 10px;
     border-radius: 10px;
@@ -155,20 +158,35 @@ h4 {
     }
     
     .card-container {
-        width: 100%;
-        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+        /* width: 100%; */
+        /* margin: 10px 0; */
     }
-}
+ 
+    #contenedor_logo_nombre img {
+        width: 150px;
+        height: auto;
+    }
+  
 
+}
 
 /* formulario contacto -------------------------------gabriel*/
 
-
+#contacto{
+    margin-top: 50px;
+   
+}
+#cont{
+    background-color: #C49D9D;
+}
   h2 {
     color: #333;
   }
 
   #contactForm{
+    
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -179,6 +197,7 @@ h4 {
   }
 
   label {
+    
     display: block;
     margin-bottom: 5px;
     color: #333;
@@ -207,10 +226,10 @@ h4 {
   #mensajeError {
     color: red;
   }
-  .whatsapp {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+
+  #whatsapp {
+    background-color: #7B3F3F;
+    text-align: center; 
 
   }
 
@@ -218,13 +237,17 @@ h4 {
 
 /* footer */
 footer {
-    background-color: rgb(173, 232, 212);
+    background-color: #002424;
     text-align: center;
 }
-
+footer p{
+    font-size: large;
+    color: #fff;
+}
 .footer>small {
     font-size: 16px;
     margin: 0 4px;
+    color: #fff;
 }
 
 .footer-headline>h2 {
@@ -250,18 +273,19 @@ footer {
     display: flex;
     gap: 20px;
     align-items: center;
+
 }
 
 .social-text {
     display: flex;
     align-items: center;
     gap: 8px;
+
 }
 
 .social-links img {
     margin-top: 10px;
     width: 35px;
-
     transition: all 0.2s ease-in-out;
 }
 
@@ -275,7 +299,9 @@ footer {
     gap: 12px;
     list-style-type: none;
 }
-
+small{
+    text-align:  center;
+}
 /* Estilos mtm */
 .linea1_encabezado {
     display: grid;
@@ -302,8 +328,7 @@ footer {
     margin: auto;
    align-items: end;
 }
-
-.linea1_encabezado a {
+a{
     text-decoration: none;
 }
 
@@ -322,7 +347,7 @@ h2 {
  a {
     display: flex;
     align-items: center;
-    text-decoration: none;
+    
     text-align: center;
     /*border: 2px solid yellow; */
     height: 100%;
@@ -394,10 +419,7 @@ h2 {
     animation: girarIzquierda 20s linear 3s 1 normal;
 }
 
-body {
-    overflow: hidden;
-    overflow-y: visible;
-}
+
 
 @keyframes girarIzquierda {
     20% {
@@ -473,6 +495,7 @@ body {
         /* border: 2px solid orange; */
         height: 100%;
         padding: 0px;
+        
     }
 
 }
