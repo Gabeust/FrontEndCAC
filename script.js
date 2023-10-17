@@ -46,7 +46,7 @@ function desplegarMenu() {
 
     barraNav.style.display = barraNavegacionVisiblePorBoton ? "none" : "block";
     barraNavegacionVisiblePorBoton = !barraNavegacionVisiblePorBoton;
-    
+
     console.log(barraNav);
 }
 
@@ -70,3 +70,4 @@ function desplegarMenuSegunViewport() {
 
     console.log(barraNav);
 } 
+
