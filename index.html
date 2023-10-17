@@ -28,12 +28,15 @@
       <div id="contenedor_logo_carrito">
         <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
       </div>
+      <div id="contenedor_logo_menu">
+        <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
+      </div>
     </div>
 
     <!-- Segunda línea del encabezado -->
     <div>
-      <nav class="barra_navegacion">
-        <ul type="none" class="lista_menues">
+      <nav id="barra_navegacion" onresize="desplegarMenu()">
+        <ul type="none" id="lista_menues">
           <a href="./index.html">
             <li>Inicio</li>
           </a>
