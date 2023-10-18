@@ -12,40 +12,35 @@
 
     <!--Para incorporar íconos de flaticon-->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
-
 </head>
 
 <body>
     <header>
         <!-- Primer línea del encabezado -->
-        <div style="display: flex; justify-content: space-around; align-items: center;">
-            <div>
-                <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
-                <h1 style="display: inline;">FERRETERIA</h1>
+        <div class="linea1_encabezado">
+            <div id="contenedor_logo_nombre">
+                <img src="./imagenes/5.png" alt="Logo de Ferretería">
             </div>
-            <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1"
-                placeholder="Ingresa tu búsqueda"></textarea>
-            <div>
-                <a href=""><i class="fi fi-rr-envelope"></i></a>
-                <a href=""><i class="fi fi-rr-marker"></i></a>
+            <form class="buscar">
+                <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+                <button type="button" class="buscarbtn">
+                    <i class="fi-rr-search"></i>
+                </button>
+            </form>
+            <div id="contenedor_logo_carrito" style="align-items: end;">
+                <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
             </div>
         </div>
 
         <!-- Segunda línea del encabezado -->
         <div>
-            <nav>
-                <ul type="none" style="display: flex; justify-content: space-evenly;">
-                    
-                  <a href="./index.html">
-
+            <nav class="barra_navegacion">
+                <ul type="none" class="lista_menues">
+                    <a href="./index.html">
                         <li>Inicio</li>
                     </a>
-                    <a href="./SobreNosotros.html">
+                    <a href="./sobreNosotros.html">
                         <li>Sobre Nosotros</li>
-                    </a>
-                    <a href="#">
-                        <li>Ofertas</li>
                     </a>
                     <a href="./Productos.html">
                         <li>Productos</li>
@@ -61,148 +56,48 @@
         </div>
     </header>
 
-    <main style="display: flex;  ">
-        <div id="colum izq">
-            <div id="categorias">
+
+
+    <main class="contenedor-grid">
+    
+
+        <div>
+            <div class="izquierda" id="categorias">
+
                 <h2> <span> Categorías </span></h2>
                 <div>
-                    <ul class="tree dynamized" style="display: block;">
-                        <li> <a href=""> Accesorios Para Vehículos </a>
+                    <ul>
+                        <li> <a href="" data-categoria="Accesorios Para Vehículos"> Accesorios Para Vehículos </a>
                         </li>
-                        <li> <a href=""> Brochas Rodillos Bandejas </a>
+                        <li> <a href="" data-categoria="Brochas Rodillos Bandejas"> Brochas Rodillos Bandejas </a>
                         </li>
-                        <li> <a href=""> Cerraduras </a>
+                        <li> <a href="" data-categoria="Cerraduras"> Cerraduras </a>
                         </li>
-                        <li> <a href=""> Electrónica </a>
+                        <li> <a href="" data-categoria="Herramientas"> Herramientas </a>
                         </li>
-                        <li> <a href=""> Herramientas </a>
+                        <li> <a href="" data-categoria="Hogar y Productos para el Hogar"> Hogar y Productos para el
+                                Hogar </a>
                         </li>
-                        <li> <a href=""> Hogar y Productos para el Hogar </a>
+                        <li> <a href="" data-categoria="Lijas Pliegos y Discos Esmeril"> Lijas Pliegos y Discos Esmeril
+                            </a>
                         </li>
-                        <li> <a href=""> Lijas Pliegos y Discos Esmeril </a>
+                        <li> <a href="" data-categoria="Materiales de Construcción"> Materiales de Construcción </a>
                         </li>
-                        <li> <a href=""> Materiales de Construcción </a>
+                        <li> <a href="" data-categoria="Materiales Electricos"> Materiales Electricos </a>
                         </li>
-                        <li> <a href=""> Materiales Electricos </a>
+                        <li> <a href="" data-categoria="Pinturas, Pegamentos y Accesorios"> Pinturas, Pegamentos y
+                                Accesorios </a>
                         </li>
-                        <li> <a href=""> Pinturas, Pegamentos y Accesorios </a>
-                        </li>
-                        <li> <a href=""> Seguridad Industrial </a>
-                        </li>
+
                 </div>
             </div>
         </div>
+        <section class="productos" class="derecha">
+            <ul id="productos-cards">
+
+            </ul>
+        </section>
     </main>
-
-
-    <section class="productos" id="Productos">
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://ferreteria3.net/25804-home_default/rotomartillo-1000w-26mm-wesco.jpg" alt="..."
-                    width="100%" class="imagen">
-            </div>
-            <h3> Rotomartillo 1000W - 26mm. WESCO </h3>
-            <p>WESCO-WS3161KU</p>
-            <div class="descrip-prod">
-                <p>Rotomartillo de 1000w utilizado para facilitar la tarea de agujerar superficies duras
-                    como el
-                    concreto o la piedra, diseñada con 3 funciones: taladro, martillo y cíncel, caja de
-                    engranajes
-                    en aluminio y cambio de escobillas desde el exterior.</p>
-            </div>
-
-            <div class="card-detalle">
-                <div class="precio">
-                    <p>Precio: $250000.00</p>
-                </div>
-            </div>
-            <button class="agregar">Agregar al Carrito</button>
-        </div>
-
-
-
-
-        <div class="card">
-
-            <div class="card-img">
-                <img src="https://ferreteria3.net/25803-home_default/rotomartillo-620w-20mm-wesco.jpg" alt="..."
-                    width="100%" class="imagen" id="imagen1">
-            </div>
-            <h3> Rotomartillo 620W - 20mm. WESCO </h3>
-            <p>WESCO-WS3160KU</p>
-            <div class="descrip-prod">
-                <p>Rotomartillo de 620W utilizada para facilitar la tarea de agujerar superficies duras como
-                    el
-                    concreto o la piedra, diseñada con 2 funciones: taladro y martillo, control de velocidad
-                    variable, rotación hacia adelante y en reversa y botón de bloqueo del interruptor.</p>
-            </div>
-
-            <div class="card-detalle">
-                <div class="precio">
-                    <p>Precio: $185000.00</p>
-                </div>
-            </div>
-            <button class="agregar">Agregar al Carrito</button>
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="card-img">
-                <img src="https://ferreteria3.net/25802-home_default/taladro-pecurtor-750w-12-wesco.jpg" alt="..."
-                    width="100%" class="imagen" id="imagen1">
-            </div>
-            <h3> Taladro Pecurtor 750W - 1/2". WESCO </h3>
-            <p>WESCO-WS3174U</p>
-            <div class="descrip-prod">
-                <p>Taladro eléctrico diseñado especialmente para percutir, diseñado con un mandril con
-                    llave, control de velocidad variable y rotación hacia adelante y en reversa. Tiene dos
-                    funciones: el del giro del taladro y un pequeño martilleo que permite realizar el
-                    trabajo de forma más cómoda.
-                </p>
-
-            </div>
-
-            <div class="card-detalle">
-                <div class="precio">
-                    <p>Precio: $215000.00</p>
-                </div>
-            </div>
-            <button class="agregar">Agregar al Carrito</button>
-        </div>
-
-
-
-
-        <div class="card">
-
-            <div class="card-img">
-                <img src="https://ferreteria1.net/25790-home_default/linterna-recargable-3-led-pretul-lire.jpg"
-                    alt="..." width="100%">
-            </div>
-            <h3> Linterna Recargable 3 Led. PRETUL LIRE</h3>
-            <p>PRETUL-28021</p>
-            <div class="descrip-prod">
-                <p> Cuerpo fabricado en plástico, Se conecta directamente a la corriente eléctrica. Lente
-                    plano y haz multiled. Recargable.
-                </p>
-            </div>
-
-            <div class="card-detalle">
-                <div class="precio">
-                    <p>Precio: $8000.00</p>
-                </div>
-            </div>
-            <button class="agregar">Agregar al Carrito</button>
-        </div>
-
-
-        </div>
-
-    </section>
-
     <footer>
 
         <div class="footer">

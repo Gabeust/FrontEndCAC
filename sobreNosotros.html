@@ -2,142 +2,149 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferreteria</title>
-    <link rel="stylesheet" href="./estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferreteria</title>
+  <link rel="stylesheet" href="./estilos.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-    <!--Para incorporar íconos de flaticon-->
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <!--Para incorporar íconos de flaticon-->
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
 
 </head>
 
 <body>
-    <header>
-        <!-- Primer línea del encabezado -->
-        <div style="display: flex; justify-content: space-around; align-items: center;">
-            <div>
-                <img src="./imagenes/logo_ferreteria_32x32.png" alt="Logo de Ferretería">
-                <h1 style="display: inline;">FERRETERIA</h1>
-            </div>
-            <textarea name="barra_busqueda" id="barra_busqueda" cols="30" rows="1"
-                placeholder="Ingresa tu búsqueda"></textarea>
-            <div>
-                <a href=""><i class="fi fi-rr-envelope"></i></a>
-                <a href=""><i class="fi fi-rr-marker"></i></a>
-            </div>
+  <header>
+
+      <!-- Primer línea del encabezado -->
+      <div class="linea1_encabezado">
+        <div id="contenedor_logo_nombre">
+          <img src="./imagenes/5.png" alt="Logo de Ferretería">
         </div>
-
-        <!-- Segunda línea del encabezado -->
-        <div>
-            <nav>
-                <ul type="none" style="display: flex; justify-content: space-evenly;">
-                    <a href="./index1.html">
-                        <li>Inicio</li>
-                    </a>
-                    <a href="./SobreNosotros.html">
-                        <li>Sobre Nosotros</li>
-                    </a>
-                    <a href="#">
-                        <li>Ofertas</li>
-                    </a>
-                    <a href="./Productos.html">
-                        <li>Productos</li>
-                    </a>
-                    <a href="./Sucursales.html">
-                        <li>Sucursales</li>
-                    </a>
-                    <a href="./Contacto.html">
-                        <li>Contacto</li>
-                    </a>
-                </ul>
-            </nav>
+        <form class="buscar">
+          <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+          <button type="button" class="buscarbtn">
+            <i class="fi-rr-search"></i>
+          </button>
+        </form>
+        <div id="contenedor_logo_carrito" style="align-items: end;">
+          <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
         </div>
-    </header>
-
-    <main id="sobre">
-        <section>
-                <h4>Bienvenidos a [Nombre de la Ferretería]</h4>
-            <p>
-                Somos tu recurso confiable para herramientas y suministros esenciales en construcción, mantenimiento y reparación. Con más de [X] años de experiencia, ofrecemos productos de calidad y asesoramiento experto para profesionales y aficionados.
-            </p>
-
-            <p>En [Nombre de la Ferretería], estamos comprometidos en proporcionarte las herramientas y productos adecuados para hacer realidad tus proyectos de construcción y renovación. Ya seas un profesional experimentado o un entusiasta del bricolaje, estamos aquí para brindarte orientación experta, calidad excepcional y un servicio personalizado que mereces.</p>
-
-            <p> Creemos en el crecimiento de la comunidad y apoyamos proyectos locales. Valoramos la confianza de nuestros clientes y trabajamos incansablemente para superar sus expectativas</p>
-
-            <p><strong> [Nombre de la Ferretería], tu éxito es nuestro éxito. Gracias por formar parte de nuestra historia y permitirnos ser parte de la tuya. Juntos, construiremos un futuro más sólido</strong></p>
-        </section>
-        
-        <article>
-            <h2>Visión:</h2>
-
-            <p>En [Nombre de la Ferretería], nuestra visión es convertirnos en la ferretería líder de referencia en la
-                región, reconocida por nuestra excelencia en productos, servicio al cliente incomparable y un compromiso
-                inquebrantable con la comunidad. Buscamos constantemente innovar y crecer, expandiendo nuestra oferta
-                para
-                satisfacer las cambiantes necesidades de nuestros clientes y brindando un ambiente de trabajo
-                excepcional
-                para nuestro talentoso equipo. En todo lo que hacemos, aspiramos a ser un modelo de integridad,
-                sostenibilidad y responsabilidad social.</p>
-        
-            <h2>Misión:</h2>
-
-            <p> La misión de [Nombre de la Ferretería] es proporcionar a nuestros clientes las herramientas, materiales
-                y
-                conocimientos necesarios para construir, mejorar y transformar sus espacios, proyectos y sueños. Nos
-                comprometemos a ofrecer productos de calidad superior respaldados por un servicio excepcional y
-                asesoramiento experto. Estamos dedicados a ser un recurso de confianza para todos, desde contratistas
-                profesionales hasta entusiastas del bricolaje, brindándoles soluciones eficaces y asequibles para sus
-                proyectos. Además, estamos comprometidos a devolver a la comunidad que nos ha apoyado, colaborando en
-                iniciativas locales y promoviendo prácticas comerciales sostenibles para un futuro mejor.</p>
-
-        </article>
-        <button id="leerMas" onclick="mostrarOcultar()">Leer más</button>
-    </main>
-    <hr>
-  
-    <footer>
-        
-      <div class="footer">
-        <div class='social-links'>
-          <ul>
-            <li>
-              <a href="#" title="Instagram">
-                <img src="imagenes/svg/instagram.svg" alt='Instagram'>
-              </a>
-            </li>
-            <li>
-              <a href="#" title="Linkedin">
-                <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
-              </a>
-            </li>
-            <li>
-              <a href="#" title="Twitter">
-                <img src="imagenes/svg/twitter.svg" alt='Twitter'>
-              </a>
-            </li>
-            <li>
-              <a href="#" title="Youtube">
-                <img src="imagenes/svg/youtube.svg" alt='YouTube'>
-              </a>
-            </li>
-            <li>
-              <a href="#" title="GitHub">
-                <img src="imagenes/svg/github.svg" alt='GitHub'>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
       </div>
-    </footer>
-    <script src="./script.js"></script>
+
+    <!-- Segunda línea del encabezado -->
+    <div>
+      <nav class="barra_navegacion">
+        <ul type="none" class="lista_menues">
+          <a href="./index.html">
+            <li>Inicio</li>
+          </a>
+          <a href="./sobreNosotros.html">
+            <li>Sobre Nosotros</li>
+          </a>
+          <a href="./Productos.html">
+            <li>Productos</li>
+          </a>
+          <a href="./Sucursales.html">
+            <li>Sucursales</li>
+          </a>
+          <a href="./Contacto.html">
+            <li>Contacto</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="sobre">
+    <section>
+      <h4>Bienvenidos a EL COSITO</h4>
+      <p>
+        Somos tu recurso confiable para herramientas y suministros esenciales en construcción, mantenimiento y
+        reparación. Con más de 10 años de experiencia, ofrecemos productos de calidad y asesoramiento experto para
+        profesionales y aficionados.
+      </p>
+
+      <p>En El Cosito, estamos comprometidos en proporcionarte las herramientas y productos adecuados para hacer
+        realidad tus proyectos de construcción y renovación. Ya seas un profesional experimentado o un entusiasta del
+        bricolaje, estamos aquí para brindarte orientación experta, calidad excepcional y un servicio personalizado que
+        mereces.</p>
+
+      <p> Creemos en el crecimiento de la comunidad y apoyamos proyectos locales. Valoramos la confianza de nuestros
+        clientes y trabajamos incansablemente para superar sus expectativas</p>
+
+      <p><strong> El Cosito, tu éxito es nuestro éxito. Gracias por formar parte de nuestra historia y permitirnos ser
+          parte de la tuya. Juntos, construiremos un futuro más sólido</strong></p>
+    </section>
+
+    <article style="display: none">
+      <h2>Visión:</h2>
+
+      <p>En El Cosito, nuestra visión es convertirnos en la ferretería líder de referencia en la
+        región, reconocida por nuestra excelencia en productos, servicio al cliente incomparable y un compromiso
+        inquebrantable con la comunidad. Buscamos constantemente innovar y crecer, expandiendo nuestra oferta
+        para
+        satisfacer las cambiantes necesidades de nuestros clientes y brindando un ambiente de trabajo
+        excepcional
+        para nuestro talentoso equipo. En todo lo que hacemos, aspiramos a ser un modelo de integridad,
+        sostenibilidad y responsabilidad social.</p>
+
+      <h2>Misión:</h2>
+
+      <p> La misión de El Cosito es proporcionar a nuestros clientes las herramientas, materiales
+        y
+        conocimientos necesarios para construir, mejorar y transformar sus espacios, proyectos y sueños. Nos
+        comprometemos a ofrecer productos de calidad superior respaldados por un servicio excepcional y
+        asesoramiento experto. Estamos dedicados a ser un recurso de confianza para todos, desde contratistas
+        profesionales hasta entusiastas del bricolaje, brindándoles soluciones eficaces y asequibles para sus
+        proyectos. Además, estamos comprometidos a devolver a la comunidad que nos ha apoyado, colaborando en
+        iniciativas locales y promoviendo prácticas comerciales sostenibles para un futuro mejor.</p>
+
+    </article>
+    <button class="botones" id="leerMas" onclick="mostrarOcultar()">Leer más</button>
+  </main>
+  <hr>
+
+  <footer>
+
+    <div class="footer">
+      <div class='social-links'>
+        <ul>
+          <li>
+            <a href="#" title="Instagram">
+              <img src="imagenes/svg/instagram.svg" alt='Instagram'>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Linkedin">
+              <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Twitter">
+              <img src="imagenes/svg/twitter.svg" alt='Twitter'>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Youtube">
+              <img src="imagenes/svg/youtube.svg" alt='YouTube'>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="GitHub">
+              <img src="imagenes/svg/github.svg" alt='GitHub'>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
 </body>
 
 </html>
