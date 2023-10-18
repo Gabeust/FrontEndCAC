@@ -1,13 +1,5 @@
-html{
-    background-color: #5E7575;
-}
-.sticky-top {
-    position: sticky;
-    top: 0;
-    height: 60px;
-    background-color: #bcc1ea;
 
-}
+
 /* Buscar ------------------------------------------------ gabriel*/
 .buscar{
     display: inline-flex;
@@ -91,11 +83,14 @@ h2 {
     border-radius: 5pc;
     
 }
+.botones:hover {
+    background-color: #0056b3;
+  }
 
 /* Pruductos --------------------------------------------- gabriel */
 .izquierda h2 {
     text-align: start;
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 .productos ul {
@@ -108,7 +103,7 @@ h2 {
 
 li {
     list-style-type: none;
-    text-align: start;
+   
 }
 
 li a {
@@ -116,7 +111,7 @@ li a {
 }
 
 main {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .contenedor-grid {
@@ -152,6 +147,7 @@ h4 {
     padding: 15px 0 0 15px;
 }
 
+
 @media (max-width: 768px) {
     .contenedor-grid {
         grid-template: auto / 1fr;
@@ -160,8 +156,7 @@ h4 {
     .card-container {
         display: flex;
         flex-direction: row;
-        /* width: 100%; */
-        /* margin: 10px 0; */
+        
     }
  
     #contenedor_logo_nombre img {
@@ -171,22 +166,41 @@ h4 {
   
 
 }
+@media (max-width: 450px) {
+    .contenedor-grid {
+        grid-template: auto;
+        padding-left: 30px;
+        align-items: center;
+    }
+    .izquierda h2 {
+        text-align: center;
+        padding-left: 0px;
+    }
+    
+
+}
 
 /* formulario contacto -------------------------------gabriel*/
+
+.input-correcto {
+    background-color: #c8f7c5; 
+}
+
+
+.input-incorrecto {
+    background-color: #f7c5c5; 
+}
 
 #contacto{
     margin-top: 50px;
    
 }
-#cont{
-    background-color: #C49D9D;
-}
+
   h2 {
     color: #333;
   }
 
   #contactForm{
-    
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -196,8 +210,7 @@ h4 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
-  label {
-    
+  label {    
     display: block;
     margin-bottom: 5px;
     color: #333;
@@ -217,22 +230,32 @@ h4 {
     height: 150px;
   }
 
-
-
-  button:hover {
-    background-color: #0056b3;
+  .input-field {
+    margin-bottom: 20px;
+    position: relative;
   }
 
-  #mensajeError {
+    
+  .error-message {
     color: red;
+    margin-top: 5px;
   }
+  
 
+  .alert-success {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+  }
+  
   #whatsapp {
-    background-color: #7B3F3F;
-    text-align: center; 
+    margin-top: 60px;
+    text-align: center;
+  
 
   }
-
 
 
 /* footer */
@@ -330,6 +353,8 @@ header {
     background-color: var(--color-primario-oscuro);
     width: 100vw;
     padding-bottom: 1vh;
+    transition: transform 0.3s ease; /* Agrega una transición para suavizar el efecto */
+    transform: translateY(0); /* Inicialmente, no desplazado */
 }
 
 header h1,
@@ -400,23 +425,23 @@ h2 {
     display: flex; 
     flex-direction: column;
     gap: 2px;
-
     justify-content: space-evenly;
     align-items: center;
     margin: 1vh 0 1vh 0;
     padding: 0px;
 }
- a {
+
+ nav a {
     display: flex;
     align-items: center;
-    
     text-align: center;
     height: 100%;
     padding: 0px 10px;
+    text-decoration: none;
 }
 
 
-nav a:hover {
+nav a:hover{
     background-color: var(--color-secundario-claro);
     color: var(--color-secundario);
     border-radius: 10px 0px;
@@ -542,7 +567,7 @@ nav a:hover {
     }
     #contenedor_logo_nombre img {
 
-        width: 400px;
+        width: 300px;
         height: auto;
 
     }
@@ -560,8 +585,7 @@ nav a:hover {
         padding: 10px;
     }
 
-    #contenedor_barra_busqueda {
-    }
+  
 
     #barra_navegacion {
         display: block;
@@ -587,12 +611,13 @@ nav a:hover {
         padding: 0px;
         
     }
-
-
     .imagen_marca {
         min-width: 125px;
         max-width: 175px;
     }
-    
-  }
+}
+
+
+  
+
 

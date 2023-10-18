@@ -37,7 +37,7 @@ function desplegarMenu() {
 
 window.onresize = desplegarMenuSegunViewport;
 function desplegarMenuSegunViewport() {
-    console.log("Ancho del vieport en px:", window.innerWidth);
+    // console.log("Ancho del vieport en px:", window.innerWidth);
     
     let barraNav = document.querySelector("#barra_navegacion");
     let anchoVentana = window.innerWidth;
@@ -53,8 +53,28 @@ function desplegarMenuSegunViewport() {
         }
     }
 
-    console.log(barraNav);
+    // console.log(barraNav);
 } 
+
+// scroll ---------------- gabriel
+var lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+    var header = document.getElementById("scrollHeader");
+    var scrollTop = window.pageYYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+        // Si estás desplazándote hacia abajo, oculta el encabezado
+        header.style.transform = "translateY(-100%)";
+    } else {
+        // Si estás desplazándote hacia arriba, muestra el encabezado
+        header.style.transform = "translateY(0)";
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+
 
 // Productos ------------- gabriel
 const productCardsContainer = document.querySelector("#productos-cards");
@@ -118,27 +138,89 @@ categoriasLinks.forEach(link => {
 });
 
 // formulario -------------------------------------gabriel 
-function validarFormulario() {
+
+
+document.getElementById("submit").addEventListener("click", function(event) {
+    event.preventDefault(); 
+
+    
+    var nombre = document.getElementById("nombre");
+    var email = document.getElementById("email");
+    var mensaje = document.getElementById("mensaje");
+
+    var nombreError = document.getElementById("nombre-error");
+    var emailError = document.getElementById("email-error");
+    var mensajeError = document.getElementById("mensaje-error");
+
+    var valido = true;
+
+    
+    if (nombre.value.length < 3 || nombre.value.length > 23 || !/^[A-Za-z]+$/.test(nombre.value)){
+        nombreError.textContent = "El nombre debe tener entre 3 y 23 letras";
+        nombre.classList.remove("input-correcto");
+        nombre.classList.add("input-incorrecto");
+        valido = false;
+    } else {
+        nombreError.textContent = "";
+        nombre.classList.remove("input-incorrecto");
+        nombre.classList.add("input-correcto");
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email.value)) {
+        emailError.textContent = "El email debe ser válido";
+        email.classList.remove("input-correcto");
+        email.classList.add("input-incorrecto");
+        valido = false;
+    } else {
+        emailError.textContent = "";
+        email.classList.remove("input-incorrecto");
+        email.classList.add("input-correcto");
+    }
+
+    if (mensaje.value.length >= 250 || mensaje.value != null) {
+        mensajeError.textContent = "El mensaje debe tener menos de 250 caracteres";
+        mensaje.classList.remove("input-correct");
+        mensaje.classList.add("input-incorrect");
+        valido = false;
+    } else {
+        mensajeError.textContent = "";
+        mensaje.classList.remove("input-incorrect");
+        mensaje.classList.add("input-correct");
+    }
+
+    if (valido) {
+        enviarFormulario(); 
+    }
+});
+
+function enviarFormulario() {
+    const endpoint = 'https://formspree.io/f/xzbqolpd';
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
     const mensaje = document.getElementById('mensaje').value;
-    const mensajeError = document.getElementById('mensajeError');
 
-    // Verificar si los campos están vacíos
-    if (!nombre || !email || !mensaje) {
-        mensajeError.textContent = 'Todos los campos son obligatorios';
-        return false;
-    }
+    const data = {
+        nombre: nombre,
+        email: email,
+        mensaje: mensaje
+    };
 
-    // Verificar la validez del correo electrónico
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        mensajeError.textContent = 'Ingrese una dirección de correo electrónico válida';
-        return false;
-    }
-
-    return true;
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('enviadoExitoso').style.display = 'block';
+        document.getElementById('nombre').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('mensaje').value = '';
+      
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
-
-
-

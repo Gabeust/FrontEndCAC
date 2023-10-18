@@ -23,12 +23,13 @@
         <img src="./imagenes/5.png" alt="Logo de Ferretería">
       </div>
 
-      <form class="buscar">
+      <div class="buscar" id="contenedor_barra_busqueda">
         <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
         <button type="button" class="buscarbtn">
           <i class="fi-rr-search"></i>
         </button>
-      </form>
+      </div>
+
       <div id="contenedor_logo_carrito" style="align-items: end;">
 
         <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
@@ -40,8 +41,8 @@
 
     <!-- Segunda línea del encabezado -->
     <div>
-      <nav id="barra_navegacion" onresize="desplegarMenu()">
-        <ul type="none" id="lista_menues">
+      <nav id="barra_navegacion" onresize="desplegarMenu()" >
+        <ul type="none" id="lista_menues" class="aAnimiacion">
           <a href="./index.html">
             <li>Inicio</li>
           </a>
