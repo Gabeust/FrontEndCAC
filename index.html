@@ -101,10 +101,10 @@
       <h2>Suscribite y mantenete informado</h2>
       <p>Ingresa tu mail para recibir novedades y ofertas. Aprovecha un descuento en tu primer compra.</p>
     </div>
-    <form action="" class="formulario_suscripcion">
+    <form action="#" id="formulario_suscripcion" class="formulario_suscripcion">
       <fieldset>
-        <input type="email" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico" onkeypress="validarMailSuscripcion()">
-        <input type="submit" value="Enviar">
+        <input type="text" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico" onkeyup="validarMailSuscripcion()" style="outline: none;">
+        <input type="button" value="Enviar" onclick="validarFormularioSuscripcion()">
       </fieldset>
       <fieldset>
         <input type="checkbox" name="aceptar_tyc" id="aceptar_tyc">

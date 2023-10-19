@@ -458,6 +458,14 @@ nav a:hover {
     text-align: center;
 }
 
+.campo_valido {
+    border: 5px solid blue;
+}
+
+.campo_invalido {
+    border: 5px solid red;
+}
+
 #email_suscripcion {
     width: 70%;
     padding: 5px;
