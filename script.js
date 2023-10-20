@@ -26,7 +26,7 @@ var barraNavegacionVisiblePorAncho = false;
 
 function desplegarMenu() {
     console.log("Barra de navegación es visible?", barraNavegacionVisiblePorBoton);
-    
+
     let barraNav = document.querySelector("#barra_navegacion");
 
     barraNav.style.display = barraNavegacionVisiblePorBoton ? "none" : "block";
@@ -38,7 +38,7 @@ function desplegarMenu() {
 window.onresize = desplegarMenuSegunViewport;
 function desplegarMenuSegunViewport() {
     // console.log("Ancho del vieport en px:", window.innerWidth);
-    
+
     let barraNav = document.querySelector("#barra_navegacion");
     let anchoVentana = window.innerWidth;
 
@@ -49,20 +49,20 @@ function desplegarMenuSegunViewport() {
     } else {
         if (barraNavegacionVisiblePorAncho) {
             barraNav.style.display = "none";
-            barraNavegacionVisiblePorAncho = false;    
+            barraNavegacionVisiblePorAncho = false;
         }
     }
 
     // console.log(barraNav);
-} 
+}
 
 // scroll ---------------- gabriel
 var lastScrollTop = 0;
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
     var header = document.getElementById("scrollHeader");
     var scrollTop = window.pageYYOffset || document.documentElement.scrollTop;
-    
+
     if (scrollTop > lastScrollTop) {
         // Si estás desplazándote hacia abajo, oculta el encabezado
         header.style.transform = "translateY(-100%)";
@@ -70,13 +70,69 @@ window.addEventListener("scroll", function() {
         // Si estás desplazándote hacia arriba, muestra el encabezado
         header.style.transform = "translateY(0)";
     }
-    
+
     lastScrollTop = scrollTop;
 });
 
 
 
 // Productos ------------- gabriel
+// const productCardsContainer = document.querySelector("#productos-cards");
+// let data; // Variable global para almacenar los datos del JSON
+
+// fetch('https://my-json-server.typicode.com/Gabeust/db.json/productos')
+//     .then(datos => datos.json())
+//     .then(responseData => {
+//         data = responseData; // Asigna los datos a la variable "data"
+//         mostrarProductos(data); // Muestra todos los productos al cargar la página
+//     })
+//     .catch(error => {
+//         console.error("Error al obtener los datos de la API:", error);
+//     });
+
+// function mostrarProductos(productos) {
+//     // Limpia el contenedor antes de mostrar los nuevos resultados
+//     productCardsContainer.innerHTML = "";
+
+//     productos.forEach(producto => {
+//         const card = document.createElement("li");
+
+//         card.innerHTML = `
+//         <div class="card-container">
+//             <div class="card">
+//                 <div class="card-img">
+//                     <img src="${producto.imagen_url}" class="img-prod" >
+//                 </div>
+//                 <div class="detalle-prod">
+//                 <h4>${producto.nombre}</h4>
+//                 <p>Cod. ${producto.codigo}</p>
+//                 </div>
+//                 <div class="card-detalle">
+//                     <div class="precio">
+//                         <p>Precio <strong> $${producto.precio}</strong></p>
+//                     </div>
+//                 </div>
+//                 <button class="botones"> Agregar al Carrito</button>
+
+//             </div>
+//         </div>
+//     `;
+//         productCardsContainer.appendChild(card);
+//     });
+// }
+
+
+// const categoriasLinks = document.querySelectorAll("ul li a");
+
+// categoriasLinks.forEach(link => {
+//     link.addEventListener("click", (e) => {
+//         e.preventDefault();
+//         const categoriaSeleccionada = link.getAttribute("data-categoria");
+//         mostrarProductosPorCategoria(categoriaSeleccionada);
+//     });
+// });
+
+// ---------------------------------------------------------------
 const productCardsContainer = document.querySelector("#productos-cards");
 let data; // Variable global para almacenar los datos del JSON
 
@@ -98,35 +154,27 @@ function mostrarProductos(productos) {
         const card = document.createElement("li");
 
         card.innerHTML = `
-        <div class="card-container">
-            <div class="card">
-                <div class="card-img">
-                    <img src="${producto.imagen_url}" class="img-prod" >
-                </div>
-                <div class="detalle-prod">
-                <h4>${producto.nombre}</h4>
-                <p>Cod. ${producto.codigo}</p>
-                </div>
-                <div class="card-detalle">
-                    <div class="precio">
-                        <p>Precio <strong> $${producto.precio}</strong></p>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="${producto.imagen_url}" class="img-prod" >
+                        </div>
+                        <div class="detalle-prod">
+                            <h4>${producto.nombre}</h4>
+                            <p>Cod. ${producto.codigo}</p>
+                        </div>
+                        <div class="card-detalle">
+                            <div class="precio">
+                                <p>Precio <strong> $${producto.precio}</strong></p>
+                            </div>
+                        </div>
+                        <button class="botones" onclick="agregarAlCarrito('${producto.codigo}', '${producto.nombre}')"> Agregar al Carrito</button>
                     </div>
                 </div>
-                <button class="botones" >Agregar al Carrito</button>
-            </div>
-        </div>
-    `;
+                `;
         productCardsContainer.appendChild(card);
     });
 }
-
-function mostrarProductosPorCategoria(categoria) {
-
-    const productosFiltrados = data.filter(producto => producto.categoria === categoria);
-    mostrarProductos(productosFiltrados);
-}
-
-
 const categoriasLinks = document.querySelectorAll("ul li a");
 
 categoriasLinks.forEach(link => {
@@ -137,13 +185,36 @@ categoriasLinks.forEach(link => {
     });
 });
 
+function agregarAlCarrito(codigo, nombre) {
+    // Obtener el carrito actual desde localStorage o crear uno nuevo
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Buscar si el producto ya está en el carrito
+    const productoEnCarrito = carrito.find(producto => producto.codigo === codigo);
+
+    if (productoEnCarrito) {
+        // Si el producto ya está en el carrito, aumenta la cantidad
+        productoEnCarrito.cantidad++;
+    } else {
+        // Si el producto no está en el carrito, agrégalo
+        const producto = data.find(producto => producto.codigo === codigo);
+        if (producto) {
+            carrito.push({ ...producto, cantidad: 1 });
+        }
+    }
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+
 // formulario -------------------------------------gabriel 
 
 
-document.getElementById("submit").addEventListener("click", function(event) {
-    event.preventDefault(); 
+document.getElementById("submit").addEventListener("click", function (event) {
+    event.preventDefault();
 
-    
+
     var nombre = document.getElementById("nombre");
     var email = document.getElementById("email");
     var mensaje = document.getElementById("mensaje");
@@ -154,8 +225,8 @@ document.getElementById("submit").addEventListener("click", function(event) {
 
     var valido = true;
 
-    
-    if (nombre.value.length < 3 || nombre.value.length > 23 || !/^[A-Za-z]+$/.test(nombre.value)){
+
+    if (nombre.value.length < 3 || nombre.value.length > 23 || !/^[A-Za-z]+$/.test(nombre.value)) {
         nombreError.textContent = "El nombre debe tener entre 3 y 23 letras";
         nombre.classList.remove("input-correcto");
         nombre.classList.add("input-incorrecto");
@@ -189,7 +260,7 @@ document.getElementById("submit").addEventListener("click", function(event) {
     }
 
     if (valido) {
-        enviarFormulario(); 
+        enviarFormulario();
     }
 });
 
@@ -212,15 +283,15 @@ function enviarFormulario() {
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('enviadoExitoso').style.display = 'block';
-        document.getElementById('nombre').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('mensaje').value = '';
-      
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('enviadoExitoso').style.display = 'block';
+            document.getElementById('nombre').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('mensaje').value = '';
+
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
