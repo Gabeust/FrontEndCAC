@@ -1,6 +1,7 @@
+/* 
 html{
     background-color: #5E7575;
-}
+} */
 .sticky-top {
     position: sticky;
     top: 0;
@@ -40,8 +41,8 @@ html{
     color: #e3e3e3;
 }
 .buscar:focus-within input {
-    width: 400px;
-   
+    /* width: 400px; */
+    width: 100%;
 }
 ::placeholder{
     font: inherit;
@@ -236,6 +237,7 @@ h4 {
 
 
 /* footer */
+/*
 footer {
     background-color: #002424;
     text-align: center;
@@ -266,15 +268,17 @@ footer p{
     height: 2px;
     background-color: var(--text-gray);
 }
+*/
 
-
+/*
 .social-links {
     flex-direction: column;
     display: flex;
     gap: 20px;
     align-items: center;
-
+    border: 2px solid yellow;
 }
+*/
 
 .social-text {
     display: flex;
@@ -283,6 +287,7 @@ footer p{
 
 }
 
+/*
 .social-links img {
     margin-top: 10px;
     width: 35px;
@@ -299,6 +304,7 @@ footer p{
     gap: 12px;
     list-style-type: none;
 }
+*/
 small{
     text-align:  center;
 }
@@ -345,9 +351,7 @@ header a {
     grid-template-rows: 70% 30%;
     grid-template-columns: 15% 70% 15%;
     grid-template-areas: "vacio1 logo_y_nombre vacio2"
-
                          "menu_hamburguesa barra_busqueda carrito";
-
   }
 
 #contenedor_logo_nombre {
@@ -400,7 +404,6 @@ h2 {
     display: flex; 
     flex-direction: column;
     gap: 2px;
-
     justify-content: space-evenly;
     align-items: center;
     margin: 1vh 0 1vh 0;
@@ -423,18 +426,25 @@ nav a:hover {
     transition: background-color 0.25s ease-out 0s;
 }
 
-.contenedor_marcas {
-    display: grid;
-    grid-template: 2 / 3;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    column-gap: 4vw;
-    row-gap: 4vw;
-    padding: 1vw;
+#seccion_marcas {
+    background-color: white;
+}
+
+#contenedor_marcas {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2vh;
+    column-gap: 1vw;
+}
+
+.contenedor_imagen_marca {
+    display: block;
+    margin: auto;
 }
 
 .imagen_marca {
     width: 100%;
+    max-width: 140px;
 }
 
 
@@ -453,7 +463,18 @@ nav a:hover {
     color: var(--color-terciario-claro);
 }
 
-.formulario_suscripcion fieldset {
+#formulario_suscripcion {
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+    justify-content: center;
+    align-content: center;
+    grid-template-areas: "vacio11 entrada_mail vacio12"
+                         "vacio21 term_y_cond vacio22"
+                         "vacio31 enviar vacio32";
+    padding: 2vh 0;
+}
+
+#formulario_suscripcion fieldset {
     border: none;
     text-align: center;
 }
@@ -467,8 +488,36 @@ nav a:hover {
 }
 
 #email_suscripcion {
-    width: 70%;
+    grid-area: entrada_mail;
+    width: 75%;
+    margin: auto;
     padding: 5px;
+    border-radius: 5px;
+}
+
+#grupo_tyc_y_check {
+    grid-area: term_y_cond;
+    margin: auto;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#grupo_tyc_y_check label {
+    font-size: 0.85rem;
+    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#btn_enviar_form_susc {
+    grid-area: enviar;
+    margin: 10px auto 0px auto;
+    width: 50%;
+    max-width: 100px;
+    padding: 2px;
+    border-radius: 5px;
 }
 
 .contenedor_imagen_central {
@@ -493,6 +542,52 @@ nav a:hover {
 #footer {
     background-color: var(--color-secundario);
     padding: 10px;
+}
+
+#contenedor-social-links {
+    margin: 0;
+}
+
+#lista_redessociales {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "logo1 vacio1 logo2 vacio2 logo3"
+                         "vacio3 logo4 vacio5 logo5 vacio6";
+    padding: 1vh;
+}
+
+#lista_redessociales li,
+#lista_redessociales a {
+    padding: 0;
+    margin: auto;
+}
+
+#item_logo_ig {
+    grid-area: logo1;
+}
+
+#item_logo_lin {
+    grid-area: logo2;
+}
+
+#item_logo_tw {
+    grid-area: logo3;
+}
+
+#item_logo_yt {
+    grid-area: logo4;
+}
+
+#item_logo_git {
+    grid-area: logo5;
+}
+
+#footer p {
+    font-size: 0.875rem;
+    color: white;
+    text-align: center;
 }
 
 /* Animaciones */
@@ -549,13 +644,10 @@ nav a:hover {
         align-items: center;
     }
     #contenedor_logo_nombre img {
-
         width: 400px;
         height: auto;
-
     }
   
-
     h1 {
         text-align: center;
     }
@@ -566,9 +658,6 @@ nav a:hover {
     
     #contenedor_logo_carrito {
         padding: 10px;
-    }
-
-    #contenedor_barra_busqueda {
     }
 
     #barra_navegacion {
@@ -590,17 +679,32 @@ nav a:hover {
         display: flex;
         align-items: center;
         text-align: center;
-
         height: 100%;
         padding: 0px;
-        
     }
 
-
+    #contenedor_marcas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, fr);
+        padding: 1vh;
+        gap: 3vh 1vw;
+    }
+    
     .imagen_marca {
         min-width: 125px;
         max-width: 175px;
-    }
-    
-  }
+    }    
+}
 
+
+/* Algunos puntos de quiebre intermedios: 300px */
+@media (min-width: 300px) {
+    #lista_redessociales {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1vh;
+    }
+}

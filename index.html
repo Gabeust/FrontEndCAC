@@ -23,14 +23,16 @@
         <img src="./imagenes/5.png" alt="Logo de Ferretería">
       </div>
 
-      <form class="buscar">
-        <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
-        <button type="button" class="buscarbtn">
-          <i class="fi-rr-search"></i>
-        </button>
-      </form>
-      <div id="contenedor_logo_carrito" style="align-items: end;">
+      <div id="contenedor_barra_busqueda">
+        <form class="buscar">
+          <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+          <button type="button" class="buscarbtn">
+            <i class="fi-rr-search"></i>
+          </button>
+        </form>
+      </div>
 
+      <div id="contenedor_logo_carrito" style="align-items: end;">
         <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
       </div>
       <div id="contenedor_logo_menu">
@@ -62,7 +64,7 @@
     </div>
   </header>
 
-  <section>
+  <section id="seccion_galeria_imagenes">
     <div class="galeria_imagenes" style="display: flex; overflow: hidden; width: 400vw;">
       <div class="contenedor_imagen_central imagen_bienvenidos">
         <img class="imagen_central" src="imagenes/ferreteria.jpg" alt="Nuestra ferretería">
@@ -84,15 +86,21 @@
 
   </section>
 
-  <section>
+  <section id="seccion_marcas">
     <h2>Nuestras marcas</h2>
-    <div class="contenedor_marcas">
-      <img class="imagen_marca" src="imagenes/marca_Bahco.png" alt="Productos Bahco">
-      <img class="imagen_marca" src="imagenes/marca_BlackandDecker.png" alt="Productos Black and Decker">
-      <img class="imagen_marca" src="imagenes/marca_Bosch.png" alt="Productos Bosch">
-      <img class="imagen_marca" src="imagenes/marca_DeWalt.png" alt="Productos DeWalt">
-      <img class="imagen_marca" src="imagenes/marca_Makita.png" alt="Productos Makita">
-      <img class="imagen_marca" src="imagenes/marca_Stanley.png" alt="Productos Stanley">
+    <div id="contenedor_marcas">
+      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Bahco.png"
+          alt="Productos Bahco"></div>
+      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_BlackandDecker.png"
+          alt="Productos Black and Decker"></div>
+      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Bosch.png"
+          alt="Productos Bosch"></div>
+      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_DeWalt.png"
+          alt="Productos DeWalt"></div>
+      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Makita.png"
+          alt="Productos Makita"></div>
+      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Stanley.png"
+          alt="Productos Stanley"></div>
     </div>
   </section>
 
@@ -102,13 +110,12 @@
       <p>Ingresa tu mail para recibir novedades y ofertas. Aprovecha un descuento en tu primer compra.</p>
     </div>
     <form action="#" id="formulario_suscripcion" class="formulario_suscripcion">
-      <fieldset>
-        <input type="text" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico" onkeyup="validarMailSuscripcion()" style="outline: none;">
-        <input type="button" value="Enviar" onclick="validarFormularioSuscripcion()">
-      </fieldset>
-      <fieldset>
+      <input type="text" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico"
+        onkeyup="validarMailSuscripcion()" style="outline: none;">
+      <input type="button" id="btn_enviar_form_susc" value="Enviar" onclick="validarFormularioSuscripcion()">
+      <fieldset id="grupo_tyc_y_check">
         <input type="checkbox" name="aceptar_tyc" id="aceptar_tyc">
-        <label for="aceptar_tyc" style="font-size: 0.85em;">Acepto términos y condiciones</label>
+        <label for="aceptar_tyc">Acepto términos y condiciones</label>
       </fieldset>
     </form>
   </section>
@@ -116,41 +123,41 @@
 
 
   <footer id="footer">
-    <div class='social-links'>
-      <ul>
-        <li>
+    <div id="contenedor-social-links" class='social-links'>
+      <ul id="lista_redessociales">
+        <li id="item_logo_ig">
           <a href="#" title="Instagram">
             <img src="imagenes/svg/instagram.svg" alt='Instagram'>
           </a>
         </li>
-        <li>
+        <li id="item_logo_lin">
           <a href="#" title="Linkedin">
             <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
           </a>
         </li>
-        <li>
+        <li id="item_logo_tw">
           <a href="#" title="Twitter">
             <img src="imagenes/svg/twitter.svg" alt='Twitter'>
           </a>
         </li>
-        <li>
+        <li id="item_logo_yt">
           <a href="#" title="Youtube">
             <img src="imagenes/svg/youtube.svg" alt='YouTube'>
           </a>
         </li>
-        <li>
+        <li id="item_logo_git">
           <a href="#" title="GitHub">
             <img src="imagenes/svg/github.svg" alt='GitHub'>
           </a>
         </li>
       </ul>
-       </div>
+    </div>
 
-        <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+    <p>© Codo a Codo. 2023, All rights reserved</p>
 
     </div>
 
-</footer>
+  </footer>
 
   <script src="./script.js"></script>
 </body>
