@@ -373,7 +373,6 @@ header a {
 
 #contenedor_logo_carrito {
     grid-area: carrito;
-
 }
 
 #contenedor_logo_menu,
@@ -487,6 +486,7 @@ nav a:hover {
     margin: auto;
     padding: 5px;
     border-radius: 5px;
+    outline: none;
 }
 
 #grupo_tyc_y_check {
@@ -585,7 +585,10 @@ nav a:hover {
 }
 
 /* Animaciones */
-.galeria_imagenes {
+#galeria_imagenes {
+    display: flex;
+    overflow: hidden;
+    width: 400vw;
     animation: girarIzquierda 20s linear 3s 1 normal;
 }
 
