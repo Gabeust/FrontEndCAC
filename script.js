@@ -24,19 +24,16 @@ var barraNavegacionVisiblePorBoton = false;
 var barraNavegacionVisiblePorAncho = false;
 
 function desplegarMenu() {
-    console.log("Barra de navegación es visible?", barraNavegacionVisiblePorBoton);
 
     let barraNav = document.querySelector("#barra_navegacion");
 
     barraNav.style.display = barraNavegacionVisiblePorBoton ? "none" : "block";
     barraNavegacionVisiblePorBoton = !barraNavegacionVisiblePorBoton;
 
-    console.log(barraNav);
 }
 
 window.onresize = desplegarMenuSegunViewport;
 function desplegarMenuSegunViewport() {
-    // console.log("Ancho del vieport en px:", window.innerWidth);
 
     let barraNav = document.querySelector("#barra_navegacion");
     let anchoVentana = window.innerWidth;
@@ -52,8 +49,7 @@ function desplegarMenuSegunViewport() {
         }
     }
 
-    // console.log(barraNav);
-}
+} 
 
 // scroll ---------------- gabriel
 var lastScrollTop = 0;
@@ -74,6 +70,58 @@ window.addEventListener("scroll", function () {
 });
 
 
+
+
+function validarMailSuscripcion() {
+    let campoMail = document.querySelector("#email_suscripcion");
+    let mailIngresado = campoMail.value;
+
+    let expreg = /^[A-Za-z][\w.-]+\@[A-Za-z]+[.][A-Za-z]{2,}/i; // Inicie con letra, puede contener ., -, _ y luego del @ admite sólo letras
+
+    if (expreg.test(mailIngresado)) {
+        campoMail.classList.remove("campo_invalido")
+        campoMail.classList.add("campo_valido");
+        return true;
+    } else {
+        campoMail.classList.remove("campo_valido")
+        mailIngresado == "" ? campoMail.classList.remove("campo_invalido") : campoMail.classList.add("campo_invalido");
+        return false;
+    }
+
+}
+
+function validarFormularioSuscripcion() {
+
+    if (!validarMailSuscripcion()) {
+        alert("Ingrese un mail válido.\n\nNo está permitido que comience con números, no incluir ñ ni acentos, ni caracteres especiales.");
+        document.querySelector("#email_suscripcion").focus();
+    } else if (!document.querySelector("#aceptar_tyc").checked) {
+        alert("No olvide aceptar términos y condiciones de suscripción.");
+        document.querySelector("#aceptar_tyc").focus();
+    } else {
+        alert("Suscripción realizada con éxito!");
+        document.querySelector("#formulario_suscripcion").submit();
+    }
+
+}
+
+function visualizarMapaSucursal(idSucursal){
+    let sucursalOV = document.querySelector("#mapa_sucursal_ov");
+    let sucursalTigre = document.querySelector("#mapa_sucursal_tigre");
+
+    switch (idSucursal) {
+        case 1:
+            sucursalTigre.style.display = "none";
+            sucursalOV.style.display = "block";
+            break;
+        case 2:
+            sucursalOV.style.display = "none";
+            sucursalTigre.style.display = "block";
+            break;        
+        default:
+            break;
+    }
+}
 
 // Productos ------------- gabriel
 const productCardsContainer = document.querySelector("#productos-cards");

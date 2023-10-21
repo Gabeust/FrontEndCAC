@@ -23,15 +23,17 @@
         <img src="./imagenes/5.png" alt="Logo de Ferretería">
       </div>
 
-      <div class="buscar" id="contenedor_barra_busqueda">
-        <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
-        <button type="button" class="buscarbtn">
-          <i class="fi-rr-search"></i>
-        </button>
+
+      <div id="contenedor_barra_busqueda">
+        <form class="buscar">
+          <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+          <button type="button" class="buscarbtn">
+            <i class="fi-rr-search"></i>
+          </button>
+        </form>
       </div>
 
-      <div id="contenedor_logo_carrito" style="align-items: end;">
-
+            <div id="contenedor_logo_carrito">
         <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
       </div>
       <div id="contenedor_logo_menu">
@@ -52,7 +54,7 @@
           <a href="./Productos.html">
             <li>Productos</li>
           </a>
-          <a href="./Sucursales.html">
+          <a href="./sucursales.html">
             <li>Sucursales</li>
           </a>
           <a href="./Contacto.html">
@@ -63,8 +65,8 @@
     </div>
   </header>
 
-  <section>
-    <div class="galeria_imagenes" style="display: flex; overflow: hidden; width: 400vw;">
+  <section id="seccion_galeria_imagenes">
+    <div id="galeria_imagenes" class="galeria_imagenes">
       <div class="contenedor_imagen_central imagen_bienvenidos">
         <img class="imagen_central" src="imagenes/ferreteria.jpg" alt="Nuestra ferretería">
         <h3 class="texto_imagen_central">BIENVENIDOS</h3>
@@ -85,15 +87,21 @@
 
   </section>
 
-  <section>
+  <section id="seccion_marcas">
     <h2>Nuestras marcas</h2>
-    <div class="contenedor_marcas">
-      <img class="imagen_marca" src="imagenes/marca_Bahco.png" alt="Productos Bahco">
-      <img class="imagen_marca" src="imagenes/marca_BlackandDecker.png" alt="Productos Black and Decker">
-      <img class="imagen_marca" src="imagenes/marca_Bosch.png" alt="Productos Bosch">
-      <img class="imagen_marca" src="imagenes/marca_DeWalt.png" alt="Productos DeWalt">
-      <img class="imagen_marca" src="imagenes/marca_Makita.png" alt="Productos Makita">
-      <img class="imagen_marca" src="imagenes/marca_Stanley.png" alt="Productos Stanley">
+    <div id="contenedor_marcas">
+      <div id="contenedor_marca_bahco" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Bahco.png"
+          alt="Productos Bahco"></div>
+      <div id="contenedor_marca_byd" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_BlackandDecker.png"
+          alt="Productos Black and Decker"></div>
+      <div id="contenedor_marca_bosch" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Bosch.png"
+          alt="Productos Bosch"></div>
+      <div id="contenedor_marca_dew" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_DeWalt.png"
+          alt="Productos DeWalt"></div>
+      <div id="contenedor_marca_makita" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Makita.png"
+          alt="Productos Makita"></div>
+      <div id="contenedor_marca_stanley" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Stanley.png"
+          alt="Productos Stanley"></div>
     </div>
   </section>
 
@@ -102,14 +110,13 @@
       <h2>Suscribite y mantenete informado</h2>
       <p>Ingresa tu mail para recibir novedades y ofertas. Aprovecha un descuento en tu primer compra.</p>
     </div>
-    <form action="" class="formulario_suscripcion">
-      <fieldset>
-        <input type="email" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico">
-        <input type="submit" value="Enviar">
-      </fieldset>
-      <fieldset>
+    <form action="#" id="formulario_suscripcion" class="formulario_suscripcion">
+      <input type="text" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico"
+        onkeyup="validarMailSuscripcion()">
+      <input type="button" id="btn_enviar_form_susc" value="Enviar" onclick="validarFormularioSuscripcion()">
+      <fieldset id="grupo_tyc_y_check">
         <input type="checkbox" name="aceptar_tyc" id="aceptar_tyc">
-        <label for="aceptar_tyc" style="font-size: 0.85em;">Acepto términos y condiciones</label>
+        <label for="aceptar_tyc">Acepto términos y condiciones</label>
       </fieldset>
     </form>
   </section>
@@ -117,41 +124,41 @@
 
 
   <footer id="footer">
-    <div class='social-links'>
-      <ul>
-        <li>
+    <div id="contenedor-social-links" class='social-links'>
+      <ul id="lista_redessociales">
+        <li id="item_logo_ig">
           <a href="#" title="Instagram">
             <img src="imagenes/svg/instagram.svg" alt='Instagram'>
           </a>
         </li>
-        <li>
+        <li id="item_logo_lin">
           <a href="#" title="Linkedin">
             <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
           </a>
         </li>
-        <li>
+        <li id="item_logo_tw">
           <a href="#" title="Twitter">
             <img src="imagenes/svg/twitter.svg" alt='Twitter'>
           </a>
         </li>
-        <li>
+        <li id="item_logo_yt">
           <a href="#" title="Youtube">
             <img src="imagenes/svg/youtube.svg" alt='YouTube'>
           </a>
         </li>
-        <li>
+        <li id="item_logo_git">
           <a href="#" title="GitHub">
             <img src="imagenes/svg/github.svg" alt='GitHub'>
           </a>
         </li>
       </ul>
-       </div>
+    </div>
 
-        <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+    <p>© Codo a Codo. 2023, All rights reserved</p>
 
     </div>
 
-</footer>
+  </footer>
 
   <script src="./script.js"></script>
 </body>

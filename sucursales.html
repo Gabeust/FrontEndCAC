@@ -1,97 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferreteria</title>
-    <link rel="stylesheet" href="./estilos.css">
-  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  
+    <title>Ferreteria El Cosito</title>
+    <link rel="icon" href="./imagenes/logo_ferreteria_16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="estilos.css">
     <!--Para incorporar íconos de flaticon-->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-  
-  
+
 </head>
+
 <body>
 
     <!-- Aquí va el header - COPIARLO DEL INDEX CUANDO ESTE TERMINADO -->
     <header id="scrollHeader">
         <!-- Primer línea del encabezado -->
         <div class="linea1_encabezado">
-          <div id="contenedor_logo_nombre">
-            <img src="./imagenes/5.png" alt="Logo de Ferretería">
-          </div>
-    
-          <form class="buscar">
-            <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
-            <button type="button" class="buscarbtn">
-              <i class="fi-rr-search"></i>
-            </button>
-          </form>
-          <div id="contenedor_logo_carrito" style="align-items: end;">
-    
-            <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
-          </div>
-          <div id="contenedor_logo_menu">
-            <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
-          </div>
+
+            <div id="contenedor_logo_nombre">
+                <img src="./imagenes/5.png" alt="Logo de Ferretería">
+            </div>
+
+            <div id="contenedor_barra_busqueda">
+                <form class="buscar">
+                    <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+                    <button type="button" class="buscarbtn">
+                        <i class="fi-rr-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div id="contenedor_logo_carrito">
+                <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
+            </div>
+            <div id="contenedor_logo_menu">
+                <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
+            </div>
+
         </div>
-    
+
         <!-- Segunda línea del encabezado -->
         <div>
-          <nav id="barra_navegacion" onresize="desplegarMenu()">
-            <ul type="none" id="lista_menues">
-              <a href="./index.html">
-                <li>Inicio</li>
-              </a>
-              <a href="./sobreNosotros.html">
-                <li>Sobre Nosotros</li>
-              </a>
-              <a href="./Productos.html">
-                <li>Productos</li>
-              </a>
-              <a href="./Sucursales.html">
-                <li>Sucursales</li>
-              </a>
-              <a href="./Contacto.html">
-                <li>Contacto</li>
-              </a>
-            </ul>
-          </nav>
+
+            <nav id="barra_navegacion" onresize="desplegarMenu()">
+                <ul type="none" id="lista_menues">
+                    <a href="./index.html">
+                        <li>Inicio</li>
+                    </a>
+                    <a href="./sobreNosotros.html">
+                        <li>Sobre Nosotros</li>
+                    </a>
+                    <a href="./Productos.html">
+                        <li>Productos</li>
+                    </a>
+                    <a href="./Sucursales.html">
+                        <li>Sucursales</li>
+                    </a>
+                    <a href="./Contacto.html">
+                        <li>Contacto</li>
+                    </a>
+                </ul>
+            </nav>
+
         </div>
-      </header>
-    
-      <section>
-        <h2 style="text-align: center;">Nuestras tiendas</h2>
-        <article style="display: flex; border: 2px solid green; height: 50vh;">
-            <figcaption style="width: 20%;">
+    </header>
+
+    <section id="seccion_sucursales">
+        <h2>Nuestras tiendas</h2>
+        <p>Acercate a nuestras sucursales. <br> <strong>Tenemos todo lo que necesitas!</strong></p>
+
+        <div id="contenedor_seccion_sucursales">
+            <figcaption id="datos_sucursal_ov" class="datos_sucursal">
+                <div>
+                    <a href="#" onclick="visualizarMapaSucursal(1)"><i class="fi fi-rr-marker"></i></a>
+                </div>
                 <p>Sucursal Oro Verde</p>
                 <p>Los Paraísos y Los Mistos</p>
                 <p>Entre Ríos</p>
                 <p>Tel: 0343-4555657</p>
             </figcaption>
-                <figure style="border: 2px solid blue; width: 80%;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.8585843823566!2d-60.51747641712648!3d-31.827843349398727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b44b92d3b5241d%3A0xafb715e3e1dcb03e!2sLos%20Para%C3%ADsos%20%26%20Los%20Mistos%2C%20Entre%20R%C3%ADos!5e1!3m2!1ses-419!2sar!4v1695775119023!5m2!1ses-419!2sar"  width="100%" height="100%"  style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </figure>
-        </article>
+            <figure id="mapa_sucursal_ov" class="mapa_sucursal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3389.8951601329586!2d-60.51518042367164!3d-31.827847974074746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b44b92d3b5241d%3A0xafb715e3e1dcb03e!2sLos%20Para%C3%ADsos%20%26%20Los%20Mistos%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses-419!2sar!4v1697831984622!5m2!1ses-419!2sar"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </figure>
 
-        <article style="display: flex; border: 2px solid green; height: 50vh;">
-            <figcaption style="width: 20%;">
+            <figcaption id="datos_sucursal_tigre" class="datos_sucursal">
+                <div>
+                    <a href="#" onclick="visualizarMapaSucursal(2)"><i class="fi fi-rr-marker"></i></a>
+                </div>
                 <p>Sucursal Tigre</p>
                 <p>Av Cazón 1265</p>
                 <p>Buenos Aires</p>
                 <p>Tel: 011-47484950</p>
             </figcaption>
-                <figure style="border: 2px solid blue; width: 80%;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.2487535946865!2d-58.57762463034603!3d-34.42525609208401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca5987a39fd07%3A0x220d8b38baa6cadc!2sAv.%20Caz%C3%B3n%201265%2C%20B1648EWM%20Tigre%2C%20Provincia%20de%20Buenos%20Aires!5e1!3m2!1ses-419!2sar!4v1695832771576!5m2!1ses-419!2sar"  width="100%" height="100%"  style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </figure>
-        </article>
+            <figure id="mapa_sucursal_tigre" class="mapa_sucursal" style="display: none;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.058970812891!2d-58.579555823583355!3d-34.42525717301886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca5987a39fd07%3A0x220d8b38baa6cadc!2sAv.%20Caz%C3%B3n%201265%2C%20B1648EWM%20Tigre%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1697832169446!5m2!1ses-419!2sar"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </figure>
 
-      </section>
-       
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
 </body>
+
 </html>

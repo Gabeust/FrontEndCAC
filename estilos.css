@@ -1,3 +1,4 @@
+
 /* Buscar ------------------------------------------------ gabriel*/
 .buscar {
     display: inline-flex;
@@ -35,7 +36,8 @@
 }
 
 .buscar:focus-within input {
-    width: 400px;
+
+    width: 100%;
 
 }
 
@@ -296,7 +298,7 @@ h4 {
     }
 
     #contenedor_logo_nombre img {
-        width: 150px;
+        width: 200px;
         height: auto;
     }
 
@@ -404,6 +406,7 @@ textarea {
 
 
 /* footer */
+/*
 footer {
     background-color: #002424;
     text-align: center;
@@ -436,15 +439,17 @@ footer p {
     height: 2px;
     background-color: var(--text-gray);
 }
+*/
 
-
+/*
 .social-links {
     flex-direction: column;
     display: flex;
     gap: 20px;
     align-items: center;
-
+    border: 2px solid yellow;
 }
+*/
 
 .social-text {
     display: flex;
@@ -453,16 +458,11 @@ footer p {
 
 }
 
-.social-links img {
-    margin-top: 10px;
-    width: 35px;
-    transition: all 0.2s ease-in-out;
-}
-
 .social-links img:hover {
-    transform: scale(1.1);
+    transform: scale(1.25);
 }
 
+/*
 .social-links ul {
     justify-content: center;
     display: flex;
@@ -470,9 +470,8 @@ footer p {
     list-style-type: none;
 }
 
-small {
-    text-align: center;
-}
+*/
+
 
 /* Estilos mtm */
 * {
@@ -521,10 +520,8 @@ header a {
     grid-template-rows: 70% 30%;
     grid-template-columns: 15% 70% 15%;
     grid-template-areas: "vacio1 logo_y_nombre vacio2"
-
-        "menu_hamburguesa barra_busqueda carrito";
-
-}
+                         "menu_hamburguesa barra_busqueda carrito";
+  }
 
 #contenedor_logo_nombre {
     grid-area: logo_y_nombre;
@@ -532,6 +529,7 @@ header a {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 200px;
 }
 
 #contenedor_barra_busqueda {
@@ -551,7 +549,6 @@ header a {
 
 #contenedor_logo_carrito {
     grid-area: carrito;
-
 }
 
 #contenedor_logo_menu,
@@ -583,6 +580,10 @@ h2 {
     padding: 0px;
 }
 
+#lista_menues li {
+    padding-bottom: 1vh;
+}
+
 nav a {
     display: flex;
     align-items: center;
@@ -600,18 +601,25 @@ nav a:hover {
     transition: background-color 0.25s ease-out 0s;
 }
 
-.contenedor_marcas {
-    display: grid;
-    grid-template: 2 / 3;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    column-gap: 4vw;
-    row-gap: 4vw;
-    padding: 1vw;
+#seccion_marcas {
+    background-color: white;
+}
+
+#contenedor_marcas {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2vh;
+    column-gap: 1vw;
+}
+
+.contenedor_imagen_marca {
+    display: block;
+    margin: auto;
 }
 
 .imagen_marca {
     width: 100%;
+    max-width: 140px;
 }
 
 
@@ -630,22 +638,72 @@ nav a:hover {
     color: var(--color-terciario-claro);
 }
 
-.formulario_suscripcion fieldset {
+#formulario_suscripcion {
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+    justify-content: center;
+    align-content: center;
+    grid-template-areas: "vacio11 entrada_mail vacio12"
+                         "vacio21 term_y_cond vacio22"
+                         "vacio31 enviar vacio32";
+    padding: 2vh 0;
+}
+
+#formulario_suscripcion fieldset {
     border: none;
     text-align: center;
 }
 
+.campo_valido {
+    border: 5px solid blue;
+}
+
+.campo_invalido {
+    border: 5px solid red;
+}
+
 #email_suscripcion {
-    width: 70%;
+    grid-area: entrada_mail;
+    width: 75%;
+    margin: auto;
     padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#grupo_tyc_y_check {
+    grid-area: term_y_cond;
+    margin: auto;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#grupo_tyc_y_check label {
+    font-size: 0.85rem;
+    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#btn_enviar_form_susc {
+    grid-area: enviar;
+    margin: 10px auto 0px auto;
+    width: 50%;
+    max-width: 100px;
+    padding: 2px;
+    border-radius: 5px;
 }
 
 .contenedor_imagen_central {
     position: relative;
+    width: 100vw;
 }
 
 .imagen_central {
     width: 100%;
+    height: 100%;
 }
 
 .texto_imagen_central {
@@ -664,8 +722,57 @@ nav a:hover {
     padding: 10px;
 }
 
+#contenedor-social-links {
+    margin: 0;
+}
+
+#lista_redessociales {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "logo1 vacio1 logo2 vacio2 logo3"
+                         "vacio3 logo4 vacio5 logo5 vacio6";
+    padding: 1vh;
+}
+
+#lista_redessociales li,
+#lista_redessociales a {
+    padding: 0;
+    margin: auto;
+}
+
+#item_logo_ig {
+    grid-area: logo1;
+}
+
+#item_logo_lin {
+    grid-area: logo2;
+}
+
+#item_logo_tw {
+    grid-area: logo3;
+}
+
+#item_logo_yt {
+    grid-area: logo4;
+}
+
+#item_logo_git {
+    grid-area: logo5;
+}
+
+#footer p {
+    font-size: 0.875rem;
+    color: white;
+    text-align: center;
+}
+
 /* Animaciones */
-.galeria_imagenes {
+#galeria_imagenes {
+    display: flex;
+    overflow: hidden;
+    width: 400vw;
     animation: girarIzquierda 20s linear 3s 1 normal;
 }
 
@@ -696,14 +803,79 @@ nav a:hover {
     }
 }
 
-.contenedor_imagen_central {
-    width: 100vw;
+
+/* Sucursales ---------------------------------------- turco */
+#seccion_sucursales > p {
+    text-align: center;
+    margin-bottom: 3vh;
 }
 
-.imagen_central {
+#contenedor_seccion_sucursales {
+    display: grid;
+    margin: auto 1vw;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 3fr;
+    align-items: center;
+    grid-template-areas: "datos_suc_ov datos_suc_tigre"
+                         "mapa_suc mapa_suc";
+}
+
+#datos_sucursal_ov {
+    grid-area: datos_suc_ov;
+}
+
+#datos_sucursal_tigre {
+    grid-area: datos_suc_tigre;
+}
+
+#mapa_sucursal_ov,
+#mapa_sucursal_tigre {
+    grid-area: mapa_suc;
+}
+
+.datos_sucursal {
+    text-align: center;
+    font-size: 0.875rem;
     height: 100%;
+    max-width: 250px;
+    margin-bottom: 1vh;
+    padding-top: 1vh;
+    background-color: var(--color-secundario);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10% 10% 0 0;
 }
 
+.datos_sucursal .fi-rr-marker {
+    color: white;
+    font-size: 2em;
+}
+
+.datos_sucursal a {
+    display: block;
+    padding: 2px;
+}
+
+.datos_sucursal a:hover {
+    transform: scale(1.25);
+}
+
+.datos_sucursal p {
+    margin: 1px;
+}
+
+.mapa_sucursal {
+    height: 100%;
+    width: 97.5%;
+    margin: auto;
+    border: 2px solid var(--color-secundario);
+    border-top: 2px solid white;
+}
+
+.mapa_sucursal iframe {
+    height: 100%;
+    width: 100%;
+}
 
 /* Media queries para distintos breakpoints: 450px, 900px y 1200px */
 @media (min-width: 450px) {
@@ -720,11 +892,9 @@ nav a:hover {
 
     #contenedor_logo_nombre img {
 
-        width: 300px;
+        width: 200px; 
         height: auto;
-
     }
-
 
     h1 {
         text-align: center;
@@ -737,8 +907,6 @@ nav a:hover {
     #contenedor_logo_carrito {
         padding: 10px;
     }
-
-
 
     #barra_navegacion {
         display: block;
@@ -759,14 +927,98 @@ nav a:hover {
         display: flex;
         align-items: center;
         text-align: center;
-
         height: 100%;
         padding: 0px;
 
     }
 
+    #contenedor_marcas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, fr);
+        padding: 1vh;
+        gap: 3vh 1vw;
+    }
+
     .imagen_marca {
         min-width: 125px;
         max-width: 175px;
+    }    
+
+    #lista_redessociales {
+        max-width: 500px;
+        margin: auto;
     }
+}
+
+@media (min-width: 900px) {
+    #contenedor_logo_nombre img {
+        width: 300px;
+        height: auto;
+    }
+ 
+    #lista_menues li {
+        font-size: 1rem;
+    }
+
+    .imagen_central {
+        height: 610px;
+    }
+
+    #contenedor_marcas {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, fr);
+        grid-template-areas: "logo_bahco logo_byd logo_bosch logo_dew"
+                             "vacio1 logo_makita logo_stanley vacio";
+    }
+
+    #contenedor_marca_makita {
+        grid-area: logo_makita;
+    }
+
+    #contenedor_marca_stanley {
+        grid-area: logo_stanley;
+    }
+
+    #formulario_suscripcion {
+        display: grid;
+        grid-template-columns: 5% 70% 1fr;
+        grid-template-areas: "vacio11 entrada_mail enviar"
+                             "vacio21 term_y_cond vacio22";
+    }    
+
+    #btn_enviar_form_susc {
+        grid-area: enviar;
+        margin-left: 0px;
+    }    
+}
+
+@media (min-width: 1200px) {
+    #contenedor_marcas {
+        display: flex;
+    }
+}
+
+/* Algunos puntos de quiebre intermedios: 300px, 500px */
+@media (min-width: 300px) {
+    #lista_redessociales {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1vh;
+    }
+}
+
+@media (min-width: 500px) {
+    #contenedor_seccion_sucursales {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 3fr;
+        align-items: center;
+        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13"
+                             "mapa_suc mapa_suc mapa_suc";
+    }
+
 }
