@@ -53,7 +53,7 @@
           <a href="./Productos.html">
             <li>Productos</li>
           </a>
-          <a href="./Sucursales.html">
+          <a href="./sucursales.html">
             <li>Sucursales</li>
           </a>
           <a href="./Contacto.html">
@@ -89,17 +89,17 @@
   <section id="seccion_marcas">
     <h2>Nuestras marcas</h2>
     <div id="contenedor_marcas">
-      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Bahco.png"
+      <div id="contenedor_marca_bahco" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Bahco.png"
           alt="Productos Bahco"></div>
-      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_BlackandDecker.png"
+      <div id="contenedor_marca_byd" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_BlackandDecker.png"
           alt="Productos Black and Decker"></div>
-      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Bosch.png"
+      <div id="contenedor_marca_bosch" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Bosch.png"
           alt="Productos Bosch"></div>
-      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_DeWalt.png"
+      <div id="contenedor_marca_dew" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_DeWalt.png"
           alt="Productos DeWalt"></div>
-      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Makita.png"
+      <div id="contenedor_marca_makita" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Makita.png"
           alt="Productos Makita"></div>
-      <div class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Stanley.png"
+      <div id="contenedor_marca_stanley" class="contenedor_imagen_marca"><img class="imagen_marca" src="imagenes/marca_Stanley.png"
           alt="Productos Stanley"></div>
     </div>
   </section>
@@ -111,7 +111,7 @@
     </div>
     <form action="#" id="formulario_suscripcion" class="formulario_suscripcion">
       <input type="text" name="email_suscripcion" id="email_suscripcion" placeholder="Ingresa tu correo electrónico"
-        onkeyup="validarMailSuscripcion()" style="outline: none;">
+        onkeyup="validarMailSuscripcion()">
       <input type="button" id="btn_enviar_form_susc" value="Enviar" onclick="validarFormularioSuscripcion()">
       <fieldset id="grupo_tyc_y_check">
         <input type="checkbox" name="aceptar_tyc" id="aceptar_tyc">

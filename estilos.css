@@ -166,7 +166,7 @@ h4 {
     }
  
     #contenedor_logo_nombre img {
-        width: 150px;
+        width: 200px;
         height: auto;
     }
   
@@ -354,6 +354,7 @@ header a {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 200px;
 }
 
 #contenedor_barra_busqueda {
@@ -402,7 +403,12 @@ h2 {
     margin: 1vh 0 1vh 0;
     padding: 0px;
 }
- a {
+
+#lista_menues li {
+    padding-bottom: 1vh;
+}
+
+a {
     display: flex;
     align-items: center;
     
@@ -516,10 +522,12 @@ nav a:hover {
 
 .contenedor_imagen_central {
     position: relative;
+    width: 100vw;
 }
 
 .imagen_central {
     width: 100%;
+    height: 100%;
 }
 
 .texto_imagen_central {
@@ -619,13 +627,6 @@ nav a:hover {
     }
 }
 
-.contenedor_imagen_central {
-    width: 100vw;
-}
-
-.imagen_central {
-    height: 100%;
-}
 
 /* Sucursales ---------------------------------------- turco */
 #seccion_sucursales > p {
@@ -638,8 +639,6 @@ nav a:hover {
     margin: auto 1vw;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 3fr;
-    /*grid-template-columns: 35% 1fr;
-    grid-template-rows: 20% 20% 1fr;*/
     align-items: center;
     grid-template-areas: "datos_suc_ov datos_suc_tigre"
                          "mapa_suc mapa_suc";
@@ -662,6 +661,7 @@ nav a:hover {
     text-align: center;
     font-size: 0.875rem;
     height: 100%;
+    max-width: 250px;
     margin-bottom: 1vh;
     padding-top: 1vh;
     background-color: var(--color-secundario);
@@ -714,7 +714,7 @@ nav a:hover {
         align-items: center;
     }
     #contenedor_logo_nombre img {
-        width: 400px;
+        width: 200px;
         height: auto;
     }
   
@@ -765,10 +765,63 @@ nav a:hover {
         min-width: 125px;
         max-width: 175px;
     }    
+
+    #lista_redessociales {
+        max-width: 500px;
+        margin: auto;
+    }
 }
 
+@media (min-width: 900px) {
+    #contenedor_logo_nombre img {
+        width: 300px;
+        height: auto;
+    }
+    
+    #lista_menues li {
+        font-size: 1rem;
+    }
 
-/* Algunos puntos de quiebre intermedios: 300px */
+    .imagen_central {
+        height: 610px;
+    }
+
+    #contenedor_marcas {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, fr);
+        grid-template-areas: "logo_bahco logo_byd logo_bosch logo_dew"
+                             "vacio1 logo_makita logo_stanley vacio";
+    }
+
+    #contenedor_marca_makita {
+        grid-area: logo_makita;
+    }
+
+    #contenedor_marca_stanley {
+        grid-area: logo_stanley;
+    }
+
+    #formulario_suscripcion {
+        display: grid;
+        grid-template-columns: 5% 70% 1fr;
+        grid-template-areas: "vacio11 entrada_mail enviar"
+                             "vacio21 term_y_cond vacio22";
+    }    
+
+    #btn_enviar_form_susc {
+        grid-area: enviar;
+        margin-left: 0px;
+    }    
+}
+
+@media (min-width: 1200px) {
+    #contenedor_marcas {
+        display: flex;
+    }
+}
+
+/* Algunos puntos de quiebre intermedios: 300px, 500px */
 @media (min-width: 300px) {
     #lista_redessociales {
         display: flex;
@@ -776,5 +829,16 @@ nav a:hover {
         flex-direction: row;
         justify-content: space-around;
         padding: 1vh;
+    }
+}
+
+@media (min-width: 500px) {
+    #contenedor_seccion_sucursales {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 3fr;
+        align-items: center;
+        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13"
+                             "mapa_suc mapa_suc mapa_suc";
     }
 }
