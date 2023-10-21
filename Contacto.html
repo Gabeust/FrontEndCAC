@@ -17,27 +17,33 @@
 
 <body>
 
-  <header>
+  <header id="scrollHeader">
     <!-- Primer línea del encabezado -->
     <div class="linea1_encabezado">
       <div id="contenedor_logo_nombre">
         <img src="./imagenes/5.png" alt="Logo de Ferretería">
       </div>
-      <form class="buscar">
+
+      <div class="buscar" id="contenedor_barra_busqueda">
         <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
         <button type="button" class="buscarbtn">
           <i class="fi-rr-search"></i>
         </button>
-      </form>
+      </div>
+
       <div id="contenedor_logo_carrito" style="align-items: end;">
+
         <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
+      </div>
+      <div id="contenedor_logo_menu">
+        <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
       </div>
     </div>
 
     <!-- Segunda línea del encabezado -->
     <div>
-      <nav class="barra_navegacion">
-        <ul type="none" class="lista_menues">
+      <nav id="barra_navegacion" onresize="desplegarMenu()">
+        <ul type="none" id="lista_menues">
           <a href="./index.html">
             <li>Inicio</li>
           </a>
@@ -58,11 +64,13 @@
     </div>
   </header>
 
-  <section id="contacto">
+
+  <!-- <section id="contacto">
     <div class="row">
-      <div id="cont" class="col-sm-12 col-md-7" style="border: solid blue;">
+      <div id="cont" class="col-sm-12 col-md-7">
         <h1>Contacto</h1>
         <form id="contactForm" onsubmit="return validarFormulario()">
+          
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required>
 
@@ -74,13 +82,46 @@
 
           <button class="botones" type="submit">Enviar</button>
         </form>
+      </div> -->
+  <section id="contacto">
+    <div class="row">
+      <div id="cont" class="col-sm-12 col-md-7">
+        <h1>Contacto</h1>
+        <form action="https://formspree.io/f/xzbqolpd" method="POST" id="contactForm">
+          <div class="input-field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" maxlength="50" required>
+            <div id="nombre-error" class="error-message"></div>
+          </div>
+
+          <div class="input-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" maxlength="100" required>
+            <div id="email-error" class="error-message"></div>
+          </div>
+
+          <div class="input-field">
+            <label for="mensaje">Consulta</label>
+            <textarea id="mensaje" name="mensaje" rows="10" maxlength="15000" required></textarea>
+            <div id="mensaje-error" class="error-message"></div>
+          </div>
+
+          <div class="btn-block">
+            <button class="botones" id="submit"><i class="fas fa-paper-plane"></i>ENVIAR</button>
+          </div>
+          <div id="enviadoExitoso" class="alert alert-success">
+            <p>Su mensaje ha sido enviado. ¡Gracias por contactarnos!</p>
+          </div>
+        </form>
       </div>
 
-      <div class="col-sm-12 col-md-5" id="whatsapp" >
+
+      <div class="col-sm-12 col-md-5" id="whatsapp">
         <h3><strong>Es Más Rápido por WhatsApp</strong></h2>
           <p>Solicita tu cotización</p>
-          <img src="https://tumayorferretero.net/img/cms/emocoties/boton-de-whatsapp.png"
-            alt="Solicitar Cotización Whatsapp Coorporativo" title="Whatsapp Coorporativo" width="250" >
+          <a href="https://api.whatsapp.com/send?phone=111530946731">
+            <img src="https://tumayorferretero.net/img/cms/emocoties/boton-de-whatsapp.png" alt="" width="250">
+          </a>
           <p>Teléfonos Atención al Cliente: <br>0343-4555657 / 4557890</p>
           <p>Teléfonos Area Administrativa: <br>011-47484950 / 47896714</p>
       </div>

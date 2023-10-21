@@ -1,16 +1,6 @@
-/* 
-html{
-    background-color: #5E7575;
-} */
-.sticky-top {
-    position: sticky;
-    top: 0;
-    height: 60px;
-    background-color: #bcc1ea;
 
-}
 /* Buscar ------------------------------------------------ gabriel*/
-.buscar{
+.buscar {
     display: inline-flex;
     align-items: center;
     background: #264A4A;
@@ -19,16 +9,19 @@ html{
     border-radius: 10px;
     border: 1px solid #fff;
 }
-.buscar :is(input, button){
+
+.buscar :is(input, button) {
     background: transparent;
     color: inherit;
     border: none;
     outline: none;
 }
-.buscarinput{
+
+.buscarinput {
     width: 0;
     transition: width 0.5s;
 }
+
 .buscarbtn {
     display: grid;
     place-items: center;
@@ -37,17 +30,22 @@ html{
     cursor: pointer;
     transition: color 0.25s;
 }
-.buscarbtn:hover{
+
+.buscarbtn:hover {
     color: #e3e3e3;
 }
+
 .buscar:focus-within input {
-    /* width: 400px; */
+
     width: 100%;
+
 }
-::placeholder{
+
+::placeholder {
     font: inherit;
     color: #e3e3e3;
 }
+
 /* Sobre nosotros ---------------------------------------- gabriel */
 #sobre {
     max-width: 800px;
@@ -90,13 +88,147 @@ h2 {
     border: none;
     padding: 10px 20px;
     border-radius: 5pc;
-    
+
+}
+
+.botones:hover {
+    background-color: #0056b3;
 }
 
 /* Pruductos --------------------------------------------- gabriel */
+
+
+#cart {
+    width: 100%;
+}
+.cart-img{
+    width: 95%;
+    height: 60%;
+}
+.product {
+    border: 1px solid #eee;
+    margin: 40px;
+    width: 95%;
+    height: 195px;
+}
+
+.product header,
+.product .content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-style: none none solid none;
+    float: left;
+}
+
+.product header {
+    margin: 0 1% 20px 0;
+    overflow: hidden;
+    position: relative;
+    width: 24%;
+    height: 195px;
+}
+
+.product header:hover h3 {
+    bottom: 73px;
+}
+
+.product header h3 {
+    background: #53b5aa;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 49px;
+    margin: 0;
+    padding: 0 30px;
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    left: 0;
+
+}
+
+.remove {
+    cursor: pointer;
+}
+
+.product .content {
+    box-sizing: border-box;
+    width: 75%;
+    height: 50px;
+    margin: 6px 0 0 0;
+    padding: 0;
+}
+
+
+.product .precio {
+
+    float: left;
+
+}
+
+.product .total-precio {
+    background: #53b5aa;
+    color: #fff;
+    float: right;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 49px;
+    margin: 0;
+    padding: 0 30px;
+
+}
+
+.q {
+    font-size: 35px;
+    line-height: 50px;
+    width: 70px;
+    text-align: center;
+}
+
+.q-mas,
+.q-menos {
+    font-size: 35px;
+    font-weight: 300;
+    margin: 0 10px 0 10px;
+}
+
+.q-mas:hover,
+.q-menos:hover {
+    background: #53b5aa;
+    color: #fff;
+    cursor: pointer;
+}
+
+.total-table {
+    padding: 0 25px 20px;
+    display: flex;
+    justify-content: end;
+    font-size: x-large;
+    font-weight: 600;
+    
+   
+}
+
+#retiro {
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 3px -5px 10px rgba(0, 0, 0, 0.2);
+    color: #FF0000;
+
+}
+
+#retiro a {
+    text-decoration: none;
+    color: #FF0000;
+}
+#retiro a:hover{
+    background: var(--color-secundario);
+    color: #fff;
+    cursor: pointer;
+}
 .izquierda h2 {
     text-align: start;
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 .productos ul {
@@ -109,7 +241,7 @@ h2 {
 
 li {
     list-style-type: none;
-    text-align: start;
+
 }
 
 li a {
@@ -117,7 +249,7 @@ li a {
 }
 
 main {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .contenedor-grid {
@@ -153,41 +285,69 @@ h4 {
     padding: 15px 0 0 15px;
 }
 
+
 @media (max-width: 768px) {
     .contenedor-grid {
         grid-template: auto / 1fr;
     }
-    
+
     .card-container {
         display: flex;
         flex-direction: row;
-        /* width: 100%; */
-        /* margin: 10px 0; */
+
     }
- 
+
     #contenedor_logo_nombre img {
         width: 200px;
         height: auto;
     }
-  
+
+
+}
+
+@media (max-width: 450px) {
+    .contenedor-grid {
+        grid-template: auto;
+        padding-left: 30px;
+        align-items: center;
+    }
+
+    .izquierda h2 {
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    #cart {
+        align-items: center;
+        padding-right: 35px;
+    }
+    .total-table {
+        justify-content: center;
+    }
 
 }
 
 /* formulario contacto -------------------------------gabriel*/
 
-#contacto{
-    margin-top: 50px;
-   
+.input-correcto {
+    background-color: #c8f7c5;
 }
-#cont{
-    background-color: #C49D9D;
-}
-  h2 {
-    color: #333;
-  }
 
-  #contactForm{
-    
+
+.input-incorrecto {
+    background-color: #f7c5c5;
+}
+
+#contacto {
+    margin-top: 50px;
+
+}
+
+h2 {
+    color: #333;
+}
+
+#contactForm {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -195,45 +355,54 @@ h4 {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  label {
-    
+label {
     display: block;
     margin-bottom: 5px;
     color: #333;
-  }
+}
 
-  #contactForm input[type="text"],
-  input[type="email"],
-  textarea {
+#contactForm input[type="text"],
+input[type="email"],
+textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-  }
+}
 
-  textarea {
+textarea {
     height: 150px;
-  }
+}
+
+.input-field {
+    margin-bottom: 20px;
+    position: relative;
+}
 
 
-
-  button:hover {
-    background-color: #0056b3;
-  }
-
-  #mensajeError {
+.error-message {
     color: red;
-  }
+    margin-top: 5px;
+}
 
-  #whatsapp {
-    background-color: #7B3F3F;
-    text-align: center; 
 
-  }
+.alert-success {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
 
+#whatsapp {
+    margin-top: 60px;
+    text-align: center;
+
+
+}
 
 
 /* footer */
@@ -242,10 +411,12 @@ footer {
     background-color: #002424;
     text-align: center;
 }
-footer p{
+
+footer p {
     font-size: large;
     color: #fff;
 }
+
 .footer>small {
     font-size: 16px;
     margin: 0 4px;
@@ -298,10 +469,10 @@ footer p{
     gap: 12px;
     list-style-type: none;
 }
+
 */
-small{
-    text-align:  center;
-}
+
+
 /* Estilos mtm */
 * {
     --color-primario: #1D4645;
@@ -330,6 +501,10 @@ header {
     background-color: var(--color-primario-oscuro);
     width: 100vw;
     padding-bottom: 1vh;
+    transition: transform 0.3s ease;
+    /* Agrega una transición para suavizar el efecto */
+    transform: translateY(0);
+    /* Inicialmente, no desplazado */
 }
 
 header h1,
@@ -382,7 +557,8 @@ header a {
     justify-content: center;
 
 }
-a{
+
+a {
     text-decoration: none;
 }
 
@@ -395,7 +571,7 @@ h2 {
 }
 
 #lista_menues {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     gap: 2px;
     justify-content: space-evenly;
@@ -408,13 +584,13 @@ h2 {
     padding-bottom: 1vh;
 }
 
-a {
+nav a {
     display: flex;
     align-items: center;
-    
     text-align: center;
     height: 100%;
     padding: 0px 10px;
+    text-decoration: none;
 }
 
 
@@ -713,11 +889,13 @@ nav a:hover {
         justify-content: space-around;
         align-items: center;
     }
+
     #contenedor_logo_nombre img {
-        width: 200px;
+
+        width: 200px; 
         height: auto;
     }
-  
+
     h1 {
         text-align: center;
     }
@@ -725,7 +903,7 @@ nav a:hover {
     #contenedor_logo_menu {
         display: none;
     }
-    
+
     #contenedor_logo_carrito {
         padding: 10px;
     }
@@ -735,7 +913,7 @@ nav a:hover {
     }
 
     #lista_menues {
-        display: flex; 
+        display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
@@ -751,6 +929,7 @@ nav a:hover {
         text-align: center;
         height: 100%;
         padding: 0px;
+
     }
 
     #contenedor_marcas {
@@ -760,7 +939,7 @@ nav a:hover {
         padding: 1vh;
         gap: 3vh 1vw;
     }
-    
+
     .imagen_marca {
         min-width: 125px;
         max-width: 175px;
@@ -777,7 +956,7 @@ nav a:hover {
         width: 300px;
         height: auto;
     }
-    
+ 
     #lista_menues li {
         font-size: 1rem;
     }
@@ -841,4 +1020,5 @@ nav a:hover {
         grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13"
                              "mapa_suc mapa_suc mapa_suc";
     }
+
 }
