@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferreteria</title>
+    <link rel="stylesheet" href="./estilos.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!--Para incorporar íconos de flaticon-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+
+<body>
+
+    <header>
+        <!-- Primer línea del encabezado -->
+        <div class="linea1_encabezado">
+            <div id="contenedor_logo_nombre">
+                <img src="./imagenes/5.png" alt="Logo de Ferretería">
+            </div>
+            <!-- 
+            <div class="buscar" id="contenedor_barra_busqueda">
+                <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+                <button type="button" class="buscarbtn">
+                    <i class="fi-rr-search"></i>
+                </button>
+            </div>
+
+            <div id="contenedor_logo_carrito" style="align-items: end;">
+
+                <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
+            </div> -->
+            <div id="contenedor_logo_menu">
+                <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
+            </div>
+        </div>
+
+        <!-- Segunda línea del encabezado -->
+        <div>
+            <nav id="barra_navegacion" onresize="desplegarMenu()">
+                <ul type="none" id="lista_menues">
+                    <a href="./index.html">
+                        <li>Inicio</li>
+                    </a>
+                    <a href="./sobreNosotros.html">
+                        <li>Sobre Nosotros</li>
+                    </a>
+                    <a href="./Productos.html">
+                        <li>Productos</li>
+                    </a>
+                    <a href="./Sucursales.html">
+                        <li>Sucursales</li>
+                    </a>
+                    <a href="./Contacto.html">
+                        <li>Contacto</li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="cart">
+        <!-- Aquí se mostrarán los productos en el carrito -->
+    </div>
+    <div class="total-table">
+        <table >
+            <tr>
+                <td>Importe total:</td>
+                <td id="total"><span>0.00</span></td>
+            </tr>
+        </table>
+    </div>
+    <div id="retiro">
+        <h3>Luego de las 48hs de realizar el pedido, lo puede retirar por alguna de nuestras Sucursales</h3>
+        <p><a href="./sucursales.html"> ver sucursales</a> </p>
+    </div>
+
+    </section>
+    <footer>
+        <div class="footer">
+            <div class='social-links'>
+                <ul>
+                    <li>
+                        <a href="#" title="Instagram">
+                            <img src="imagenes/svg/instagram.svg" alt='Instagram'>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Linkedin">
+                            <img src="imagenes/svg/linkedin.svg" alt='Linkedin'>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Twitter">
+                            <img src="imagenes/svg/twitter.svg" alt='Twitter'>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Youtube">
+                            <img src="imagenes/svg/youtube.svg" alt='YouTube'>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="GitHub">
+                            <img src="imagenes/svg/github.svg" alt='GitHub'>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <small>© Codo a Codo. <span id="year">2023</span>, All rights reserved</small>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

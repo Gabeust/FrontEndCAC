@@ -1,4 +1,3 @@
-
 // Sobre Nosotros -----------gabriel
 
 function mostrarOcultar() {
@@ -26,7 +25,7 @@ var barraNavegacionVisiblePorAncho = false;
 
 function desplegarMenu() {
     console.log("Barra de navegación es visible?", barraNavegacionVisiblePorBoton);
-    
+
     let barraNav = document.querySelector("#barra_navegacion");
 
     barraNav.style.display = barraNavegacionVisiblePorBoton ? "none" : "block";
@@ -37,8 +36,8 @@ function desplegarMenu() {
 
 window.onresize = desplegarMenuSegunViewport;
 function desplegarMenuSegunViewport() {
-    console.log("Ancho del vieport en px:", window.innerWidth);
-    
+    // console.log("Ancho del vieport en px:", window.innerWidth);
+
     let barraNav = document.querySelector("#barra_navegacion");
     let anchoVentana = window.innerWidth;
 
@@ -49,12 +48,32 @@ function desplegarMenuSegunViewport() {
     } else {
         if (barraNavegacionVisiblePorAncho) {
             barraNav.style.display = "none";
-            barraNavegacionVisiblePorAncho = false;    
+            barraNavegacionVisiblePorAncho = false;
         }
     }
 
-    console.log(barraNav);
-} 
+    // console.log(barraNav);
+}
+
+// scroll ---------------- gabriel
+var lastScrollTop = 0;
+
+window.addEventListener("scroll", function () {
+    var header = document.getElementById("scrollHeader");
+    var scrollTop = window.pageYYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Si estás desplazándote hacia abajo, oculta el encabezado
+        header.style.transform = "translateY(-100%)";
+    } else {
+        // Si estás desplazándote hacia arriba, muestra el encabezado
+        header.style.transform = "translateY(0)";
+    }
+
+    lastScrollTop = scrollTop;
+});
+
+
 
 // Productos ------------- gabriel
 const productCardsContainer = document.querySelector("#productos-cards");
@@ -92,7 +111,7 @@ function mostrarProductos(productos) {
                         <p>Precio <strong> $${producto.precio}</strong></p>
                     </div>
                 </div>
-                <button class="botones" >Agregar al Carrito</button>
+                <button class="botones" data-product-id="${producto.codigo}">Agregar al Carrito</button>
             </div>
         </div>
     `;
@@ -116,29 +135,216 @@ categoriasLinks.forEach(link => {
         mostrarProductosPorCategoria(categoriaSeleccionada);
     });
 });
+//carrito de compra ------------------------------------------
+
+const cartSection = document.getElementById('cart');
+const totalElement = document.getElementById('total');
+
+function agregarAlCarrito(codigo) {
+    // Obtiene el carrito almacenado en localStorage
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Busca el producto en el carrito
+    const productoExistente = carrito.find(producto => producto.codigo === codigo);
+
+    if (productoExistente) {
+        // Si el producto ya está en el carrito, incrementa la cantidad
+        productoExistente.cantidad++;
+    } else {
+        // Si el producto no está en el carrito, agrégalo
+        const producto = data.find(producto => producto.codigo === codigo);
+        if (producto) {
+            carrito.push({ ...producto, cantidad: 1 });
+        }
+    }
+
+    // Guarda el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// Escucha el evento "Agregar al Carrito"
+document.addEventListener('click', function (event) {
+    if (event.target && event.target.className === 'botones') {
+        const codigo = event.target.getAttribute('data-product-id');
+        agregarAlCarrito(codigo);
+    }
+});
+
+function actualizarCarrito() {
+    cartSection.innerHTML = '';
+    let totalGeneral = 0;
+
+    // Obtiene el carrito almacenado en localStorage
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    carrito.forEach(producto => {
+        const article = document.createElement('article');
+        article.className = 'product';
+
+        const totalProducto = producto.precio * producto.cantidad;
+        totalGeneral += totalProducto;
+
+        article.innerHTML = `
+            <header>
+                <a class="remove" onclick="eliminarDelCarrito('${producto.codigo}')">
+                    <h3>Borrar Producto</h3>
+                    <div class="cart-img">
+                        <img src="${producto.imagen_url}"  style="width:55%">
+                    </div>
+                </a>
+            </header>
+            <div class="content">
+                <p>${producto.nombre}</p>
+            </div>
+            <div class="content">
+           
+            <h2 class="precio">$${producto.precio.toFixed(2)}</h2>
+            <div>
+                <span class="q-menos" onclick="restarCantidad('${producto.codigo}')">-</span>
+                <span class="q">${producto.cantidad}</span>
+                <span class="q-mas" onclick="sumarCantidad('${producto.codigo}')">+</span>
+                </div>
+                <h2 class="total-precio">$${totalProducto.toFixed(2)}</h2>
+            </div>
+        `;
+
+        cartSection.appendChild(article);
+    });
+
+    totalElement.textContent = totalGeneral.toFixed(2);
+}
+
+function eliminarDelCarrito(codigo) {
+    // Obtiene el carrito almacenado en localStorage
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Elimina el producto del carrito
+    carrito = carrito.filter(producto => producto.codigo !== codigo);
+
+    // Actualiza el carrito en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    actualizarCarrito();
+}
+
+function restarCantidad(codigo) {
+    // Obtiene el carrito almacenado en localStorage
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Encuentra el producto en el carrito
+    const producto = carrito.find(p => p.codigo === codigo);
+
+    if (producto && producto.cantidad > 1) {
+        producto.cantidad--;
+        // Actualiza el carrito en localStorage
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    actualizarCarrito();
+}
+
+function sumarCantidad(codigo) {
+    // Obtiene el carrito almacenado en localStorage
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Encuentra el producto en el carrito
+    const producto = carrito.find(p => p.codigo === codigo);
+
+    if (producto) {
+        producto.cantidad++;
+        // Actualiza el carrito en localStorage
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    actualizarCarrito();
+}
+
+actualizarCarrito(); // Actualiza el carrito al cargar la página
 
 // formulario -------------------------------------gabriel 
-function validarFormulario() {
+
+
+document.getElementById("submit").addEventListener("click", function (event) {
+    event.preventDefault();
+
+
+    var nombre = document.getElementById("nombre");
+    var email = document.getElementById("email");
+    var mensaje = document.getElementById("mensaje");
+
+    var nombreError = document.getElementById("nombre-error");
+    var emailError = document.getElementById("email-error");
+    var mensajeError = document.getElementById("mensaje-error");
+
+    var valido = true;
+
+
+    if (nombre.value.length < 3 || nombre.value.length > 23 || !/^[A-Za-z]+$/.test(nombre.value)) {
+        nombreError.textContent = "El nombre debe tener entre 3 y 23 letras";
+        nombre.classList.remove("input-correcto");
+        nombre.classList.add("input-incorrecto");
+        valido = false;
+    } else {
+        nombreError.textContent = "";
+        nombre.classList.remove("input-incorrecto");
+        nombre.classList.add("input-correcto");
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email.value)) {
+        emailError.textContent = "El email debe ser válido";
+        email.classList.remove("input-correcto");
+        email.classList.add("input-incorrecto");
+        valido = false;
+    } else {
+        emailError.textContent = "";
+        email.classList.remove("input-incorrecto");
+        email.classList.add("input-correcto");
+    }
+
+    if (mensaje.value.length >= 250 || mensaje.value != null) {
+        mensajeError.textContent = "El mensaje debe tener menos de 250 caracteres";
+        mensaje.classList.remove("input-correct");
+        mensaje.classList.add("input-incorrect");
+        valido = false;
+    } else {
+        mensajeError.textContent = "";
+        mensaje.classList.remove("input-incorrect");
+        mensaje.classList.add("input-correct");
+    }
+
+    if (valido) {
+        enviarFormulario();
+    }
+});
+
+function enviarFormulario() {
+    const endpoint = 'https://formspree.io/f/xzbqolpd';
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
     const mensaje = document.getElementById('mensaje').value;
-    const mensajeError = document.getElementById('mensajeError');
 
-    // Verificar si los campos están vacíos
-    if (!nombre || !email || !mensaje) {
-        mensajeError.textContent = 'Todos los campos son obligatorios';
-        return false;
-    }
+    const data = {
+        nombre: nombre,
+        email: email,
+        mensaje: mensaje
+    };
 
-    // Verificar la validez del correo electrónico
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        mensajeError.textContent = 'Ingrese una dirección de correo electrónico válida';
-        return false;
-    }
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('enviadoExitoso').style.display = 'block';
+            document.getElementById('nombre').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('mensaje').value = '';
 
-    return true;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
-
-
-
