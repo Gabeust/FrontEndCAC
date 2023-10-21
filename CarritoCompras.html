@@ -65,105 +65,18 @@
     <div id="cart">
         <!-- Aquí se mostrarán los productos en el carrito -->
     </div>
-    <div id="total">
-        <h5>Productos:</h5>
-        <h5 id="envio">Envio:</h5>
-        <h5>Total: <span id="totalAmount">0.00</span></h5>
+    <div class="total-table">
+        <table >
+            <tr>
+                <td>Importe total:</td>
+                <td id="total"><span>0.00</span></td>
+            </tr>
+        </table>
     </div>
-    <script>
-    const cartSection = document.getElementById('cart');
-    const subtotalElement = document.getElementById('subtotal');
-    const totalElement = document.getElementById('total');
-
-    function actualizarCarrito() {
-        cartSection.innerHTML = '';
-        let subtotal = 0;
-
-        // Obtiene el carrito almacenado en localStorage
-        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-        carrito.forEach(producto => {
-            const article = document.createElement('article');
-            article.className = 'product';
-
-            article.innerHTML = `
-                <header>
-                    <a class="remove" onclick="eliminarDelCarrito('${producto.codigo}')">
-                        <h3>Borrar Producto</h3>
-                        <div class="cart-img">
-                        <img src="${producto.imagen_url}" >
-                        </div>
-
-                    </a>
-                </header>
-                <div class="content">
-                    <p>${producto.nombre}</p>
-                </div>
-                <div class="content">
-                    <span class="qt-minus" onclick="restarCantidad('${producto.codigo}')">-</span>
-                    <span class="qt">${producto.cantidad}</span>
-                    <span class="qt-plus" onclick="sumarCantidad('${producto.codigo}')">+</span>
-                    <h2 class="full-price">$${(producto.precio * producto.cantidad).toFixed(2)}</h2>
-                    <h2 class="price">$${producto.precio.toFixed(2)}</h2>
-                </div>
-
-            `;
-
-            cartSection.appendChild(article);
-
-            subtotal += producto.precio * producto.cantidad;
-        });
-
-        subtotalElement.textContent = subtotal.toFixed(2);
-        totalElement.textContent = subtotal.toFixed(2);
-    }
-
-    function eliminarDelCarrito(codigo) {
-        // Obtiene el carrito almacenado en localStorage
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-        // Elimina el producto del carrito
-        carrito = carrito.filter(producto => producto.codigo !== codigo);
-
-        // Actualiza el carrito en localStorage
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-
-        actualizarCarrito();
-    }
-
-    function restarCantidad(codigo) {
-        // Obtiene el carrito almacenado en localStorage
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-        // Encuentra el producto en el carrito
-        const producto = carrito.find(p => p.codigo === codigo);
-
-        if (producto && producto.cantidad > 1) {
-            producto.cantidad--;
-            // Actualiza el carrito en localStorage
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-            actualizarCarrito();
-        }
-    }
-
-    function sumarCantidad(codigo) {
-        // Obtiene el carrito almacenado en localStorage
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-        // Encuentra el producto en el carrito
-        const producto = carrito.find(p => p.codigo === codigo);
-
-        if (producto) {
-            producto.cantidad++;
-            // Actualiza el carrito en localStorage
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-            actualizarCarrito();
-        }
-
-    }
-
-    actualizarCarrito(); // Actualiza el carrito al cargar la página
-</script>
+    <div id="retiro">
+        <h3>Luego de las 48hs de realizar el pedido, lo puede retirar por alguna de nuestras Sucursales</h3>
+        <p><a href="./sucursales.html"> ver sucursales</a> </p>
+    </div>
 
     </section>
     <footer>
