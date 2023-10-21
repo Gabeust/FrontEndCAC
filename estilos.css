@@ -287,17 +287,11 @@ footer p{
 
 }
 
-/*
-.social-links img {
-    margin-top: 10px;
-    width: 35px;
-    transition: all 0.2s ease-in-out;
-}
-
 .social-links img:hover {
-    transform: scale(1.1);
+    transform: scale(1.25);
 }
 
+/*
 .social-links ul {
     justify-content: center;
     display: flex;
@@ -630,6 +624,79 @@ nav a:hover {
     height: 100%;
 }
 
+/* Sucursales ---------------------------------------- turco */
+#seccion_sucursales > p {
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+#contenedor_seccion_sucursales {
+    display: grid;
+    margin: auto 1vw;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 3fr;
+    /*grid-template-columns: 35% 1fr;
+    grid-template-rows: 20% 20% 1fr;*/
+    align-items: center;
+    grid-template-areas: "datos_suc_ov datos_suc_tigre"
+                         "mapa_suc mapa_suc";
+}
+
+#datos_sucursal_ov {
+    grid-area: datos_suc_ov;
+}
+
+#datos_sucursal_tigre {
+    grid-area: datos_suc_tigre;
+}
+
+#mapa_sucursal_ov,
+#mapa_sucursal_tigre {
+    grid-area: mapa_suc;
+}
+
+.datos_sucursal {
+    text-align: center;
+    font-size: 0.875rem;
+    height: 100%;
+    margin-bottom: 1vh;
+    padding-top: 1vh;
+    background-color: var(--color-secundario);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10% 10% 0 0;
+}
+
+.datos_sucursal .fi-rr-marker {
+    color: white;
+    font-size: 2em;
+}
+
+.datos_sucursal a {
+    display: block;
+    padding: 2px;
+}
+
+.datos_sucursal a:hover {
+    transform: scale(1.25);
+}
+
+.datos_sucursal p {
+    margin: 1px;
+}
+
+.mapa_sucursal {
+    height: 100%;
+    width: 97.5%;
+    margin: auto;
+    border: 2px solid var(--color-secundario);
+    border-top: 2px solid white;
+}
+
+.mapa_sucursal iframe {
+    height: 100%;
+    width: 100%;
+}
 
 /* Media queries para distintos breakpoints: 450px, 900px y 1200px */
 @media (min-width: 450px) {
