@@ -54,7 +54,7 @@
 }
 
 section {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 h4 {
@@ -487,6 +487,8 @@ footer p {
     --color-terciario: #736C30;
     --color-terciario-claro: #E8E6D3;
     --color-terciario-oscuro: #2A2500;
+
+    font-family: 'Lato', 'Roboto', sans-serif;
 }
 
 body {
@@ -557,6 +559,11 @@ header a {
     display: flex;
     justify-content: center;
 
+}
+
+#contenedor_logo_menu i,
+#contenedor_logo_carrito i {
+    font-size: 1.5rem;
 }
 
 a {
@@ -700,6 +707,10 @@ nav a:hover {
 .contenedor_imagen_central {
     position: relative;
     width: 100vw;
+}
+
+.contenedor_imagen_central h3 {
+    font-weight: 700;
 }
 
 .imagen_central {
@@ -878,6 +889,17 @@ nav a:hover {
     width: 100%;
 }
 
+/* Algunos puntos de quiebre intermedios: 300px */
+@media (min-width: 300px) {
+    #lista_redessociales {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1vh;
+    }
+}
+
 /* Media queries para distintos breakpoints: 450px, 900px y 1200px */
 @media (min-width: 450px) {
     .linea1_encabezado {
@@ -947,12 +969,30 @@ nav a:hover {
     }    
 
     #lista_redessociales {
-        max-width: 500px;
+        max-width: 450px;
         margin: auto;
     }
 }
 
+/* Algunos puntos de quiebre intermedios: 500px */
+@media (min-width: 500px) {
+    #contenedor_seccion_sucursales {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 3fr;
+        align-items: center;
+        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13"
+                             "mapa_suc mapa_suc mapa_suc";
+    }
+
+}
+
 @media (min-width: 900px) {
+    .linea1_encabezado {
+        max-width: 900px;
+        margin: auto;
+    }
+
     #contenedor_logo_nombre img {
         width: 300px;
         height: auto;
@@ -982,6 +1022,12 @@ nav a:hover {
         grid-area: logo_stanley;
     }
 
+    #seccion_suscripcion > div,
+    #seccion_suscripcion > form {
+        max-width: 900px;
+        margin: auto;
+    }
+    
     #formulario_suscripcion {
         display: grid;
         grid-template-columns: 5% 70% 1fr;
@@ -992,34 +1038,41 @@ nav a:hover {
     #btn_enviar_form_susc {
         grid-area: enviar;
         margin-left: 0px;
-    }    
+    }
+    
+    #contenedor_seccion_sucursales {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 3fr;
+        align-items: center;
+        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13 vacio14"
+                             "mapa_suc mapa_suc mapa_suc mapa_suc";
+    }
+
 }
 
 @media (min-width: 1200px) {
+    #barra_navegacion {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    #lista_menues li {
+        font-size: 1.125rem;
+    }
+
+    .imagen_central {
+        height: 850px;
+    }
+
     #contenedor_marcas {
         display: flex;
+        max-width: 1400px;
+        margin: auto;
     }
-}
-
-/* Algunos puntos de quiebre intermedios: 300px, 500px */
-@media (min-width: 300px) {
-    #lista_redessociales {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 1vh;
-    }
-}
-
-@media (min-width: 500px) {
+    
     #contenedor_seccion_sucursales {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 3fr;
-        align-items: center;
-        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13"
-                             "mapa_suc mapa_suc mapa_suc";
+        max-width: 1200px;
+        margin: auto;
     }
-
 }
