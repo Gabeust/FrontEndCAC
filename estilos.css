@@ -263,7 +263,7 @@ h4 {
 .product article h3 {
     text-align: center;
     background: #53b5aa;
-    color: #070101;
+    color: #060000;
     font-size: 22px;
     font-weight: 600;
     line-height: 49px;
@@ -274,11 +274,9 @@ h4 {
     right: 0;
     left: 0;
 }
-
 .remove {
     cursor: pointer;
 }
-
 
 .product .content {
     box-sizing: border-box;
