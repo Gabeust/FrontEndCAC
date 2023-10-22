@@ -310,6 +310,7 @@ small{
 
     --color-secundario: #4E204B;
     --color-secundario-claro: #9E909D;
+    --color-secundario-claro2: #785C76;
     --color-secundario-oscuro: #1D001B;
 
     --color-terciario: #736C30;
@@ -542,7 +543,7 @@ nav a:hover {
 }
 
 #footer {
-    background-color: var(--color-secundario);
+    background-color: var(--color-secundario-claro2);
     padding: 10px;
 }
 
@@ -664,7 +665,7 @@ nav a:hover {
     max-width: 250px;
     margin-bottom: 1vh;
     padding-top: 1vh;
-    background-color: var(--color-secundario);
+    background-color: var(--color-secundario-claro2);
     color: white;
     border: 2px solid white;
     border-radius: 10% 10% 0 0;
