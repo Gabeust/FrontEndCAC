@@ -304,3 +304,5 @@ function sumarCantidad(codigo) {
 }
 
 actualizarCarrito(); // Actualiza el carrito al cargar la página
+
+// ---------------------------------------------------------------------
