@@ -261,10 +261,11 @@ h4 {
 }
 
 .product article h3 {
+    text-align: center;
     background: #53b5aa;
-    color: #fff;
+    color: #070101;
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 49px;
     margin: 0;
     padding: 0 30px;
@@ -277,9 +278,7 @@ h4 {
 .remove {
     cursor: pointer;
 }
-.remove h3{
-    text-align: center;
-}
+
 
 .product .content {
     box-sizing: border-box;
@@ -371,7 +370,7 @@ h4 {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-   background-color: var(--color-primario-claro);
+    background-color: var(--color-primario-claro);
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -419,69 +418,15 @@ textarea {
     text-align: center;
 }
 
-/* footer */
-/*
-footer {
-    background-color: #002424;
-    text-align: center;
-}
-
-footer p {
-    font-size: large;
-    color: #fff;
-}
-
-.footer>small {
-    font-size: 16px;
-    margin: 0 4px;
-    color: #fff;
-}
-
-.footer-headline>h2 {
-    margin: 0px;
-    color: var(--text-primary);
-}
-
-.footer-headline>p {
-    color: var(--text-gray);
-    margin: 4px 0px 20px 0px;
-}
-
-.footer-line {
-    display: block;
-    min-width: 40px;
-    height: 2px;
-    background-color: var(--text-gray);
-}
-*/
-
-/*
-.social-links {
-    flex-direction: column;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    border: 2px solid yellow;
-}
-*/
 .social-text {
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
 .social-links img:hover {
     transform: scale(1.25);
 }
-/*
-.social-links ul {
-    justify-content: center;
-    display: flex;
-    gap: 12px;
-    list-style-type: none;
-}
-
-*/
-
 
 /* Estilos mtm */
 * {
@@ -565,6 +510,7 @@ header a {
 #contenedor_logo_carrito {
     display: flex;
     justify-content: center;
+
 }
 
 a {
@@ -814,6 +760,9 @@ nav a:hover {
 
 
 /* Sucursales ---------------------------------------- turco */
+.colorSuc{
+    background-color: var(--color-terciario-claro);
+}
 #seccion_sucursales > p {
     text-align: center;
     margin-bottom: 3vh;
