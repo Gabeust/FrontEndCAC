@@ -1,19 +1,3 @@
-// Sobre Nosotros -----------gabriel
-
-function mostrarOcultar() {
-    var article = document.querySelector('#sobre article');
-    var button = document.querySelector('#leerMas');
-
-    if (article.style.display === 'none' || article.style.display === '') {
-        article.style.display = 'block';
-        button.textContent = 'Leer menos';
-    } else {
-        article.style.display = 'none';
-        button.textContent = 'Leer más';
-    }
-}
-
-
 
 /* 
 Despliego o contraigo el menú teniendo en cuenta:
@@ -51,25 +35,23 @@ function desplegarMenuSegunViewport() {
 
 } 
 
-// scroll ---------------- gabriel
-var lastScrollTop = 0;
+// // scroll ---------------- gabriel
+// var lastScrollTop = 0;
 
-window.addEventListener("scroll", function () {
-    var header = document.getElementById("scrollHeader");
-    var scrollTop = window.pageYYOffset || document.documentElement.scrollTop;
+// window.addEventListener("scroll", function () {
+//     var header = document.getElementById("scrollHeader");
+//     var scrollTop = window.pageYYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop) {
-        // Si estás desplazándote hacia abajo, oculta el encabezado
-        header.style.transform = "translateY(-100%)";
-    } else {
-        // Si estás desplazándote hacia arriba, muestra el encabezado
-        header.style.transform = "translateY(0)";
-    }
+//     if (scrollTop > lastScrollTop) {
+//         // Si estás desplazándote hacia abajo, oculta el encabezado
+//         header.style.transform = "translateY(-100%)";
+//     } else {
+//         // Si estás desplazándote hacia arriba, muestra el encabezado
+//         header.style.transform = "translateY(0)";
+//     }
 
-    lastScrollTop = scrollTop;
-});
-
-
+//     lastScrollTop = scrollTop;
+// });
 
 
 function validarMailSuscripcion() {
@@ -122,6 +104,22 @@ function visualizarMapaSucursal(idSucursal){
             break;
     }
 }
+
+// Sobre Nosotros -----------gabriel
+
+function mostrarOcultar() {
+    var article = document.querySelector('#sobre article');
+    var button = document.querySelector('#leerMas');
+
+    if (article.style.display === 'none' || article.style.display === '') {
+        article.style.display = 'block';
+        button.textContent = 'Leer menos';
+    } else {
+        article.style.display = 'none';
+        button.textContent = 'Leer más';
+    }
+}
+
 
 // Productos ------------- gabriel
 const productCardsContainer = document.querySelector("#productos-cards");
@@ -233,25 +231,23 @@ function actualizarCarrito() {
         totalGeneral += totalProducto;
 
         article.innerHTML = `
-            <header>
+            <article >
                 <a class="remove" onclick="eliminarDelCarrito('${producto.codigo}')">
-                    <h3>Borrar Producto</h3>
+                    <h3>Borrar</h3>
                     <div class="cart-img">
-                        <img src="${producto.imagen_url}"  style="width:55%">
+                        <img src="${producto.imagen_url}">
                     </div>
                 </a>
-            </header>
+            </article>
             <div class="content">
                 <p>${producto.nombre}</p>
             </div>
-            <div class="content">
-           
-            <h2 class="precio">$${producto.precio.toFixed(2)}</h2>
-            <div>
+            <div >
+            <div class="SumRes">
                 <span class="q-menos" onclick="restarCantidad('${producto.codigo}')">-</span>
                 <span class="q">${producto.cantidad}</span>
                 <span class="q-mas" onclick="sumarCantidad('${producto.codigo}')">+</span>
-                </div>
+             </div>
                 <h2 class="total-precio">$${totalProducto.toFixed(2)}</h2>
             </div>
         `;
@@ -308,91 +304,3 @@ function sumarCantidad(codigo) {
 }
 
 actualizarCarrito(); // Actualiza el carrito al cargar la página
-
-// formulario -------------------------------------gabriel 
-
-
-document.getElementById("submit").addEventListener("click", function (event) {
-    event.preventDefault();
-
-
-    var nombre = document.getElementById("nombre");
-    var email = document.getElementById("email");
-    var mensaje = document.getElementById("mensaje");
-
-    var nombreError = document.getElementById("nombre-error");
-    var emailError = document.getElementById("email-error");
-    var mensajeError = document.getElementById("mensaje-error");
-
-    var valido = true;
-
-
-    if (nombre.value.length < 3 || nombre.value.length > 23 || !/^[A-Za-z]+$/.test(nombre.value)) {
-        nombreError.textContent = "El nombre debe tener entre 3 y 23 letras";
-        nombre.classList.remove("input-correcto");
-        nombre.classList.add("input-incorrecto");
-        valido = false;
-    } else {
-        nombreError.textContent = "";
-        nombre.classList.remove("input-incorrecto");
-        nombre.classList.add("input-correcto");
-    }
-
-    if (!/\S+@\S+\.\S+/.test(email.value)) {
-        emailError.textContent = "El email debe ser válido";
-        email.classList.remove("input-correcto");
-        email.classList.add("input-incorrecto");
-        valido = false;
-    } else {
-        emailError.textContent = "";
-        email.classList.remove("input-incorrecto");
-        email.classList.add("input-correcto");
-    }
-
-    if (mensaje.value.length >= 250 || mensaje.value != null) {
-        mensajeError.textContent = "El mensaje debe tener menos de 250 caracteres";
-        mensaje.classList.remove("input-correct");
-        mensaje.classList.add("input-incorrect");
-        valido = false;
-    } else {
-        mensajeError.textContent = "";
-        mensaje.classList.remove("input-incorrect");
-        mensaje.classList.add("input-correct");
-    }
-
-    if (valido) {
-        enviarFormulario();
-    }
-});
-
-function enviarFormulario() {
-    const endpoint = 'https://formspree.io/f/xzbqolpd';
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
-
-    const data = {
-        nombre: nombre,
-        email: email,
-        mensaje: mensaje
-    };
-
-    fetch(endpoint, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('enviadoExitoso').style.display = 'block';
-            document.getElementById('nombre').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('mensaje').value = '';
-
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
