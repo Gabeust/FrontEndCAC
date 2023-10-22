@@ -17,22 +17,25 @@
 </head>
 
 <body class="colorSobre">
-  <header id="scrollHeader">
+  <header>
     <!-- Primer línea del encabezado -->
     <div class="linea1_encabezado">
       <div id="contenedor_logo_nombre">
         <img src="./imagenes/5.png" alt="Logo de Ferretería">
       </div>
-<!-- 
-      <form class="buscar">
-        <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
-        <button type="button" class="buscarbtn">
-          <i class="fi-rr-search"></i>
-        </button>
-      </form> -->
-      <div id="contenedor_logo_carrito" style="align-items: end;">
 
-        <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
+
+      <div id="contenedor_barra_busqueda">
+        <form class="buscar">
+          <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+          <button type="button" class="buscarbtn">
+            <i class="fi-rr-search"></i>
+          </button>
+        </form>
+      </div>
+
+      <div id="contenedor_logo_carrito">
+        <a href="./CarritoCompras.html"><i class="fi fi-rr-shopping-cart"></i></a>
       </div>
       <div id="contenedor_logo_menu">
         <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
@@ -42,7 +45,7 @@
     <!-- Segunda línea del encabezado -->
     <div>
       <nav id="barra_navegacion" onresize="desplegarMenu()">
-        <ul type="none" id="lista_menues">
+        <ul type="none" id="lista_menues" class="aAnimiacion">
           <a href="./index.html">
             <li>Inicio</li>
           </a>
@@ -52,7 +55,7 @@
           <a href="./Productos.html">
             <li>Productos</li>
           </a>
-          <a href="./Sucursales.html">
+          <a href="./sucursales.html">
             <li>Sucursales</li>
           </a>
           <a href="./Contacto.html">

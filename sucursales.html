@@ -13,61 +13,58 @@
 
 </head>
 
-<body>
+<body class="colorCont">
 
     <!-- Aquí va el header - COPIARLO DEL INDEX CUANDO ESTE TERMINADO -->
-    <header id="scrollHeader">
+    <header>
         <!-- Primer línea del encabezado -->
         <div class="linea1_encabezado">
-
-            <div id="contenedor_logo_nombre">
-                <img src="./imagenes/5.png" alt="Logo de Ferretería">
-            </div>
-
-            <div id="contenedor_barra_busqueda">
-                <form class="buscar">
-                    <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
-                    <button type="button" class="buscarbtn">
-                        <i class="fi-rr-search"></i>
-                    </button>
-                </form>
-            </div>
-
-            <div id="contenedor_logo_carrito">
-                <a href="#"><i class="fi fi-rr-shopping-cart"></i></a>
-            </div>
-            <div id="contenedor_logo_menu">
-                <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
-            </div>
-
+          <div id="contenedor_logo_nombre">
+            <img src="./imagenes/5.png" alt="Logo de Ferretería">
+          </div>
+    
+    
+          <div id="contenedor_barra_busqueda">
+            <form class="buscar">
+              <input type="text" placeholder="Ingresa tu búsqueda" class="buscarinput"> </imput>
+              <button type="button" class="buscarbtn">
+                <i class="fi-rr-search"></i>
+              </button>
+            </form>
+          </div>
+    
+          <div id="contenedor_logo_carrito">
+            <a href="./CarritoCompras.html"><i class="fi fi-rr-shopping-cart"></i></a>
+          </div>
+          <div id="contenedor_logo_menu">
+            <a href="#" onclick="desplegarMenu()"><i class="fi fi-rr-menu-burger"></i></a>
+          </div>
         </div>
-
+    
         <!-- Segunda línea del encabezado -->
         <div>
-
-            <nav id="barra_navegacion" onresize="desplegarMenu()">
-                <ul type="none" id="lista_menues">
-                    <a href="./index.html">
-                        <li>Inicio</li>
-                    </a>
-                    <a href="./sobreNosotros.html">
-                        <li>Sobre Nosotros</li>
-                    </a>
-                    <a href="./Productos.html">
-                        <li>Productos</li>
-                    </a>
-                    <a href="./Sucursales.html">
-                        <li>Sucursales</li>
-                    </a>
-                    <a href="./Contacto.html">
-                        <li>Contacto</li>
-                    </a>
-                </ul>
-            </nav>
-
+          <nav id="barra_navegacion" onresize="desplegarMenu()">
+            <ul type="none" id="lista_menues" class="aAnimiacion">
+              <a href="./index.html">
+                <li>Inicio</li>
+              </a>
+              <a href="./sobreNosotros.html">
+                <li>Sobre Nosotros</li>
+              </a>
+              <a href="./Productos.html">
+                <li>Productos</li>
+              </a>
+              <a href="./sucursales.html">
+                <li>Sucursales</li>
+              </a>
+              <a href="./Contacto.html">
+                <li>Contacto</li>
+              </a>
+            </ul>
+          </nav>
         </div>
-    </header>
-
+      </header>
+    
     <section id="seccion_sucursales">
         <h2>Nuestras tiendas</h2>
         <p>Acercate a nuestras sucursales. <br> <strong>Tenemos todo lo que necesitas!</strong></p>
