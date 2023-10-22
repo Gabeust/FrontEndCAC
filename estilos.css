@@ -263,7 +263,7 @@ h4 {
 .product article h3 {
     text-align: center;
     background: #53b5aa;
-    color: #060000;
+    color: #000;
     font-size: 22px;
     font-weight: 600;
     line-height: 49px;
@@ -416,6 +416,51 @@ textarea {
     text-align: center;
 }
 
+/* footer */
+/*
+footer {
+    background-color: #002424;
+    text-align: center;
+}
+
+footer p {
+    font-size: large;
+    color: #fff;
+}
+
+.footer>small {
+    font-size: 16px;
+    margin: 0 4px;
+    color: #fff;
+}
+
+.footer-headline>h2 {
+    margin: 0px;
+    color: var(--text-primary);
+}
+
+.footer-headline>p {
+    color: var(--text-gray);
+    margin: 4px 0px 20px 0px;
+}
+
+.footer-line {
+    display: block;
+    min-width: 40px;
+    height: 2px;
+    background-color: var(--text-gray);
+}
+*/
+
+/*
+.social-links {
+    flex-direction: column;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 2px solid yellow;
+}
+*/
 .social-text {
     display: flex;
     align-items: center;
