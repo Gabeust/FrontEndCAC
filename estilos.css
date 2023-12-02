@@ -479,7 +479,7 @@ header a {
     grid-template: 2 / 3;
     grid-template-rows: 70% 30%;
     grid-template-columns: 15% 70% 15%;
-    grid-template-areas: "vacio1 logo_y_nombre vacio2"
+    grid-template-areas: "vacio1 logo_y_nombre usuario"
                          "menu_hamburguesa barra_busqueda carrito";
   }
 
@@ -490,6 +490,10 @@ header a {
     justify-content: center;
     align-items: center;
     width: 200px;
+}
+
+#contenedor_logo_usuario {
+    grid-area: usuario;
 }
 
 #contenedor_barra_busqueda {
@@ -512,13 +516,15 @@ header a {
 }
 
 #contenedor_logo_menu,
-#contenedor_logo_carrito {
+#contenedor_logo_carrito,
+#contenedor_logo_usuario {
     display: flex;
     justify-content: center;
 }
 
 #contenedor_logo_menu i,
-#contenedor_logo_carrito i {
+#contenedor_logo_carrito i,
+#contenedor_logo_usuario i {
     font-size: 1.5rem;
 }
 
@@ -883,8 +889,9 @@ nav a:hover {
         display: none;
     }
 
-    #contenedor_logo_carrito {
-        padding: 10px;
+    #contenedor_logo_carrito, 
+    #contenedor_logo_usuario {
+        padding: 5px;
     }
 
     #barra_navegacion {
