@@ -868,13 +868,26 @@ nav a:hover {
 }
 
 #form-iniciar-sesion {
-    max-width: 400px;
-    margin: 0 auto;
+    margin: 0 8px;
     padding: 20px;
     background-color: var(--color-primario-claro);
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#form-iniciar-sesion label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#form-iniciar-sesion input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 
@@ -968,6 +981,19 @@ nav a:hover {
         max-width: 450px;
         margin: auto;
     }
+
+    #form-iniciar-sesion,
+    #seccion-buscar-proveedor,
+    #seccion-agregar-proveedor {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    #contenedor-modificar-eliminar {
+        max-width: 440px !important;
+        margin: 0 auto !important;
+    }
+    
 }
 
 /* Algunos puntos de quiebre intermedios: 500px */
@@ -1074,16 +1100,76 @@ nav a:hover {
 }
 
 
-#form-iniciar-sesion label {
+/* Portal Administración ---------------------------------------- turco */
+#cuerpo-portaladmin {
+    background-color: var(--color-terciario-claro);
+}
+
+#titulo-portaladmin {
+    text-align: center;
+}
+
+#menu-portaladmin {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#menu-portaladmin button {
+    margin: 8px;
+}
+
+.formularios-proveedor {
+    margin: 0 8px;
+    padding: 20px;
+    background-color: var(--color-primario-claro);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formularios-proveedor label {
     display: block;
     margin-bottom: 5px;
     color: #333;
 }
 
-#form-iniciar-sesion input {
+.formularios-proveedor input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+.boton-modificar {
+    background-color: #FF7B00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5pc;
+}
+
+.boton-eliminar {
+    background-color: #FF0022; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5pc;
+}
+
+#cancelar-editar-proveedor {
+    display: inline-block;
+}
+
+.boton-modificar,
+.boton-eliminar {
+    margin: 0px 4px;
+}
+
+#contenedor-modificar-eliminar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 0 8px;
 }
