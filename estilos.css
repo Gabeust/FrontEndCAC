@@ -41,7 +41,7 @@
 
 }
 
-::placeholder {
+.buscarinput::placeholder {
     font: inherit;
     color: #e3e3e3;
 }
@@ -520,7 +520,7 @@ header a {
     grid-template: 2 / 3;
     grid-template-rows: 70% 30%;
     grid-template-columns: 15% 70% 15%;
-    grid-template-areas: "vacio1 logo_y_nombre vacio2"
+    grid-template-areas: "vacio1 logo_y_nombre usuario"
                          "menu_hamburguesa barra_busqueda carrito";
   }
 
@@ -531,6 +531,10 @@ header a {
     justify-content: center;
     align-items: center;
     width: 200px;
+}
+
+#contenedor_logo_usuario {
+    grid-area: usuario;
 }
 
 #contenedor_barra_busqueda {
@@ -553,14 +557,16 @@ header a {
 }
 
 #contenedor_logo_menu,
-#contenedor_logo_carrito {
+#contenedor_logo_carrito,
+#contenedor_logo_usuario {
     display: flex;
     justify-content: center;
 
 }
 
 #contenedor_logo_menu i,
-#contenedor_logo_carrito i {
+#contenedor_logo_carrito i,
+#contenedor_logo_usuario i {
     font-size: 1.5rem;
 }
 
@@ -890,6 +896,49 @@ nav a:hover {
     width: 100%;
 }
 
+
+/* Inicio Sesión ---------------------------------------- turco */
+#cuerpo-inicioses {
+    background-color: var(--color-terciario-claro);
+}
+
+#cuerpo-inicioses h1 {
+    text-align: center;
+    padding: 16px;
+}
+
+#cuerpo-inicioses h2 {
+    text-align: center;
+    padding: 8px;
+}
+
+#form-iniciar-sesion {
+    margin: 0 8px;
+    padding: 20px;
+    background-color: var(--color-primario-claro);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#form-iniciar-sesion label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#form-iniciar-sesion input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+
+
+/* Puntos de quiebre ---------------------------------------- turco */
 /* Algunos puntos de quiebre intermedios: 300px */
 @media (min-width: 300px) {
     #lista_redessociales {
@@ -929,7 +978,11 @@ nav a:hover {
     }
 
     #contenedor_logo_carrito {
-        padding: 10px;
+        padding: 8px;
+    }
+
+    #contenedor_logo_usuario {
+        padding-left: 8px;
     }
 
     #barra_navegacion {
@@ -973,6 +1026,19 @@ nav a:hover {
         max-width: 450px;
         margin: auto;
     }
+
+    #form-iniciar-sesion,
+    #seccion-buscar-proveedor,
+    #seccion-agregar-proveedor {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    #contenedor-modificar-eliminar {
+        max-width: 440px !important;
+        margin: 0 auto !important;
+    }
+    
 }
 
 /* Algunos puntos de quiebre intermedios: 500px */
@@ -1076,4 +1142,79 @@ nav a:hover {
         max-width: 1200px;
         margin: auto;
     }
+}
+
+
+/* Portal Administración ---------------------------------------- turco */
+#cuerpo-portaladmin {
+    background-color: var(--color-terciario-claro);
+}
+
+#titulo-portaladmin {
+    text-align: center;
+}
+
+#menu-portaladmin {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#menu-portaladmin button {
+    margin: 8px;
+}
+
+.formularios-proveedor {
+    margin: 0 8px;
+    padding: 20px;
+    background-color: var(--color-primario-claro);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formularios-proveedor label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.formularios-proveedor input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.boton-modificar {
+    background-color: #FF7B00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5pc;
+}
+
+.boton-eliminar {
+    background-color: #FF0022; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5pc;
+}
+
+#cancelar-editar-proveedor {
+    display: inline-block;
+}
+
+.boton-modificar,
+.boton-eliminar {
+    margin: 0px 4px;
+}
+
+#contenedor-modificar-eliminar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 0 8px;
 }
