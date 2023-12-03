@@ -41,7 +41,7 @@
 
 }
 
-::placeholder {
+.buscarinput::placeholder {
     font: inherit;
     color: #e3e3e3;
 }
@@ -851,6 +851,36 @@ nav a:hover {
     width: 100%;
 }
 
+
+/* Inicio Sesión ---------------------------------------- turco */
+#cuerpo-inicioses {
+    background-color: var(--color-terciario-claro);
+}
+
+#cuerpo-inicioses h1 {
+    text-align: center;
+    padding: 16px;
+}
+
+#cuerpo-inicioses h2 {
+    text-align: center;
+    padding: 8px;
+}
+
+#form-iniciar-sesion {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-primario-claro);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Puntos de quiebre ---------------------------------------- turco */
 /* Algunos puntos de quiebre intermedios: 300px */
 @media (min-width: 300px) {
     #lista_redessociales {
@@ -889,9 +919,12 @@ nav a:hover {
         display: none;
     }
 
-    #contenedor_logo_carrito, 
+    #contenedor_logo_carrito {
+        padding: 8px;
+    }
+
     #contenedor_logo_usuario {
-        padding: 5px;
+        padding-left: 8px;
     }
 
     #barra_navegacion {
@@ -1038,4 +1071,19 @@ nav a:hover {
         max-width: 1200px;
         margin: auto;
     }
+}
+
+
+#form-iniciar-sesion label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#form-iniciar-sesion input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
