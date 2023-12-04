@@ -14,7 +14,7 @@ function ocultarPaneles() {
     seccionEditarProveedor.style.display = "none";
     seccionEliminarProveedor.style.display = "none";
     divResultado.innerHTML = '';
-    
+
 }
 ocultarPaneles();
 
@@ -32,7 +32,7 @@ linkListadoProveedores.addEventListener("click", listarProveedores);
 function listarProveedores() {
     ocultarSeccionesProductos();
     ocultarPaneles();
-  
+
     fetch(URL + 'proveedores')
         .then(respuesta => respuesta.json())
         .then(proveedores => {
@@ -230,7 +230,7 @@ function modificarProveedor() {
     let cuit = divResultado.querySelector("#cuit-proveedor-hallado").textContent;
     // En el texto figura "CUIT: XX-XXXXXXXX-X". Por lo cual le quito los primero caracteres
     cuit = cuit.slice(6, cuit.length);
-    
+
     fetch(URL + 'proveedor/' + cuit)
         .then(datos => datos.json())
         .then(proveedor => {
@@ -246,13 +246,13 @@ function modificarProveedor() {
             };
 
             if (proveedor.email != "") {
-                document.querySelector("#email-prov-modificar").value = proveedor.email; 
+                document.querySelector("#email-prov-modificar").value = proveedor.email;
             };
 
             document.querySelector("#cuit-prov-modificar").value = proveedor.cuit;
 
             if (proveedor.telefono != "") {
-                document.querySelector("#telefono-prov-modificar").value = proveedor.telefono; 
+                document.querySelector("#telefono-prov-modificar").value = proveedor.telefono;
             };
         })
         .catch(error => console.log("Error al editar la información del proveedor.", error))
@@ -334,7 +334,7 @@ function eliminarProveedor() {
     let cuit = divResultado.querySelector("#cuit-proveedor-hallado").textContent;
     // En el texto figura "CUIT: XX-XXXXXXXX-X". Por lo cual le quito los primero caracteres
     cuit = cuit.slice(6, cuit.length);
-    
+
     let eliminar = false;
     eliminar = confirm(`¿Seguro que quiere eliminar el proveedor con CUIT: ${cuit} ?`);
 
@@ -345,7 +345,8 @@ function eliminarProveedor() {
                 console.log("Estado del POST: ", respuesta.status);
                 if (respuesta.status == 400) {
                     alert("No se pudo eliminar el proveedor de la base de datos.");
-                    throw error;}
+                    throw error;
+                }
             })
             .then(mensaje => {
                 alert("Proveedor eliminado exitosamente.");
@@ -446,19 +447,24 @@ listarProductosLink.addEventListener("click", function () {
 
             // Iterar sobre los productos y agregar filas a la tabla
             data.forEach(producto => {
-                const newRow = document.createElement('tr');
-                newRow.innerHTML = `
-                        <td>${producto.id}</td>
-                        <td>${producto.codigo}</td>
-                        <td>${producto.descripcion}</td>
-                        <td>${producto.cantidad}</td>
-                        <td>${producto.precio_compra}</td>
-                        <td>${producto.precio_venta}</td>
-                        <td>${producto.proveedor}</td>
-                        <td>${producto.categoria}</td>
-                        <td><img id="imgProducto" src="${producto.imagen_url}"></td>
-                    `;
-                document.getElementById('productosBody').appendChild(newRow);
+                const cards = document.createElement('div');
+                cards.innerHTML = `
+                <div class="tarjeta-proveedor">
+                <div class="info">
+                    <div>ID:<strong> ${producto.id}</strong></div>
+                    <div>CÓDIGO:<strong> ${producto.codigo}</strong></div>
+                    <hr>
+                    <div>Descripción:<strong> ${producto.descripcion}</strong></div>
+                    <div>Cantidad:<strong> ${producto.cantidad}</strong></div>
+                    <div>Precio de Compra:<strong> ${producto.precio_compra}</strong></div>
+                    <div>Precio de Venta: <strong>${producto.precio_venta}</strong></div>
+                    <div>Proveedor: <strong>${producto.proveedor}</strong></div>
+                    <div>Categoría:<strong> ${producto.categoria}</strong></div>
+                </div>
+                <img class="imgProducto" src="${producto.imagen_url}">
+            </div>   
+            `;
+                document.getElementById('productosBody').appendChild(cards);
             });
         })
 });
@@ -677,20 +683,25 @@ function listarParaEliminar() {
             document.getElementById('EliminarBody').innerHTML = '';
 
             data.forEach(producto => {
-                const newRow = document.createElement('tr');
-                newRow.innerHTML = `
-                    <td>${producto.id}</td>
-                    <td>${producto.codigo}</td>
-                    <td>${producto.descripcion}</td>
-                    <td>${producto.cantidad}</td>
-                    <td>${producto.precio_compra}</td>
-                    <td>${producto.precio_venta}</td>
-                    <td>${producto.proveedor}</td>
-                    <td>${producto.categoria}</td>
-                    <td><img id="imgProducto" src="${producto.imagen_url}"></td>
-                    <td><button class="botones" onclick="confirmarEliminar(${producto.id})">Eliminar</button></td>
+                const cards = document.createElement('div');
+                cards.innerHTML = `
+                <div class="tarjeta-proveedor">
+                    <div class="info">
+                        <div>ID:<strong> ${producto.id}</strong></div>
+                        <div>CÓDIGO:<strong> ${producto.codigo}</strong></div>
+                        <hr>
+                        <div>Descripción:<strong> ${producto.descripcion}</strong></div>
+                        <div>Cantidad:<strong> ${producto.cantidad}</strong></div>
+                        <div>Precio de Compra:<strong> ${producto.precio_compra}</strong></div>
+                        <div>Precio de Venta: <strong>${producto.precio_venta}</strong></div>
+                        <div>Proveedor: <strong>${producto.proveedor}</strong></div>
+                        <div>Categoría:<strong> ${producto.categoria}</strong></div>
+                    </div>
+                    <img class="imgProducto" src="${producto.imagen_url}" height="200px">
+                    <button class="botones" onclick="confirmarEliminar(${producto.id})">Eliminar</button>
+                </div>
                 `;
-                document.getElementById('EliminarBody').appendChild(newRow);
+                document.getElementById('EliminarBody').appendChild(cards);
             });
         })
         .catch(error => console.error('Error al obtener la lista de productos:', error));
@@ -718,7 +729,7 @@ function eliminarProductoXid(id) {
 
 listarParaEliminar();
 
-// ------------------------OPCION PROVEDORES EN AGREGAR PRODUCTOS---------------------
+// ------------------------ PROVEDORES EN AGREGAR PRODUCTOS---------------------
 
 
 var proveedorSelect = document.getElementById('proveedor');
@@ -730,7 +741,7 @@ function actualizarOpcionesProveedores() {
         .then(proveedores => {
             // Limpiar opciones existentes
             proveedorSelect.innerHTML = '';
-            
+
             var defaultOption = document.createElement('option');
             defaultOption.value = 0;
             defaultOption.text = 'Seleccione proveedor';
