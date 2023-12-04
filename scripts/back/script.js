@@ -726,7 +726,7 @@ function eliminarProductoXid(id) {
 
 listarParaEliminar();
 
-// ------------------------OPCION PROVEDORES EN AGREGAR PRODUCTOS---------------------
+// ------------------------ PROVEDORES EN AGREGAR PRODUCTOS---------------------
 
 
 var proveedorSelect = document.getElementById('proveedor');
