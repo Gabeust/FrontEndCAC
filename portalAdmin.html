@@ -17,7 +17,7 @@
             <div id="logo" class="col-sm-12 col-md-6">
                 <a href="./index.html"><img src="./imagenes/5.png" alt="Logo de Ferretería" width="250px"></a>
             </div>
-            <div class="col-12">
+            <div class="col-sm-12 col-md-6">
                 <h1 id="titulo-portaladmin">Portal de administración Web</h1>
             </div>
 
@@ -38,7 +38,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-6 ">
+        <div class="col-xs-12 col-sm-6">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">PROVEEDORES</button>
@@ -54,7 +54,6 @@
     </div>
     <hr>
 
-    <section>
         <section id="seccion-buscar-proveedor">
             <h2 style="text-align: center;">Proveedor</h2>
             <form action="#" id="form-buscar-proveedor" class="formularios-proveedor">
@@ -100,15 +99,20 @@
                 <label for="id-prov-modificar">Id</label>
                 <input type="text" name="id-prov-modificar" id="id-prov-modificar" disabled><br>
                 <label for="nombre-prov-modificar">Nombre (*)</label>
-                <input type="text" name="nombre-prov-modificar" id="nombre-prov-modificar" placeholder="Nombre Empresa"><br>
+                <input type="text" name="nombre-prov-modificar" id="nombre-prov-modificar"
+                    placeholder="Nombre Empresa"><br>
                 <label for="direccion-prov-modificar">Dirección</label>
-                <input type="text" name="direccion-prov-modificar" id="direccion-prov-modificar" placeholder="Calle 000 - Provincia"><br>
+                <input type="text" name="direccion-prov-modificar" id="direccion-prov-modificar"
+                    placeholder="Calle 000 - Provincia"><br>
                 <label for="email-prov-modificar">Email</label>
-                <input type="text" name="email-prov-modificar" id="email-prov-modificar" placeholder="mail@dominio.ej"><br>
+                <input type="text" name="email-prov-modificar" id="email-prov-modificar"
+                    placeholder="mail@dominio.ej"><br>
                 <label for="cuit-prov-modificar">CUIT (*)</label>
-                <input type="text" name="cuit-prov-modificar" id="cuit-prov-modificar" placeholder="11-22333444-5" disabled><br>
+                <input type="text" name="cuit-prov-modificar" id="cuit-prov-modificar" placeholder="11-22333444-5"
+                    disabled><br>
                 <label for="telefono-prov-modificar">Teléfono</label>
-                <input type="text" name="telefono-prov-modificar" id="telefono-prov-modificar" placeholder="0333 154455666"><br>
+                <input type="text" name="telefono-prov-modificar" id="telefono-prov-modificar"
+                    placeholder="0333 154455666"><br>
                 <p>(*) Datos obligatorios</p>
 
                 <div id="contenedor-guardar-cancelar">
@@ -119,16 +123,15 @@
             </form>
         </section>
 
-    </section>
     <div id="resultado-peticion"></div>
     </section>
     <!-- --------------------------------------GABRIEL-------------------------------------------- -->
     <!--AGREGAR PRODUCTOS  -->
-    <section id="addProductos" style="display: none;">
+    <section id="addProductos" class="formularios-proveedor" style="display: none;">
         <div>
-            <h2>Altas de Productos:</h2>
+            <h2>ALTAS PRODUCTOS:</h2>
         </div><br>
-        <form id="productoForm" enctype="multipart/form-data">
+        <form id="productoForm" enctype="multipart/form-data" class="formularios-productos">
 
             <label for="productoCode">Código:</label>
             <input type="number" id="codigo" name="codigo" placeholder="Ingresar codigo numerico" required><br><br>
@@ -163,35 +166,18 @@
         </form>
     </section>
     <!-- LISTAR PRODUCTOS -->
-    <!-- <section id="productosTable" style="display: ;"> -->
+    <section id="productosTable" style="display: none ;">
+        <h2>LISTADO DE PRODUCTOS: </h2>
+        <article>
+            <div id="productosBody">
 
-        <article id="productosContainer">
-            <!-- Contenedor para las tarjetas de productos -->
+            </div>
         </article>
-        <!-- <table >
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Código</th>
-                    <th>Descripcion</th>
-                    <th>Cantidad</th>
-                    <th>Precio de Compra</th>
-                    <th>Precio de Venta</th>
-                    <th>Proveedor</th>
-                    <th>Categoria</th>
-                    <th>Imagen</th>
-                </tr>
-            </thead>
-            <tbody id="productosBody">
-
-            </tbody>
-        </table> -->
 
     </section>
-
     <!-- BUSCAR PRODUCTOS -->
-    <section>
-        <article id="buscarProductos" style="display: none;">
+    <section id="buscarProductos" class="formularios-proveedor" style="display: none;">
+        <article >
             <form action="#" id="buscarProductosForm">
                 <div>
                     <H2>BUSCAR POR: </H2>
@@ -244,27 +230,16 @@
     </section>
     <!-- ---------------ELIMINAR PRODUCTOS---------------------- -->
 
-    <section>
-        <table id="eliminarProductos" style="display: none;">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Código</th>
-                    <th>Descripcion</th>
-                    <th>Cantidad</th>
-                    <th>Precio de Compra</th>
-                    <th>Precio de Venta</th>
-                    <th>Proveedor</th>
-                    <th>Categoria</th>
-                    <th>Imagen</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody id="EliminarBody">
+    <section id="eliminarProductos" style="display: none;">
+        <h2>ELIMINAR PRODUCTOS:</h2>
+        <br>
+        <article id="EliminarBody" >
 
-            </tbody>
-        </table>
+        </article>
     </section>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

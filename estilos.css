@@ -89,9 +89,9 @@ h2 {
     background-color: #007BFF;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 5pc;
-
+    margin-left: 50px;
 }
 
 .botones:hover {
@@ -968,6 +968,7 @@ nav a:hover {
 
 #titulo-portaladmin,
 #titulo-iniciosesion {
+    margin-top: 28px;
     text-align: center;
 }
 
@@ -1075,10 +1076,6 @@ nav a:hover {
 
 }
 
-div h1 {
-    margin-top: 23px;
-}
-
 div h2 {
     display: flex;
     flex-direction: column;
@@ -1094,12 +1091,6 @@ div h2 {
     justify-content: center;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #ingreso div {
     display: flex;
     justify-content: center;
@@ -1107,89 +1098,77 @@ main {
     margin: 10px 0;
 }
 
-label {
-    width: 200px;
-    text-align: left;
-    margin-right: 10px;
 
-}
 
-input {
+/* input {
     width: 200px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .botones {
-    width: 100px;
     border: solid blue;
     margin-top: 10px;
     align-items: center;
     border-radius: 10px;
 }
-#eliminarProductos,
-#productoForm,
-#proveedoresForm,
-#buscarProductos {
-    margin: 20px 0 0 0px;
-    text-align: center;
+
+.formularios-proveedor {
+    margin: 0 8px;
+    padding: 20px;
+    background-color: var(--color-primario-claro);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 440px;
 }
 
-#productoForm select,
-#productoForm input,
-#proveedoresForm input {
-    width: 250px;
+.formularios-proveedor label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
 }
+#productoForm select,
+.formularios-proveedor input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 
 /* listado completo */
 
-#eliminarProductos,
-#productosTable {
+.formularios-proveedor,
+#productosTable,
+#eliminarProductos {
     width: 100%;
-    border-collapse: collapse; 
+    margin: 0 auto;
 }
 
-#productosTable th, #productosTable td, 
-#eliminarProductos th, #eliminarProductos td {
-    border: 1px solid #ddd; 
-    padding: 8px;
-    text-align: center; 
+/* -------cards listar productos-------------- */
+.info {
+    flex-grow: 1;
+    padding: 10px;
 }
 
-
-thead {
-    background-color: #f2f2f2;
+.info p {
+    font-weight: bold;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f7f3f3;
+.imgProducto {
+    width:auto;
+    height: 300px;
 }
-th{
-    width: fit-content;
-}
-
-#imgProducto{
-    height: auto;
-    width: 40px;
-
-}
-
-@media screen and (max-width: 600px) {
-
-    #productoForm label,
-    #proveedoresForm label {
-        width: 150px;
-        text-align: center;
-    }
-
-    .bonotera {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-    }
+#productosBody,
+#EliminarBody {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: unset;
+    gap: 10px;
 }
 
 /* Puntos de quiebre ---------------------------------------- turco */
@@ -1379,8 +1358,9 @@ th{
         max-width: 750px;
         padding-left: 30px;
     }
+    
+    }
 
-}
 
 @media (min-width: 1200px) {
     #barra_navegacion {
@@ -1406,4 +1386,10 @@ th{
         max-width: 1200px;
         margin: auto;
     }
+    #productosBody,
+    #EliminarBody{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+}
 }
