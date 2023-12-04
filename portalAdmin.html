@@ -30,7 +30,7 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">PRODUCTOS</button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" id="listado-productos">Listar Productos</a></li>
+                    <li><a class="dropdown-item" href="#" id="listado-productos">Listar</a></li>
                     <li><a class="dropdown-item" href="#" id="buscar-productos">Buscar</a></li>
                     <li><a class="dropdown-item" href="#" id="agregar-productos">Agregar</a></li>
                     <li><a class="dropdown-item" href="#" id="modificar-productos">Modificar</a></li>
@@ -88,10 +88,10 @@
             <section id="seccion-modificar-proveedor">
                 <input type="button" value="Modificar" id="boton-modificar-proveedor" class="boton-modificar">
             </section>
-    
+
             <section id="seccion-eliminar-proveedor">
                 <input type="button" value="Eliminar" id="boton-eliminar-proveedor" class="boton-eliminar">
-            </section>    
+            </section>
         </div>
 
         <section id="seccion-editar-proveedor">
@@ -118,7 +118,7 @@
                 <p>(*) Datos obligatorios</p>
                 <div id="contenedor-guardar-cancelar">
                     <button type="submit" id="guardar-editar-proveedor" class="botones">Guardar cambios</button>
-                    <input type="button" value="Cancelar" id="cancelar-editar-proveedor" class="boton-cancelar">    
+                    <input type="button" value="Cancelar" id="cancelar-editar-proveedor" class="boton-cancelar">
                 </div>
             </form>
         </section>
@@ -135,16 +135,16 @@
         <form id="productoForm" enctype="multipart/form-data">
 
             <label for="productoCode">Código:</label>
-            <input type="text" id="codigo" name="codigo"><br><br>
+            <input type="number" id="codigo" name="codigo" placeholder="Ingresar codigo numerico" required><br><br>
 
             <label for="descripcion">Descripcion:</label>
-            <input type="text" id="descripcion" name="descripcion"><br><br>
+            <input type="text" id="descripcion" name="descripcion" required><br><br>
 
             <label for="productoQ">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad"><br><br>
+            <input type="number" id="cantidad" name="cantidad" required><br><br>
 
             <label for="precio_compra">Precio de compra:</label>
-            <input type="number" id="precio_compra" name="precio_compra"><br><br>
+            <input type="number" id="precio_compra" name="precio_compra" required><br><br>
 
             <label for="precio_venta">Precio de venta:</label>
             <input type="number" id="precio_venta" name="precio_venta"><br><br>
@@ -153,7 +153,9 @@
             <input type="text" id="imagen_url" name="imagen_url"><br><br>
 
             <label for="proveedor">Proveedor:</label>
-            <input type="text" id="proveedor" name="proveedor"><br><br>
+            <select id="proveedor" name="proveedor" required>
+
+            </select><br><br>
 
             <label for="categoria">Categoria:</label>
             <input type="text" id="categoria" name="categoria"><br><br>
@@ -181,7 +183,7 @@
                 </tr>
             </thead>
             <tbody id="productosBody">
-                <!-- Las filas de la tabla se agregarán aquí dinámicamente con JavaScript -->
+
             </tbody>
         </table>
 
@@ -242,7 +244,7 @@
     </section>
     <!-- ---------------ELIMINAR PRODUCTOS---------------------- -->
 
-    <section >
+    <section>
         <table id="eliminarProductos" style="display: none;">
             <thead>
                 <tr>
@@ -259,7 +261,7 @@
                 </tr>
             </thead>
             <tbody id="EliminarBody">
-                <!-- Las filas de la tabla se agregarán aquí dinámicamente con JavaScript -->
+
             </tbody>
         </table>
     </section>
@@ -269,7 +271,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+    <script src="scripts/back/script.js"></script>
 </body>
 
 </html>
