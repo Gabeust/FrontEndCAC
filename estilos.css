@@ -928,6 +928,11 @@ nav a:hover {
     padding: 8px;
 }
 
+#seccion-inicio-sesion {
+    display: block;
+    width: 100%;
+}
+
 #form-iniciar-sesion {
     margin: 0 8px;
     padding: 20px;
@@ -935,6 +940,7 @@ nav a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 #form-iniciar-sesion label {
@@ -960,7 +966,8 @@ nav a:hover {
     background-color: var(--color-terciario-claro);
 }
 
-#titulo-portaladmin {
+#titulo-portaladmin,
+#titulo-iniciosesion {
     text-align: center;
 }
 
@@ -1274,10 +1281,10 @@ th{
         margin: auto;
     }
 
-    #form-iniciar-sesion,
     #seccion-buscar-proveedor,
     #seccion-agregar-proveedor,
-    #seccion-editar-proveedor {
+    #seccion-editar-proveedor,
+    #seccion-inicio-sesion {
         max-width: 440px;
         margin: 0 auto;
     }
@@ -1370,6 +1377,7 @@ th{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 10px;
         max-width: 750px;
+        padding-left: 30px;
     }
 
 }
