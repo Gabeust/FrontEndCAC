@@ -15,7 +15,7 @@
     <header>
         <div id="nav" class="row">
             <div id="logo" class="col-sm-12 col-md-6">
-                <img src="./imagenes/5.png" alt="Logo de Ferretería" width="250px">
+                <a href="./index.html"><img src="./imagenes/5.png" alt="Logo de Ferretería" width="250px"></a>
             </div>
             <div class="col-12">
                 <h1 id="titulo-portaladmin">Portal de administración Web</h1>
@@ -59,7 +59,7 @@
             <h2 style="text-align: center;">Proveedor</h2>
             <form action="#" id="form-buscar-proveedor" class="formularios-proveedor">
                 <label for="cuit-prov">CUIT</label>
-                <input type="text" name="cuit-prov" id="cuit-prov"><br>
+                <input type="text" name="cuit-prov" id="cuit-prov" placeholder="11-22333444-5"><br>
                 <button type="submit" class="botones">Buscar</button>
             </form>
         </section>
@@ -97,29 +97,25 @@
         <section id="seccion-editar-proveedor">
             <h2 style="text-align: center;">Editar datos</h2>
             <form action="#" id="form-editar-proveedor" enctype="multipart/form-data" class="formularios-proveedor">
-                <table>
-                    <tr>
-                        <th>id</th>
-                        <th>nombre (*)</th>
-                        <th>direccion</th>
-                        <th>email</th>
-                        <th>cuit (*)</th>
-                        <th>telefono</th>
-                    </tr>
-                    <tr>
-                        <td id="id-prov-igual"></td>
-                        <td><input type="text" name="nombre-prov-nuevo" id="nombre-prov-nuevo"></td>
-                        <td><input type="text" name="direccion-prov-nueva" id="direccion-prov-nueva"></td>
-                        <td><input type="text" name="email-prov-nuevo" id="email-prov-nuevo"></td>
-                        <td id="cuit-proveedor-igual"></td>
-                        <td><input type="text" name="telefono-prov-nuevo" id="telefono-prov-nuevo"></td>
-                    </tr>
-                </table>
+                <label for="id-prov-modificar">Id</label>
+                <input type="text" name="id-prov-modificar" id="id-prov-modificar" disabled><br>
+                <label for="nombre-prov-modificar">Nombre (*)</label>
+                <input type="text" name="nombre-prov-modificar" id="nombre-prov-modificar" placeholder="Nombre Empresa"><br>
+                <label for="direccion-prov-modificar">Dirección</label>
+                <input type="text" name="direccion-prov-modificar" id="direccion-prov-modificar" placeholder="Calle 000 - Provincia"><br>
+                <label for="email-prov-modificar">Email</label>
+                <input type="text" name="email-prov-modificar" id="email-prov-modificar" placeholder="mail@dominio.ej"><br>
+                <label for="cuit-prov-modificar">CUIT (*)</label>
+                <input type="text" name="cuit-prov-modificar" id="cuit-prov-modificar" placeholder="11-22333444-5" disabled><br>
+                <label for="telefono-prov-modificar">Teléfono</label>
+                <input type="text" name="telefono-prov-modificar" id="telefono-prov-modificar" placeholder="0333 154455666"><br>
                 <p>(*) Datos obligatorios</p>
+
                 <div id="contenedor-guardar-cancelar">
                     <button type="submit" id="guardar-editar-proveedor" class="botones">Guardar cambios</button>
                     <input type="button" value="Cancelar" id="cancelar-editar-proveedor" class="boton-cancelar">
                 </div>
+
             </form>
         </section>
 

@@ -53,20 +53,21 @@ formularioIniciarSesion.addEventListener('submit', evento => {
                     .then(usuario_valido => {
                         
                         if (usuario_valido !== null){
-                            window.location.href = "./sucursales.html"; // Cambiar por el panel de administración
+                            window.location.href = "./portalAdmin.html"; // Cambiar por el panel de administración
                         }
                         else {throw "Datos inválidos";}    
                         })
                     .catch(error => {
+                        limpiarFormularioIniciarSesion();
                         document.querySelector('#form-iniciar-sesion #email-usuario').focus();
-                        limpiarFormularioIniciarSesion();                        
                     }) 
                 }
                 else {throw "Email inválido";}    
         })
         .catch(error => {
+            limpiarFormularioIniciarSesion();
             document.querySelector('#form-iniciar-sesion #email-usuario').focus();
-            limpiarFormularioIniciarSesion();})
+        })
     }
 
 }
