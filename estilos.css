@@ -954,212 +954,6 @@ nav a:hover {
 
 
 
-/* Puntos de quiebre ---------------------------------------- turco */
-/* Algunos puntos de quiebre intermedios: 300px */
-@media (min-width: 300px) {
-    #lista_redessociales {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 1vh;
-    }
-}
-
-/* Media queries para distintos breakpoints: 450px, 900px y 1200px */
-@media (min-width: 450px) {
-    .linea1_encabezado {
-        display: flex;
-        align-items: center;
-    }
-
-    #contenedor_logo_nombre {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    #contenedor_logo_nombre img {
-
-        width: 200px;
-        height: auto;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    #contenedor_logo_menu {
-        display: none;
-    }
-
-    #contenedor_logo_carrito {
-        padding: 8px;
-    }
-
-    #contenedor_logo_usuario {
-        padding-left: 8px;
-    }
-
-    #barra_navegacion {
-        display: block;
-    }
-
-    #lista_menues {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 8vh;
-        margin: 1vh 0 0 0;
-        padding: 0px;
-    }
-
-    #lista_menues li {
-        font-size: 0.75rem;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        height: 100%;
-        padding: 0px;
-
-    }
-
-    #contenedor_marcas {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, fr);
-        padding: 1vh;
-        gap: 3vh 1vw;
-    }
-
-    .imagen_marca {
-        min-width: 125px;
-        max-width: 175px;
-    }
-
-    #lista_redessociales {
-        max-width: 450px;
-        margin: auto;
-    }
-
-    #form-iniciar-sesion,
-    #seccion-buscar-proveedor,
-    #seccion-agregar-proveedor {
-        max-width: 440px;
-        margin: 0 auto;
-    }
-
-    #contenedor-modificar-eliminar {
-        max-width: 440px !important;
-        margin: 0 auto !important;
-    }
-
-}
-
-/* Algunos puntos de quiebre intermedios: 500px */
-@media (min-width: 500px) {
-    #contenedor_seccion_sucursales {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 3fr;
-        align-items: center;
-        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13"
-            "mapa_suc mapa_suc mapa_suc";
-    }
-
-}
-
-@media (min-width: 900px) {
-    .linea1_encabezado {
-        max-width: 900px;
-        margin: auto;
-    }
-
-    #contenedor_logo_nombre img {
-        width: 300px;
-        height: auto;
-    }
-
-    #lista_menues li {
-        font-size: 1rem;
-    }
-
-    .imagen_central {
-        height: 610px;
-    }
-
-    #contenedor_marcas {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, fr);
-        grid-template-areas: "logo_bahco logo_byd logo_bosch logo_dew"
-            "vacio1 logo_makita logo_stanley vacio";
-    }
-
-    #contenedor_marca_makita {
-        grid-area: logo_makita;
-    }
-
-    #contenedor_marca_stanley {
-        grid-area: logo_stanley;
-    }
-
-    #seccion_suscripcion>div,
-    #seccion_suscripcion>form {
-        max-width: 900px;
-        margin: auto;
-    }
-
-    #formulario_suscripcion {
-        display: grid;
-        grid-template-columns: 5% 70% 1fr;
-        grid-template-areas: "vacio11 entrada_mail enviar"
-            "vacio21 term_y_cond vacio22";
-    }
-
-    #btn_enviar_form_susc {
-        grid-area: enviar;
-        margin-left: 0px;
-    }
-
-    #contenedor_seccion_sucursales {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 3fr;
-        align-items: center;
-        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13 vacio14"
-            "mapa_suc mapa_suc mapa_suc mapa_suc";
-    }
-
-}
-
-@media (min-width: 1200px) {
-    #barra_navegacion {
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    #lista_menues li {
-        font-size: 1.125rem;
-    }
-
-    .imagen_central {
-        height: 850px;
-    }
-
-    #contenedor_marcas {
-        display: flex;
-        max-width: 1400px;
-        margin: auto;
-    }
-
-    #contenedor_seccion_sucursales {
-        max-width: 1200px;
-        margin: auto;
-    }
-}
-
 
 /* Portal Administración ---------------------------------------- turco */
 #cuerpo-portaladmin {
@@ -1232,8 +1026,25 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    margin: 0 8px;
+    margin: 4px 8px;
 }
+
+.tarjeta-proveedor {
+    margin: 4px 8px;
+    padding: 10px;
+    /*background-color: var(--color-primario-claro); */
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    border-bottom: 2px solid var(--color-primario-claro);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-proveedor p {
+    margin-bottom: 0.5rem;
+}
+
+
 
 /* -------------------------------gabriel--------------------- */
 #inicio {
@@ -1371,5 +1182,220 @@ th{
         flex-direction: row;
         justify-content: center;
 
+    }
+}
+
+/* Puntos de quiebre ---------------------------------------- turco */
+/* Algunos puntos de quiebre intermedios: 300px */
+@media (min-width: 300px) {
+    #lista_redessociales {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1vh;
+    }
+}
+
+/* Media queries para distintos breakpoints: 450px, 900px y 1200px */
+@media (min-width: 450px) {
+    .linea1_encabezado {
+        display: flex;
+        align-items: center;
+    }
+
+    #contenedor_logo_nombre {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #contenedor_logo_nombre img {
+
+        width: 200px;
+        height: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #contenedor_logo_menu {
+        display: none;
+    }
+
+    #contenedor_logo_carrito {
+        padding: 8px;
+    }
+
+    #contenedor_logo_usuario {
+        padding-left: 8px;
+    }
+
+    #barra_navegacion {
+        display: block;
+    }
+
+    #lista_menues {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 8vh;
+        margin: 1vh 0 0 0;
+        padding: 0px;
+    }
+
+    #lista_menues li {
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        padding: 0px;
+
+    }
+
+    #contenedor_marcas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, fr);
+        padding: 1vh;
+        gap: 3vh 1vw;
+    }
+
+    .imagen_marca {
+        min-width: 125px;
+        max-width: 175px;
+    }
+
+    #lista_redessociales {
+        max-width: 450px;
+        margin: auto;
+    }
+
+    #form-iniciar-sesion,
+    #seccion-buscar-proveedor,
+    #seccion-agregar-proveedor,
+    #seccion-editar-proveedor {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    #contenedor-modificar-eliminar,
+    .tarjeta-proveedor {
+        max-width: 440px; /* !important; */
+        margin: 8px auto;  /* !important; */
+    }
+
+}
+
+/* Algunos puntos de quiebre intermedios: 500px */
+@media (min-width: 500px) {
+    #contenedor_seccion_sucursales {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 3fr;
+        align-items: center;
+        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13"
+            "mapa_suc mapa_suc mapa_suc";
+    }
+
+}
+
+@media (min-width: 900px) {
+    .linea1_encabezado {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    #contenedor_logo_nombre img {
+        width: 300px;
+        height: auto;
+    }
+
+    #lista_menues li {
+        font-size: 1rem;
+    }
+
+    .imagen_central {
+        height: 610px;
+    }
+
+    #contenedor_marcas {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, fr);
+        grid-template-areas: "logo_bahco logo_byd logo_bosch logo_dew"
+            "vacio1 logo_makita logo_stanley vacio";
+    }
+
+    #contenedor_marca_makita {
+        grid-area: logo_makita;
+    }
+
+    #contenedor_marca_stanley {
+        grid-area: logo_stanley;
+    }
+
+    #seccion_suscripcion>div,
+    #seccion_suscripcion>form {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    #formulario_suscripcion {
+        display: grid;
+        grid-template-columns: 5% 70% 1fr;
+        grid-template-areas: "vacio11 entrada_mail enviar"
+            "vacio21 term_y_cond vacio22";
+    }
+
+    #btn_enviar_form_susc {
+        grid-area: enviar;
+        margin-left: 0px;
+    }
+
+    #contenedor_seccion_sucursales {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 3fr;
+        align-items: center;
+        grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13 vacio14"
+            "mapa_suc mapa_suc mapa_suc mapa_suc";
+    }
+
+    .tarjeta-proveedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        max-width: 750px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    #barra_navegacion {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    #lista_menues li {
+        font-size: 1.125rem;
+    }
+
+    .imagen_central {
+        height: 850px;
+    }
+
+    #contenedor_marcas {
+        display: flex;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    #contenedor_seccion_sucursales {
+        max-width: 1200px;
+        margin: auto;
     }
 }

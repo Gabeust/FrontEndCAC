@@ -58,15 +58,16 @@ formularioIniciarSesion.addEventListener('submit', evento => {
                         else {throw "Datos inválidos";}    
                         })
                     .catch(error => {
+                        limpiarFormularioIniciarSesion();
                         document.querySelector('#form-iniciar-sesion #email-usuario').focus();
-                        limpiarFormularioIniciarSesion();                        
                     }) 
                 }
                 else {throw "Email inválido";}    
         })
         .catch(error => {
+            limpiarFormularioIniciarSesion();
             document.querySelector('#form-iniciar-sesion #email-usuario').focus();
-            limpiarFormularioIniciarSesion();})
+        })
     }
 
 }
