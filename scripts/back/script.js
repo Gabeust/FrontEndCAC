@@ -37,36 +37,26 @@ function listarProveedores() {
         .then(respuesta => respuesta.json())
         .then(proveedores => {
             divResultado.innerHTML = '';
-
-            let resultadoHTML = `
-            <tr>
-                <th>id</th>
-                <th>nombre</th>
-                <th>direccion</th>
-                <th>email</th>
-                <th>cuit</th>
-                <th>telefono</th>                    
-            </tr>`;
+            let resultadoHTML = "";
 
             for (prov of proveedores) {
-                let filaProveedorHTML = `
-                <tr>
-                    <td>${prov.id}</td>
-                    <td>${prov.nombre}</td>
-                    <td>${prov.direccion}</td>
-                    <td>${prov.email}</td>
-                    <td>${prov.cuit}</td>
-                    <td>${prov.telefono}</td>                    
-                </tr>`;
+                let tarjetaProveedor = `
+                    <div class="tarjeta-proveedor">
+                        <p><strong>Id: </strong>${prov.id}</p>
+                        <p><strong>Nombre: </strong>${prov.nombre}</p>
+                        <p><strong>Dirección: </strong>${prov.direccion}</p>
+                        <p><strong>Email: </strong>${prov.email}</p>
+                        <p><strong>CUIT: </strong>${prov.cuit}</p>
+                        <p><strong>Teléfono: </strong>${prov.telefono}</p>
+                    </div>`;
 
-                resultadoHTML += filaProveedorHTML;
+                resultadoHTML += tarjetaProveedor;
             }
 
-            resultadoHTML = '<h2 style="text-align:center;">Listado de Proveedores</h2>\n' + '<table>\n' + resultadoHTML + '\n</table>';
-
+            resultadoHTML = '<h2 style="text-align:center;">Listado de Proveedores</h2>\n' + resultadoHTML;
             divResultado.innerHTML = resultadoHTML;
         })
-        .catch(error => divResultado.innerHTML = "Error al obtener el listado de proveedores")
+        .catch(error => divResultado.innerHTML = `<p style="text-align:center;">Error al obtener el listado de proveedores</p>`)
 }
 
 
@@ -88,35 +78,28 @@ formularioBuscarProveedor.addEventListener('submit', evento => {
     evento.preventDefault();
 
     let cuit = document.querySelector('#cuit-prov').value;
+    let cuitValido = validarCuitProveedor(cuit);
 
-    if (cuit != '') {
+    if (!cuitValido) {
+        document.querySelector('#form-buscar-proveedor #cuit-prov').focus();
+    }
+
+    if (cuitValido) {
         console.log("El CUIT a buscar es:", cuit);
         fetch(URL + 'proveedor/' + cuit)
             .then(respuesta => respuesta.json())
             .then(proveedor => {
                 let resultadoHTML = `
-            <tr>
-                <th>id</th>
-                <th>nombre</th>
-                <th>direccion</th>
-                <th>email</th>
-                <th>cuit</th>
-                <th>telefono</th>                    
-            </tr>`;
+                <div class="tarjeta-proveedor">
+                    <p><strong>Id: </strong>${proveedor.id}</p>
+                    <p><strong>Nombre: </strong>${proveedor.nombre}</p>
+                    <p><strong>Dirección: </strong>${proveedor.direccion}</p>
+                    <p><strong>Email: </strong>${proveedor.email}</p>
+                    <p id="cuit-proveedor-hallado"><strong>CUIT: </strong>${proveedor.cuit}</p>
+                    <p><strong>Teléfono: </strong>${proveedor.telefono}</p>
+                </div>`;
 
-                let filaProveedorHTML = `
-            <tr>
-                <td>${proveedor.id}</td>
-                <td>${proveedor.nombre}</td>
-                <td>${proveedor.direccion}</td>
-                <td>${proveedor.email}</td>
-                <td id="cuit-proveedor-hallado">${proveedor.cuit}</td>
-                <td>${proveedor.telefono}</td>                    
-            </tr>`;
-
-                resultadoHTML += filaProveedorHTML;
-                resultadoHTML = '<table>\n' + resultadoHTML + '\n</table>';
-
+                console.log("Proveedor buscado:", proveedor);
                 divResultado.innerHTML = resultadoHTML;
 
                 seccionModificarProveedor.style.display = "inline-block";
@@ -124,7 +107,7 @@ formularioBuscarProveedor.addEventListener('submit', evento => {
 
 
             })
-            .catch(error => divResultado.innerHTML = `No hallamos ningún proveedor con el CUIT: ${cuit}`)
+            .catch(error => divResultado.innerHTML = `<p style="text-align: center;">No hallamos ningún proveedor con el CUIT: ${cuit}</p>`)
     }
 })
 
@@ -245,32 +228,32 @@ let botonModificarProveedor = document.querySelector("#boton-modificar-proveedor
 botonModificarProveedor.addEventListener("click", modificarProveedor);
 function modificarProveedor() {
     let cuit = divResultado.querySelector("#cuit-proveedor-hallado").textContent;
-
+    // En el texto figura "CUIT: XX-XXXXXXXX-X". Por lo cual le quito los primero caracteres
+    cuit = cuit.slice(6, cuit.length);
+    
     fetch(URL + 'proveedor/' + cuit)
         .then(datos => datos.json())
         .then(proveedor => {
             console.log("Proveedor a editar:", proveedor);
 
             seccionEditarProveedor.style.display = "block";
-            document.querySelector("#id-prov-igual").textContent = proveedor.id;
-            document.querySelector("#nombre-prov-nuevo").value = proveedor.nombre;
+            document.querySelector("#id-prov-modificar").value = proveedor.id;
+            document.querySelector("#nombre-prov-modificar").value = proveedor.nombre;
 
-            if (proveedor.direccion == "") {
-                document.querySelector("#direccion-prov-nueva").value = "";
-                document.querySelector("#direccion-prov-nueva").setAttribute("placeholder", "Calle 000 - Provincia");
-            } else { document.querySelector("#direccion-prov-nueva").value = proveedor.direccion; };
 
-            if (proveedor.email == "") {
-                document.querySelector("#email-prov-nuevo").value = "";
-                document.querySelector("#email-prov-nuevo").setAttribute("placeholder", "mail@dominio.ej");
-            } else { document.querySelector("#email-prov-nuevo").value = proveedor.email; };
+            if (proveedor.direccion != "") {
+                document.querySelector("#direccion-prov-modificar").value = proveedor.direccion;
+            };
 
-            document.querySelector("#cuit-proveedor-igual").textContent = proveedor.cuit;
+            if (proveedor.email != "") {
+                document.querySelector("#email-prov-modificar").value = proveedor.email; 
+            };
 
-            if (proveedor.telefono == "") {
-                document.querySelector("#telefono-prov-nuevo").value = "";
-                document.querySelector("#telefono-prov-nuevo").setAttribute("placeholder", "0333 154455666");
-            } else { document.querySelector("#telefono-prov-nuevo").value = proveedor.telefono; };
+            document.querySelector("#cuit-prov-modificar").value = proveedor.cuit;
+
+            if (proveedor.telefono != "") {
+                document.querySelector("#telefono-prov-modificar").value = proveedor.telefono; 
+            };
         })
         .catch(error => console.log("Error al editar la información del proveedor.", error))
 
@@ -282,11 +265,11 @@ formularioEditarProveedor.addEventListener('submit', evento => {
     evento.preventDefault();
 
     /* Validar el formulario para editar el proveedor */
-    let nombre = document.querySelector('#form-editar-proveedor #nombre-prov-nuevo').value;
-    let direccion = document.querySelector('#form-editar-proveedor #direccion-prov-nueva').value;
-    let email = document.querySelector('#form-editar-proveedor #email-prov-nuevo').value;
-    let cuit = document.querySelector('#form-editar-proveedor #cuit-proveedor-igual').textContent;
-    let telefono = document.querySelector('#form-editar-proveedor #telefono-prov-nuevo').value;
+    let nombre = document.querySelector('#form-editar-proveedor #nombre-prov-modificar').value;
+    let direccion = document.querySelector('#form-editar-proveedor #direccion-prov-modificar').value;
+    let email = document.querySelector('#form-editar-proveedor #email-prov-modificar').value;
+    let cuit = document.querySelector('#form-editar-proveedor #cuit-prov-modificar').value;
+    let telefono = document.querySelector('#form-editar-proveedor #telefono-prov-modificar').value;
 
     let datosProveedor = {
         nombre: nombre,
@@ -316,7 +299,7 @@ formularioEditarProveedor.addEventListener('submit', evento => {
             .then(respuesta => {
                 console.log("Estado del POST: ", respuesta.status);
                 if (respuesta.status == 400) {
-                    alert("No se puedo actualizar la información del proveedor");
+                    alert("No se pudo actualizar la información del proveedor");
                     throw error;
                 }
             })
@@ -349,12 +332,21 @@ let botonEliminarProveedor = document.querySelector("#boton-eliminar-proveedor")
 botonEliminarProveedor.addEventListener("click", eliminarProveedor);
 function eliminarProveedor() {
     let cuit = divResultado.querySelector("#cuit-proveedor-hallado").textContent;
+    // En el texto figura "CUIT: XX-XXXXXXXX-X". Por lo cual le quito los primero caracteres
+    cuit = cuit.slice(6, cuit.length);
+    
     let eliminar = false;
     eliminar = confirm(`¿Seguro que quiere eliminar el proveedor con CUIT: ${cuit} ?`);
 
     if (eliminar) {
         fetch(URL + 'proveedor/' + cuit, { method: "DELETE" })
-            .then(respuesta => console.log(respuesta))
+            //.then(respuesta => console.log(respuesta))
+            .then(respuesta => {
+                console.log("Estado del POST: ", respuesta.status);
+                if (respuesta.status == 400) {
+                    alert("No se pudo eliminar el proveedor de la base de datos.");
+                    throw error;}
+            })
             .then(mensaje => {
                 alert("Proveedor eliminado exitosamente.");
                 generarPanelBuscarProveedor();
@@ -366,7 +358,7 @@ function eliminarProveedor() {
 function validarDatosProveedor(datosProveedor, formulario) {
     if (!validarNombreProveedor(datosProveedor['nombre'])) {
         if (formulario == "editar") {
-            document.querySelector("#form-editar-proveedor #nombre-prov-nuevo").focus();
+            document.querySelector("#form-editar-proveedor #nombre-prov-modificar").focus();
         } else if (formulario == "agregar") {
             //console.log("ACA ENTRA 1");
             document.querySelector("#form-agregar-proveedor #nombre-prov").focus();
@@ -376,7 +368,7 @@ function validarDatosProveedor(datosProveedor, formulario) {
 
     if (datosProveedor['direccion'] != "" & (!validarDireccionProveedor(datosProveedor['direccion']))) {
         if (formulario == "editar") {
-            document.querySelector("#form-editar-proveedor #direccion-prov-nueva").focus();
+            document.querySelector("#form-editar-proveedor #direccion-prov-modificar").focus();
         } else if (formulario == "agregar") {
             //console.log("ACA ENTRA 2");
             document.querySelector("#form-agregar-proveedor #direccion-prov").focus();
@@ -386,7 +378,7 @@ function validarDatosProveedor(datosProveedor, formulario) {
 
     if (datosProveedor['email'] != "" & (!validarEmailProveedor(datosProveedor['email']))) {
         if (formulario == "editar") {
-            document.querySelector("#form-editar-proveedor #email-prov-nuevo").focus();
+            document.querySelector("#form-editar-proveedor #email-prov-modificar").focus();
         } else if (formulario == "agregar") {
             //console.log("ACA ENTRA 3");
             document.querySelector("#form-agregar-proveedor #email-prov").focus();
@@ -406,7 +398,7 @@ function validarDatosProveedor(datosProveedor, formulario) {
 
     if (datosProveedor['telefono'] != "" & (!validarTelefonoProveedor(datosProveedor['telefono']))) {
         if (formulario == "editar") {
-            document.querySelector("#form-editar-proveedor #telefono-prov-nuevo").focus();
+            document.querySelector("#form-editar-proveedor #telefono-prov-modificar").focus();
         } else if (formulario == "agregar") {
             //console.log("ACA ENTRA 5");
             document.querySelector("#form-agregar-proveedor #telefono-prov").focus();
@@ -417,11 +409,11 @@ function validarDatosProveedor(datosProveedor, formulario) {
     return true;
 
 }
-/*
-if(false) {
-    console.log("No deberia entrar aca");
-} else if (true) {console.log("SI deberia entrar aca");}
-*/
+
+
+
+
+
 // -------------------------------------GABRIEL----------------------------------------------
 let listarProductosLink = document.getElementById('listado-productos');
 let agregarProductosLink = document.getElementById('agregar-productos');
