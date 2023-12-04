@@ -1,4 +1,3 @@
-
 /* Buscar ------------------------------------------------ gabriel*/
 .buscar {
     display: inline-flex;
@@ -47,9 +46,10 @@
 }
 
 /* Sobre nosotros ---------------------------------------- gabriel */
-.colorSobre{
+.colorSobre {
     background-color: var(--color-terciario-claro);
 }
+
 #sobre {
     max-width: 800px;
     margin: 0 auto;
@@ -100,15 +100,15 @@ h2 {
 
 
 /* productos -----------------------------------------gabriel */
-.contenedor-grid{
+.contenedor-grid {
     background-color: var(--color-terciario-claro);
-   
+
 }
 
 .izquierda h2 {
     text-align: start;
     padding-left: 40px;
- 
+
 }
 
 .productos ul {
@@ -201,40 +201,48 @@ h4 {
         align-items: center;
         padding-right: 35px;
     }
+
     .total-table {
         justify-content: center;
     }
-.content {
-    justify-content: center;
+
+    .content {
+        justify-content: center;
+    }
+
+    .SumRes {
+        justify-content: center;
+
+    }
 }
-.SumRes{
-    justify-content: center;
-    
-}
-}
+
 /* Carrito --------------------------------------------- gabriel */
 .carrito {
     background-color: var(--color-terciario-claro);
-   
+
 }
+
 #cart {
     width: 100%;
-    
+
 }
-.cart-img{
+
+.cart-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; 
-    height: 193px; 
-    mix-blend-mode:darken;
+    width: 100%;
+    height: 193px;
+    mix-blend-mode: darken;
 }
-.cart-img img{
-    max-width: 100%; 
+
+.cart-img img {
+    max-width: 100%;
     max-height: 100%;
 }
+
 .product {
-    box-shadow: 3px -4px 6px rgba(0, 0, 0, .4),  0 4px 6px rgba(8, 0, 0, 0.4);
+    box-shadow: 3px -4px 6px rgba(0, 0, 0, .4), 0 4px 6px rgba(8, 0, 0, 0.4);
     border: 1px solid #eee;
     margin: 40px;
     width: 95%;
@@ -243,9 +251,9 @@ h4 {
 
 .product article,
 .product .content {
-       float: left;
-       font-weight: 600;
-       font-size: larger;
+    float: left;
+    font-weight: 600;
+    font-size: larger;
 }
 
 .product article {
@@ -274,6 +282,7 @@ h4 {
     right: 0;
     left: 0;
 }
+
 .remove {
     cursor: pointer;
 }
@@ -316,7 +325,8 @@ h4 {
     color: #fff;
     cursor: pointer;
 }
-.SumRes{
+
+.SumRes {
     justify-content: start;
     float: right;
 }
@@ -327,7 +337,7 @@ h4 {
     justify-content: end;
     font-size: x-large;
     font-weight: 600;
-    }
+}
 
 #retiro {
     text-align: center;
@@ -339,25 +349,29 @@ h4 {
     text-decoration: none;
     color: #FF0000;
 }
-#retiro a:hover{
+
+#retiro a:hover {
     background: var(--color-secundario);
     color: #fff;
     cursor: pointer;
 }
+
 /* formulario contacto -------------------------------gabriel*/
-.colorCont{
+.colorCont {
     background-color: var(--color-terciario-claro);
 }
-#contacto h1{
+
+#contacto h1 {
     text-align: center;
     padding-bottom: 10px;
 }
+
 .input-correcto {
-    background-color : rgb(209, 242, 209);
+    background-color: rgb(209, 242, 209);
 }
 
 .input-incorrecto {
-    background-color : rgb(248, 208, 208);
+    background-color: rgb(248, 208, 208);
 }
 
 #contacto {
@@ -411,6 +425,7 @@ textarea {
     border-radius: 5px;
     display: none;
 }
+
 #whatsapp {
     margin-top: 60px;
     text-align: center;
@@ -521,8 +536,8 @@ header a {
     grid-template-rows: 70% 30%;
     grid-template-columns: 15% 70% 15%;
     grid-template-areas: "vacio1 logo_y_nombre usuario"
-                         "menu_hamburguesa barra_busqueda carrito";
-  }
+        "menu_hamburguesa barra_busqueda carrito";
+}
 
 #contenedor_logo_nombre {
     grid-area: logo_y_nombre;
@@ -656,8 +671,8 @@ nav a:hover {
     justify-content: center;
     align-content: center;
     grid-template-areas: "vacio11 entrada_mail vacio12"
-                         "vacio21 term_y_cond vacio22"
-                         "vacio31 enviar vacio32";
+        "vacio21 term_y_cond vacio22"
+        "vacio31 enviar vacio32";
     padding: 2vh 0;
 }
 
@@ -748,7 +763,7 @@ nav a:hover {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: "logo1 vacio1 logo2 vacio2 logo3"
-                         "vacio3 logo4 vacio5 logo5 vacio6";
+        "vacio3 logo4 vacio5 logo5 vacio6";
     padding: 1vh;
 }
 
@@ -821,10 +836,11 @@ nav a:hover {
 
 
 /* Sucursales ---------------------------------------- turco */
-.colorSuc{
+.colorSuc {
     background-color: var(--color-terciario-claro);
 }
-#seccion_sucursales > p {
+
+#seccion_sucursales>p {
     text-align: center;
     margin-bottom: 3vh;
 }
@@ -836,7 +852,7 @@ nav a:hover {
     grid-template-rows: 1fr 3fr;
     align-items: center;
     grid-template-areas: "datos_suc_ov datos_suc_tigre"
-                         "mapa_suc mapa_suc";
+        "mapa_suc mapa_suc";
 }
 
 #datos_sucursal_ov {
@@ -965,7 +981,7 @@ nav a:hover {
 
     #contenedor_logo_nombre img {
 
-        width: 200px; 
+        width: 200px;
         height: auto;
     }
 
@@ -1020,7 +1036,7 @@ nav a:hover {
     .imagen_marca {
         min-width: 125px;
         max-width: 175px;
-    }    
+    }
 
     #lista_redessociales {
         max-width: 450px;
@@ -1038,7 +1054,7 @@ nav a:hover {
         max-width: 440px !important;
         margin: 0 auto !important;
     }
-    
+
 }
 
 /* Algunos puntos de quiebre intermedios: 500px */
@@ -1049,7 +1065,7 @@ nav a:hover {
         grid-template-rows: 1fr 3fr;
         align-items: center;
         grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13"
-                             "mapa_suc mapa_suc mapa_suc";
+            "mapa_suc mapa_suc mapa_suc";
     }
 
 }
@@ -1064,7 +1080,7 @@ nav a:hover {
         width: 300px;
         height: auto;
     }
- 
+
     #lista_menues li {
         font-size: 1rem;
     }
@@ -1078,7 +1094,7 @@ nav a:hover {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, fr);
         grid-template-areas: "logo_bahco logo_byd logo_bosch logo_dew"
-                             "vacio1 logo_makita logo_stanley vacio";
+            "vacio1 logo_makita logo_stanley vacio";
     }
 
     #contenedor_marca_makita {
@@ -1089,31 +1105,31 @@ nav a:hover {
         grid-area: logo_stanley;
     }
 
-    #seccion_suscripcion > div,
-    #seccion_suscripcion > form {
+    #seccion_suscripcion>div,
+    #seccion_suscripcion>form {
         max-width: 900px;
         margin: auto;
     }
-    
+
     #formulario_suscripcion {
         display: grid;
         grid-template-columns: 5% 70% 1fr;
         grid-template-areas: "vacio11 entrada_mail enviar"
-                             "vacio21 term_y_cond vacio22";
-    }    
+            "vacio21 term_y_cond vacio22";
+    }
 
     #btn_enviar_form_susc {
         grid-area: enviar;
         margin-left: 0px;
     }
-    
+
     #contenedor_seccion_sucursales {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 3fr;
         align-items: center;
         grid-template-areas: "datos_suc_ov datos_suc_tigre vacio13 vacio14"
-                             "mapa_suc mapa_suc mapa_suc mapa_suc";
+            "mapa_suc mapa_suc mapa_suc mapa_suc";
     }
 
 }
@@ -1137,7 +1153,7 @@ nav a:hover {
         max-width: 1400px;
         margin: auto;
     }
-    
+
     #contenedor_seccion_sucursales {
         max-width: 1200px;
         margin: auto;
@@ -1196,7 +1212,7 @@ nav a:hover {
 }
 
 .boton-eliminar {
-    background-color: #FF0022; 
+    background-color: #FF0022;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -1217,4 +1233,143 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: flex-end;
     margin: 0 8px;
+}
+
+/* -------------------------------gabriel--------------------- */
+#inicio {
+    text-align: center;
+    border: solid 1px blue;
+    border-radius: 10px;
+    background-color: rgb(157, 157, 252);
+}
+
+#menu {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+#ingreso {
+    margin-top: 1px;
+    border: solid blue;
+    border-radius: 10px;
+
+}
+
+div h1 {
+    margin-top: 23px;
+}
+
+div h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ingreso div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+label {
+    width: 200px;
+    text-align: left;
+    margin-right: 10px;
+
+}
+
+input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.botones {
+    width: 100px;
+    border: solid blue;
+    margin-top: 10px;
+    align-items: center;
+    border-radius: 10px;
+}
+#eliminarProductos,
+#productoForm,
+#proveedoresForm,
+#buscarProductos {
+    margin: 20px 0 0 0px;
+    text-align: center;
+}
+
+#productoForm select,
+#productoForm input,
+#proveedoresForm input {
+    width: 250px;
+}
+
+/* listado completo */
+
+#eliminarProductos,
+#productosTable {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+#productosTable th, #productosTable td, 
+#eliminarProductos th, #eliminarProductos td {
+    border: 1px solid #ddd; 
+    padding: 8px;
+    text-align: center; 
+}
+
+
+thead {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7f3f3;
+}
+th{
+    width: fit-content;
+}
+
+#imgProducto{
+    height: auto;
+    width: 40px;
+
+}
+
+@media screen and (max-width: 600px) {
+
+    #productoForm label,
+    #proveedoresForm label {
+        width: 150px;
+        text-align: center;
+    }
+
+    .bonotera {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
 }
