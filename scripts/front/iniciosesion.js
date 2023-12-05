@@ -1,5 +1,5 @@
-let URL = "http://127.0.0.1:5000/"; // Funciona localmente
-//let URL = "https://matanus.pythonanywhere.com/";
+//let URL = "http://127.0.0.1:5000/"; // Funciona localmente
+let URL = "https://matanus.pythonanywhere.com/";
 
 /* --------------------------------Validar Formulario Inicio Sesión -------------------------------- */
 function validarEmailUsuario(email) {
@@ -53,12 +53,13 @@ formularioIniciarSesion.addEventListener('submit', evento => {
                     .then(usuario_valido => {
                         
                         if (usuario_valido !== null){
-                            window.location.href = "./portalAdmin.html"; // Cambiar por el panel de administración
+                            window.location.href = "./portalAdmin.html";
                         }
                         else {throw "Datos inválidos";}    
                         })
                     .catch(error => {
                         limpiarFormularioIniciarSesion();
+                         // La combinación de usuario y contraseña no coinciden.
                         document.querySelector('#form-iniciar-sesion #email-usuario').focus();
                     }) 
                 }
@@ -66,6 +67,7 @@ formularioIniciarSesion.addEventListener('submit', evento => {
         })
         .catch(error => {
             limpiarFormularioIniciarSesion();
+             // La combinación de usuario y contraseña no coinciden.
             document.querySelector('#form-iniciar-sesion #email-usuario').focus();
         })
     }

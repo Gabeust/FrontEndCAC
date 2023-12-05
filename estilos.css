@@ -90,8 +90,9 @@ h2 {
     color: #fff;
     border: none;
     padding: 10px;
-    border-radius: 5pc;
+    border-radius: 15px;
     margin-left: 50px;
+    width: 100px;
 }
 
 .botones:hover {
@@ -918,11 +919,12 @@ nav a:hover {
     background-color: var(--color-terciario-claro);
 }
 
+/*
 #cuerpo-inicioses h1 {
     text-align: center;
     padding: 16px;
 }
-
+*/
 #cuerpo-inicioses h2 {
     text-align: center;
     padding: 8px;
@@ -968,10 +970,23 @@ nav a:hover {
 
 #titulo-portaladmin,
 #titulo-iniciosesion {
-    margin-top: 28px;
-    text-align: center;
+    margin-top: 30px;
+}
+/*
+
+#header-portaladmin,
+#header-iniciosesion {
+    margin: 0 auto;
+    display: flex !important;
+    align-items: center !important;
 }
 
+#titulo-portaladmin,
+#titulo-iniciosesion {
+    margin-top: 28px !important;
+    text-align: center !important;
+}
+*/
 #menu-portaladmin {
     display: flex;
     text-align: center;
@@ -1030,7 +1045,8 @@ nav a:hover {
     margin: 0px 4px;
 }
 
-#contenedor-modificar-eliminar {
+#contenedor-modificar-eliminar,
+#contenedor-guardar-cancelar {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -1106,15 +1122,16 @@ div h2 {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-} */
+} 
 
 .botones {
     border: solid blue;
     margin-top: 10px;
     align-items: center;
     border-radius: 10px;
+    width: 75px;
 }
-
+*/
 .formularios-proveedor {
     margin: 0 8px;
     padding: 20px;
